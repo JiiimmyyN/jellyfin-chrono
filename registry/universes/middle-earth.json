@@ -4,7 +4,7 @@
   "id": "middle-earth",
   "name": "Middle Earth",
   "description": "J.R.R. Tolkien middle earth universe",
-  "revision": "2026.10.07.1",
+  "revision": "2026.10.07.2",
   "discover": {
     "wikidata": [
       "Q6841185"
@@ -184,7 +184,13 @@
         "the-lord-of-the-rings-the-rings-of-power-s2",
         "the-lord-of-the-rings-the-rings-of-power-s3",
         "the-lord-of-the-rings-the-war-of-the-rohirrim",
-        "the-hobbit-an-unexpected-journey"
+        "the-hobbit-an-unexpected-journey",
+        "the-hobbit-the-desolation-of-smaug",
+        "the-hobbit-the-battle-of-the-five-armies",
+        "the-lord-of-the-rings-the-hunt-for-gollum",
+        "the-lord-of-the-rings-the-fellowship-of-the-ring",
+        "the-lord-of-the-rings-the-two-towers",
+        "the-lord-of-the-rings-the-return-of-the-king"
       ]
     },
     {
