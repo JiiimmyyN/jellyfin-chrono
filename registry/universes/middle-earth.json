@@ -1,0 +1,250 @@
+{
+  "$schema": "../schema/universe.schema.json",
+  "schemaVersion": 1,
+  "id": "middle-earth",
+  "name": "Middle Earth",
+  "description": "J.R.R. Tolkien middle earth universe",
+  "revision": "2026.10.07.1",
+  "discover": {
+    "wikidata": [
+      "Q6841185"
+    ],
+    "tmdbCollections": []
+  },
+  "attribution": [
+    {
+      "name": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6841185",
+      "license": "CC0 1.0"
+    },
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/"
+    }
+  ],
+  "flags": {},
+  "groups": [
+    {
+      "id": "peter-jacksons-middle-earth-film-series",
+      "title": "Peter Jackson's Middle-earth film series"
+    },
+    {
+      "id": "the-lord-of-the-rings",
+      "title": "The Lord of the Rings"
+    },
+    {
+      "id": "the-hobbit-trilogy",
+      "title": "The Hobbit trilogy"
+    }
+  ],
+  "entries": [
+    {
+      "id": "the-lord-of-the-rings-the-rings-of-power-s1",
+      "type": "season",
+      "title": "The Lord of the Rings: The Rings of Power",
+      "tmdb": 84773,
+      "imdb": "tt7631058",
+      "tvdb": 367506,
+      "season": 1,
+      "released": "2022-09-01",
+      "poster": "/zZVQbQV7djOnO8ugeJ8iQKm3I4U.jpg"
+    },
+    {
+      "id": "the-lord-of-the-rings-the-rings-of-power-s2",
+      "type": "season",
+      "title": "The Lord of the Rings: The Rings of Power",
+      "tmdb": 84773,
+      "imdb": "tt7631058",
+      "tvdb": 367506,
+      "season": 2,
+      "released": "2024-08-29",
+      "poster": "/eTQLv1sjLhDBPwI2u0qaqV51HWU.jpg"
+    },
+    {
+      "id": "the-lord-of-the-rings-the-rings-of-power-s3",
+      "type": "season",
+      "title": "The Lord of the Rings: The Rings of Power",
+      "tmdb": 84773,
+      "imdb": "tt7631058",
+      "tvdb": 367506,
+      "season": 3,
+      "released": "2026-11-10",
+      "poster": "/xw9VIpdX0n0BNQRMLWj8Y0T4yew.jpg"
+    },
+    {
+      "id": "the-lord-of-the-rings-the-war-of-the-rohirrim",
+      "type": "movie",
+      "title": "The Lord of the Rings: The War of the Rohirrim",
+      "tmdb": 839033,
+      "imdb": "tt14824600",
+      "released": "2024-12-05",
+      "poster": "/23WCoDo6wzBfzbX7BGTNwVUqZfi.jpg",
+      "groups": [
+        "the-lord-of-the-rings"
+      ]
+    },
+    {
+      "id": "the-hobbit-an-unexpected-journey",
+      "type": "movie",
+      "title": "The Hobbit: An Unexpected Journey",
+      "tmdb": 49051,
+      "imdb": "tt0903624",
+      "released": "2012-12-12",
+      "poster": "/yHA9Fc37VmpUA5UncTxxo3rTGVA.jpg",
+      "groups": [
+        "peter-jacksons-middle-earth-film-series",
+        "the-hobbit-trilogy"
+      ]
+    },
+    {
+      "id": "the-lord-of-the-rings-the-fellowship-of-the-ring",
+      "type": "movie",
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "tmdb": 120,
+      "imdb": "tt0120737",
+      "released": "2001-12-18",
+      "poster": "/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",
+      "groups": [
+        "peter-jacksons-middle-earth-film-series",
+        "the-lord-of-the-rings"
+      ]
+    },
+    {
+      "id": "the-lord-of-the-rings-the-two-towers",
+      "type": "movie",
+      "title": "The Lord of the Rings: The Two Towers",
+      "tmdb": 121,
+      "imdb": "tt0167261",
+      "released": "2002-12-18",
+      "poster": "/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg",
+      "groups": [
+        "peter-jacksons-middle-earth-film-series",
+        "the-lord-of-the-rings"
+      ]
+    },
+    {
+      "id": "the-lord-of-the-rings-the-return-of-the-king",
+      "type": "movie",
+      "title": "The Lord of the Rings: The Return of the King",
+      "tmdb": 122,
+      "imdb": "tt0167260",
+      "released": "2003-12-17",
+      "poster": "/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
+      "groups": [
+        "peter-jacksons-middle-earth-film-series",
+        "the-lord-of-the-rings"
+      ]
+    },
+    {
+      "id": "the-hobbit-the-desolation-of-smaug",
+      "type": "movie",
+      "title": "The Hobbit: The Desolation of Smaug",
+      "tmdb": 57158,
+      "imdb": "tt1170358",
+      "released": "2013-12-11",
+      "poster": "/xQYiXsheRCDBA39DOrmaw1aSpbk.jpg",
+      "groups": [
+        "peter-jacksons-middle-earth-film-series",
+        "the-hobbit-trilogy"
+      ]
+    },
+    {
+      "id": "the-hobbit-the-battle-of-the-five-armies",
+      "type": "movie",
+      "title": "The Hobbit: The Battle of the Five Armies",
+      "tmdb": 122917,
+      "imdb": "tt2310332",
+      "released": "2014-12-10",
+      "poster": "/xT98tLqatZPQApyRmlPL12LtiWp.jpg",
+      "groups": [
+        "peter-jacksons-middle-earth-film-series",
+        "the-hobbit-trilogy"
+      ]
+    },
+    {
+      "id": "the-lord-of-the-rings-the-hunt-for-gollum",
+      "type": "movie",
+      "title": "The Lord of the Rings: The Hunt for Gollum",
+      "tmdb": 1090869,
+      "imdb": "tt32328070",
+      "released": "2027-12-15",
+      "poster": "/aRtIVdlgVNtvcqFUnuhR3V1RQ7o.jpg",
+      "groups": [
+        "the-lord-of-the-rings"
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": "timeline",
+      "title": "Story Order",
+      "description": "In-universe chronological order.",
+      "items": [
+        "the-lord-of-the-rings-the-rings-of-power-s1",
+        "the-lord-of-the-rings-the-rings-of-power-s2",
+        "the-lord-of-the-rings-the-rings-of-power-s3",
+        "the-lord-of-the-rings-the-war-of-the-rohirrim",
+        "the-hobbit-an-unexpected-journey"
+      ]
+    },
+    {
+      "id": "movie-timeline",
+      "title": "Movie Timeline",
+      "description": "Just the films, in timeline order.",
+      "derive": {
+        "from": "timeline",
+        "types": [
+          "movie"
+        ]
+      }
+    },
+    {
+      "id": "peter-jacksons-middle-earth-film-series",
+      "title": "Peter Jackson's Middle-earth film series",
+      "derive": {
+        "groups": [
+          "peter-jacksons-middle-earth-film-series"
+        ],
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "the-lord-of-the-rings",
+      "title": "The Lord of the Rings",
+      "derive": {
+        "groups": [
+          "the-lord-of-the-rings"
+        ],
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "the-hobbit-trilogy",
+      "title": "The Hobbit trilogy",
+      "derive": {
+        "groups": [
+          "the-hobbit-trilogy"
+        ],
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "release",
+      "title": "Release Order",
+      "description": "Everything in the order it was released.",
+      "derive": {
+        "sortBy": "released"
+      }
+    }
+  ],
+  "hub": {
+    "rows": [
+      "timeline",
+      "movie-timeline",
+      "peter-jacksons-middle-earth-film-series",
+      "the-lord-of-the-rings",
+      "the-hobbit-trilogy",
+      "release"
+    ]
+  }
+}

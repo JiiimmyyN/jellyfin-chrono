@@ -13,6 +13,12 @@
       "name": "Star Wars",
       "description": "The Skywalker Saga, anthology films and every canon series, season by season.",
       "file": "universes/star-wars.json"
+    },
+    {
+      "id": "middle-earth",
+      "name": "Middle Earth",
+      "description": "J.R.R. Tolkien middle earth universe",
+      "file": "universes/middle-earth.json"
     }
   ]
 }
