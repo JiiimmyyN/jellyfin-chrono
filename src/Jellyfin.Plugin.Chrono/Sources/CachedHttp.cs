@@ -54,9 +54,9 @@ public sealed class CachedHttp
         try
         {
             using var request = requestFactory();
-            if (cached?.ETag is not null)
+            if (cached?.ETag is not null && EntityTagHeaderValue.TryParse(cached.ETag, out var cachedETag))
             {
-                request.Headers.IfNoneMatch.Add(new EntityTagHeaderValue(cached.ETag, cached.ETag.StartsWith("W/", StringComparison.Ordinal)));
+                request.Headers.IfNoneMatch.Add(cachedETag);
             }
 
             using var client = CreateClient();
@@ -70,8 +70,7 @@ public sealed class CachedHttp
             response.EnsureSuccessStatusCode();
             var body = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
             _failures.TryRemove(cacheKey, out _);
-            var etag = response.Headers.ETag?.ToString();
-            await WriteAsync(path, new CacheRecord(body, etag?.Trim('"'), DateTimeOffset.UtcNow), cancellationToken).ConfigureAwait(false);
+            await WriteAsync(path, new CacheRecord(body, response.Headers.ETag?.ToString(), DateTimeOffset.UtcNow), cancellationToken).ConfigureAwait(false);
             return body;
         }
         catch (Exception ex) when (ex is HttpRequestException or TaskCanceledException or IOException)
