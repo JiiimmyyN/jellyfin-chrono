@@ -4,7 +4,7 @@
   "id": "mcu",
   "name": "Marvel Cinematic Universe",
   "description": "Marvel Studios films, Disney+ series and specials, and the Marvel Television series from ABC, Netflix, Hulu and Freeform.",
-  "revision": "2026.10.07",
+  "revision": "2026.10.07.1",
   "discover": {
     "wikidata": [
       "Q642878"
@@ -1535,6 +1535,18 @@
       "flags": [
         "not-on-official-timeline"
       ]
+    },
+    {
+      "id": "spider-man",
+      "type": "movie",
+      "title": "Spider-Man",
+      "tmdb": 557,
+      "imdb": "tt0145487",
+      "released": "2002-05-03",
+      "flags": [
+        "not-on-official-timeline"
+      ],
+      "note": "Automation test, do not merge."
     }
   ],
   "orders": [
@@ -1643,7 +1655,8 @@
         "the-punisher-one-last-kill",
         "spider-man-brand-new-day",
         "avengers-doomsday",
-        "avengers-secret-wars"
+        "avengers-secret-wars",
+        "spider-man"
       ]
     },
     {
