@@ -1,0 +1,6 @@
+@import url("https://cdn.jsdelivr.net/gh/intro-skipper/intro-skipper-css@main/skip-button.min.css");
+
+:root {
+    /* Skip button timing */
+    --skip-hide-duration: 8s;
+}

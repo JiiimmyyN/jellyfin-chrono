@@ -56,16 +56,46 @@ Pull requests opened by the workflow token don't trigger the *Build* workflow, s
 
 ### Claude routine (for `registry:claude`)
 
-1. Install the Claude GitHub App on this repository (Contents, Issues and Pull requests: read and write).
-2. Create a routine at https://claude.ai/code/routines:
-   * Repository: `JiiimmyyN/jellyfin-chrono`.
-   * Environment setup script (the routine needs the .NET 10 SDK to validate):
-     ```bash
-     curl -sSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel 10.0 && echo 'export PATH="$HOME/.dotnet:$PATH"' >> ~/.bashrc
+The setup script and network access belong to a **cloud environment**, not to the routine; the routine just picks an environment. Create a dedicated one first.
+
+1. **Create the environment.** On https://claude.ai/code, click the cloud icon showing the current environment name (the row above the message box) → **Cloud** → **Add cloud environment**:
+   * **Name:** `Chrono registry`
+   * **Network access:** **Custom**, tick **Also include default list of common package managers**, and add these **Allowed domains** (one per line):
+     ```text
+     builds.dotnet.microsoft.com
+     api.nuget.org
+     query.wikidata.org
+     www.wikidata.org
+     api.tvmaze.com
+     api.themoviedb.org
+     www.themoviedb.org
+     marvelcinematicuniverse.fandom.com
+     starwars.fandom.com
+     www.marvel.com
+     www.starwars.com
+     en.wikipedia.org
      ```
-   * Prompt: the text in the next section.
-   * Trigger: **API**. Copy the routine id and generate the token (it is shown once).
-3. Store them in the repository: variable `CLAUDE_ROUTINE_ID` (Settings → Secrets and variables → Actions → Variables) and secret `CLAUDE_ROUTINE_TOKEN`.
+     The .NET SDK isn't pre-installed, its installer downloads from `builds.dotnet.microsoft.com`, restoring packages needs `api.nuget.org`, and the rest are the data sources the routine checks ids and placements against.
+   * **Setup script:**
+     ```bash
+     #!/bin/bash
+     set -e
+     curl -sSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh
+     bash /tmp/dotnet-install.sh --channel 10.0 --install-dir /usr/local/share/dotnet
+     ln -sf /usr/local/share/dotnet/dotnet /usr/local/bin/dotnet
+     dotnet --version
+     ```
+     It runs once and the result is cached for later sessions (rebuilt about weekly or when you edit the environment).
+   * **Create environment.**
+2. **Install the Claude GitHub App** on the repository (https://github.com/apps/claude): Contents, Issues and Pull requests read and write.
+3. **Create the routine** at https://claude.ai/code/routines → **New routine**:
+   * Name: `Chrono registry requests`; prompt: the text in the next section.
+   * Repository: `JiiimmyyN/jellyfin-chrono`.
+   * Environment: below the **Instructions** box, click the cloud icon and pick **Chrono registry**.
+   * Trigger: **API**. Save the routine; then open it → **Edit** → the API trigger → copy the URL (the routine id is the `trig_…` part) and click **Generate token** (shown once).
+   * Connectors: remove all; the routine only needs GitHub, which works through the app.
+4. **Store them in the repository:** variable `CLAUDE_ROUTINE_ID` (Settings → Secrets and variables → Actions → Variables, value `trig_…`) and secret `CLAUDE_ROUTINE_TOKEN`.
+5. **Test it:** open an "other request" issue and add `registry:claude`. The workflow comments with the session link; open it to watch the run.
 
 API-triggered routines run on the Claude subscription of the routine owner; there is no Anthropic API key in GitHub.
 
