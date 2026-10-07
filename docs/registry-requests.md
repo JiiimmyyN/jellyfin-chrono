@@ -71,6 +71,10 @@ Runs [claude-code-action](https://code.claude.com/docs/en/github-actions) on a G
 
 The prompt lives in `.github/workflows/registry-claude.yml`. Claude gets shell access on the runner, so read a request before you label it: the prompt treats issue text as data, but the label is your approval.
 
+Both Claude workflows run Claude Opus 5.5 (`--model claude-opus-5-5` in their `claude_args`).
+
+To follow up on a pull request Claude opened (or any issue or pull request), mention `@claude` in a comment or review, for example "@claude add the in-universe timeline". The *Claude* workflow (`.github/workflows/claude.yml`) checks out the pull request branch, makes the change, validates and pushes to the same branch, and reports back in a comment. Only the owner, members and collaborators can trigger it. Because it runs from `main`, it only reacts once the workflow file is on `main`.
+
 #### Alternative: Claude Code cloud routine
 
 Runs in a Claude Code cloud session instead. `.claude/settings.json` registers a [SessionStart hook](https://code.claude.com/docs/en/cloud-environments#install-dependencies-with-a-sessionstart-hook) that runs `scripts/install_pkgs.sh`, which installs the .NET 10 SDK from Ubuntu's package archive in cloud sessions (it does nothing locally); Ubuntu's archive and NuGet are on the default **Trusted** allowlist.
