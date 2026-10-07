@@ -1,0 +1,35 @@
+name: Registry request (Claude)
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  issues: write
+
+jobs:
+  start-routine:
+    if: github.event.label.name == 'registry:claude'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ISSUE: ${{ github.event.issue.number }}
+      REPO: ${{ github.repository }}
+      ROUTINE_ID: ${{ vars.CLAUDE_ROUTINE_ID }}
+      ROUTINE_TOKEN: ${{ secrets.CLAUDE_ROUTINE_TOKEN }}
+    steps:
+      - name: Start the Claude routine
+        run: |
+          if [ -z "$ROUTINE_ID" ] || [ -z "$ROUTINE_TOKEN" ]; then
+            echo "::error::Set the CLAUDE_ROUTINE_ID repository variable and the CLAUDE_ROUTINE_TOKEN secret (see docs/registry-requests.md)."
+            exit 1
+          fi
+          payload=$(jq -n --arg text "Registry request: issue #$ISSUE in $REPO" '{text: $text}')
+          response=$(curl -sS --fail-with-body -X POST "https://api.anthropic.com/v1/claude_code/routines/$ROUTINE_ID/fire" \
+            -H "Authorization: Bearer $ROUTINE_TOKEN" \
+            -H "anthropic-beta: experimental-cc-routine-2026-04-01" \
+            -H "Content-Type: application/json" \
+            -d "$payload")
+          url=$(jq -r '.claude_code_session_url // empty' <<<"$response")
+          gh issue comment "$ISSUE" --body "Started a Claude session for this request${url:+ ($url)}. It will open a pull request or ask for clarification here."
+          gh issue edit "$ISSUE" --remove-label registry:claude

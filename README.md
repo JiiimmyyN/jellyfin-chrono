@@ -66,6 +66,10 @@ dotnet run --project tools/Chrono.RegistryTool -- discover registry
 
 `discover` lists titles Wikidata links to a universe that are neither curated nor excluded. A weekly GitHub Action keeps an issue with that list up to date.
 
+### Requesting changes
+
+Missing a title, disagree with a placement, or want a new universe? [Open an issue](https://github.com/JiiimmyyN/jellyfin-chrono/issues/new/choose) with one of the registry forms. Once a maintainer approves it, a workflow applies it and opens a pull request. See [docs/registry-requests.md](docs/registry-requests.md).
+
 ## Development
 
 ```

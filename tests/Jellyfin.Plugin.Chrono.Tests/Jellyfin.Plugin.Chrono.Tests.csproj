@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Jellyfin.Plugin.Chrono\Jellyfin.Plugin.Chrono.csproj" />
+    <ProjectReference Include="..\..\tools\Chrono.RegistryTool\Chrono.RegistryTool.csproj" />
   </ItemGroup>
 
   <ItemGroup>

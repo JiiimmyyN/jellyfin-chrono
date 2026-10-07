@@ -1,0 +1,119 @@
+name: Registry request
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: registry-request-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    if: github.event.label.name == 'registry:approved'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ISSUE: ${{ github.event.issue.number }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Detect request type
+        id: kind
+        env:
+          LABELS: ${{ toJSON(github.event.issue.labels.*.name) }}
+        run: |
+          kind=""
+          for candidate in add-title move-title exclude-title new-universe; do
+            if grep -q "\"registry:$candidate\"" <<<"$LABELS"; then kind="$candidate"; break; fi
+          done
+          echo "kind=$kind" >> "$GITHUB_OUTPUT"
+
+      - name: Not a structured request
+        if: steps.kind.outputs.kind == ''
+        run: |
+          gh issue comment "$ISSUE" --body "This isn't one of the structured registry forms, so it can't be applied automatically. Use the \`registry:claude\` label to hand it to a Claude session instead."
+          gh issue edit "$ISSUE" --remove-label registry:approved
+          exit 1
+
+      - name: Apply request
+        id: apply
+        if: steps.kind.outputs.kind != ''
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          KIND: ${{ steps.kind.outputs.kind }}
+        run: |
+          printf '%s' "$ISSUE_BODY" > "$RUNNER_TEMP/issue.md"
+          set +e
+          dotnet run --project tools/Chrono.RegistryTool -- apply-issue registry --kind "$KIND" --body "$RUNNER_TEMP/issue.md" --output "$RUNNER_TEMP/summary.md"
+          echo "exit=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Validate
+        id: validate
+        if: steps.apply.outputs.exit == '0'
+        run: |
+          set +e
+          {
+            dotnet run --project tools/Chrono.RegistryTool -- validate registry &&
+            dotnet test tests/Jellyfin.Plugin.Chrono.Tests --nologo -v quiet
+          } > "$RUNNER_TEMP/validate.log" 2>&1
+          code=$?
+          tail -40 "$RUNNER_TEMP/validate.log"
+          echo "exit=$code" >> "$GITHUB_OUTPUT"
+
+      - name: Open pull request
+        if: steps.apply.outputs.exit == '0' && steps.validate.outputs.exit == '0'
+        env:
+          TITLE: ${{ github.event.issue.title }}
+        run: |
+          branch="registry/issue-$ISSUE"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$branch"
+          git add registry
+          git commit -m "Registry: ${TITLE#\[Registry\] } (#$ISSUE)"
+          git push --force origin "$branch"
+          {
+            cat "$RUNNER_TEMP/summary.md"
+            echo
+            echo "Closes #$ISSUE"
+          } > "$RUNNER_TEMP/pr.md"
+          pr=$(gh pr list --head "$branch" --state open --json url --jq '.[0].url')
+          if [ -n "$pr" ]; then
+            gh pr edit "$pr" --body-file "$RUNNER_TEMP/pr.md"
+          else
+            pr=$(gh pr create --base main --head "$branch" --title "Registry: ${TITLE#\[Registry\] }" --body-file "$RUNNER_TEMP/pr.md")
+          fi
+          gh issue comment "$ISSUE" --body "Applied in $pr. Merge it to publish; Jellyfin servers pick it up on their next registry refresh."
+          gh issue edit "$ISSUE" --remove-label registry:needs-changes || true
+
+      - name: Report failure
+        if: always() && steps.kind.outputs.kind != '' && (steps.apply.outputs.exit != '0' || steps.validate.outputs.exit != '0')
+        run: |
+          {
+            if [ -s "$RUNNER_TEMP/summary.md" ] && [ "${{ steps.apply.outputs.exit }}" != "0" ]; then
+              cat "$RUNNER_TEMP/summary.md"
+            else
+              echo "The change was applied but validation failed:"
+              echo
+              echo '```'
+              tail -30 "$RUNNER_TEMP/validate.log" 2>/dev/null
+              echo '```'
+            fi
+            echo
+            echo "Edit the issue and add the \`registry:approved\` label again to retry."
+          } > "$RUNNER_TEMP/failure.md"
+          gh issue comment "$ISSUE" --body-file "$RUNNER_TEMP/failure.md"
+          gh issue edit "$ISSUE" --remove-label registry:approved --add-label registry:needs-changes
+          exit 1

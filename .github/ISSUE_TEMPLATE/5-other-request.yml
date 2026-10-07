@@ -1,0 +1,23 @@
+name: "Registry: other request"
+description: Anything the structured forms can't express (rework a timeline, add phases or eras, fix several entries). Handled by a Claude session after approval.
+title: "[Registry] <short description>"
+labels: ["registry", "registry:other"]
+body:
+  - type: input
+    id: universe
+    attributes:
+      label: Universe
+      description: Universe id, or "new".
+    validations:
+      required: true
+  - type: textarea
+    id: request
+    attributes:
+      label: Request
+      description: What should change and why. Be specific (titles, TMDB ids, positions).
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources

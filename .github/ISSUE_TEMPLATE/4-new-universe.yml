@@ -1,0 +1,56 @@
+name: "Registry: new universe"
+description: Add a new curated universe (franchise) to the registry.
+title: "[Registry] New universe: <name>"
+labels: ["registry", "registry:new-universe"]
+body:
+  - type: input
+    id: id
+    attributes:
+      label: Universe ID
+      description: Lowercase slug, e.g. `middle-earth`.
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+  - type: input
+    id: wikidata
+    attributes:
+      label: Wikidata franchise
+      description: Wikidata item id(s) of the franchise, e.g. `Q642878`. Used to pick up every title and new releases automatically.
+  - type: input
+    id: collections
+    attributes:
+      label: TMDB collections
+      description: Optional TMDB collection ids, comma-separated.
+  - type: input
+    id: timeline-title
+    attributes:
+      label: Timeline title
+      description: Default "Timeline".
+  - type: textarea
+    id: timeline
+    attributes:
+      label: Timeline
+      description: |
+        In-universe order, one title per line: `movie:<tmdb id>`, `tv:<tmdb id>` (all seasons), `tv:<tmdb id>:s2` or `tv:<tmdb id>:s1-3`.
+        Leave empty for a release-order-only universe.
+      render: text
+  - type: checkboxes
+    id: options
+    attributes:
+      label: Options
+      options:
+        - label: Add every other title Wikidata links to the franchise
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Where the timeline comes from.

@@ -1,5 +1,7 @@
 using System.Globalization;
 using System.Text;
+using Chrono.RegistryTool.Metadata;
+using Chrono.RegistryTool.Requests;
 using Jellyfin.Plugin.Chrono.Composition;
 using Jellyfin.Plugin.Chrono.Definitions;
 using Jellyfin.Plugin.Chrono.Sources;
@@ -12,6 +14,7 @@ return command switch
 {
     "validate" => Validate(registry),
     "discover" => await DiscoverAsync(registry, output),
+    "apply-issue" => await ApplyIssueAsync(registry, OptionValue("--kind"), OptionValue("--body"), output),
     _ => Help()
 };
 
@@ -22,6 +25,8 @@ static int Help()
 
           validate [registry-dir]                    Validate index.json and every universe file.
           discover [registry-dir] [--output file]    List Wikidata titles that are not curated yet (markdown).
+          apply-issue [registry-dir] --kind <add-title|move-title|exclude-title|new-universe> --body <issue.md> [--output summary.md]
+                                                     Apply a GitHub issue-form request to the registry files.
         """);
     return 1;
 }
@@ -100,14 +105,7 @@ static async Task<int> DiscoverAsync(string registry, string? output)
             continue;
         }
 
-        using var request = new HttpRequestMessage(HttpMethod.Post, "https://query.wikidata.org/sparql")
-        {
-            Content = new FormUrlEncodedContent([new KeyValuePair<string, string>("query", WikidataClient.BuildFranchiseQuery(anchors))])
-        };
-        request.Headers.Accept.ParseAdd("application/sparql-results+json");
-        using var response = await client.SendAsync(request);
-        response.EnsureSuccessStatusCode();
-        var discovered = WikidataClient.ParseFranchise(await response.Content.ReadAsStringAsync(), anchors);
+        var discovered = await FranchiseAsync(client, anchors);
         var merged = UniverseComposer.AddDiscovered(universe, discovered);
         var candidates = merged.Entries
             .Where(e => e.Flags.Contains(UniverseComposer.DiscoveredFlag))
@@ -141,6 +139,67 @@ static async Task<int> DiscoverAsync(string registry, string? output)
 
     Console.Write(text);
     return 0;
+}
+
+static async Task<SourceResult> FranchiseAsync(HttpClient client, IReadOnlyCollection<string> anchors)
+{
+    using var request = new HttpRequestMessage(HttpMethod.Post, "https://query.wikidata.org/sparql")
+    {
+        Content = new FormUrlEncodedContent([new KeyValuePair<string, string>("query", WikidataClient.BuildFranchiseQuery(anchors))])
+    };
+    request.Headers.Accept.ParseAdd("application/sparql-results+json");
+    using var response = await client.SendAsync(request);
+    response.EnsureSuccessStatusCode();
+    return WikidataClient.ParseFranchise(await response.Content.ReadAsStringAsync(), anchors);
+}
+
+static async Task<int> ApplyIssueAsync(string registry, string? kind, string? bodyPath, string? output)
+{
+    if (kind is null || bodyPath is null)
+    {
+        return Help();
+    }
+
+    using var client = new HttpClient { Timeout = TimeSpan.FromSeconds(90) };
+    client.DefaultRequestHeaders.UserAgent.ParseAdd(CachedHttp.UserAgent);
+    var editor = new RegistryEditor(registry, MetadataResolver.Create(), anchors => FranchiseAsync(client, anchors)!, DateOnly.FromDateTime(DateTime.UtcNow));
+    var text = new StringBuilder();
+    int exitCode;
+    try
+    {
+        await editor.ApplyAsync(kind, IssueForm.Parse(await File.ReadAllTextAsync(bodyPath)));
+        var files = editor.Save();
+        text.AppendLine("### Changes").AppendLine();
+        foreach (var line in editor.Summary)
+        {
+            text.AppendLine("- " + line);
+        }
+
+        if (editor.Warnings.Count > 0)
+        {
+            text.AppendLine().AppendLine("### Warnings").AppendLine();
+            foreach (var warning in editor.Warnings)
+            {
+                text.AppendLine("- " + warning);
+            }
+        }
+
+        text.AppendLine().AppendLine("Files: " + string.Join(", ", files.Select(f => $"`registry/{f}`")));
+        exitCode = 0;
+    }
+    catch (Exception ex) when (ex is RequestException or HttpRequestException or System.Text.Json.JsonException)
+    {
+        text.AppendLine("The request could not be applied:").AppendLine().AppendLine("> " + ex.Message.Replace("\n", "\n> ", StringComparison.Ordinal));
+        exitCode = 2;
+    }
+
+    if (output is not null)
+    {
+        await File.WriteAllTextAsync(output, text.ToString());
+    }
+
+    Console.Write(text);
+    return exitCode;
 }
 
 string? OptionValue(string name)

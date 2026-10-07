@@ -1,0 +1,29 @@
+name: "Registry: exclude a title"
+description: Stop a title from being picked up automatically (documentaries, parodies, other studios), optionally removing it.
+title: "[Registry] Exclude <title> from <universe>"
+labels: ["registry", "registry:exclude-title"]
+body:
+  - type: input
+    id: universe
+    attributes:
+      label: Universe
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: "`movie:<tmdb id>` or `tv:<tmdb id>`."
+    validations:
+      required: true
+  - type: checkboxes
+    id: options
+    attributes:
+      label: Options
+      options:
+        - label: Remove it from the universe if it is already listed
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Why it does not belong.

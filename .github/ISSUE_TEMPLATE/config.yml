@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Registry format and request guide
+    url: https://github.com/JiiimmyyN/jellyfin-chrono/blob/main/docs/registry-requests.md
+    about: How universe data is structured and how requests are applied.

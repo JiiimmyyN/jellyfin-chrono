@@ -1,0 +1,33 @@
+name: "Registry: move a title"
+description: Change where existing entries sit in a timeline.
+title: "[Registry] Move <entry> in <universe>"
+labels: ["registry", "registry:move-title"]
+body:
+  - type: input
+    id: universe
+    attributes:
+      label: Universe
+      description: Universe id, e.g. `mcu`.
+    validations:
+      required: true
+  - type: textarea
+    id: entries
+    attributes:
+      label: Entry IDs
+      description: One or more entry ids (comma or one per line). Several entries are kept together in the given order.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: placement
+    attributes:
+      label: Placement
+      description: One line per timeline, e.g. `timeline after avengers-endgame`, `timeline first`.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Why it belongs there.
