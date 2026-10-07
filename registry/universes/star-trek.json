@@ -1,0 +1,834 @@
+{
+  "$schema": "../schema/universe.schema.json",
+  "schemaVersion": 1,
+  "id": "star-trek",
+  "name": "Star Trek",
+  "description": "The Star Trek Movie and Series Universe",
+  "revision": "2026.10.07.1",
+  "discover": {
+    "wikidata": [
+      "Q18043309"
+    ],
+    "tmdbCollections": [
+      152,
+      154,
+      157,
+      168,
+      172,
+      174,
+      193,
+      199,
+      200,
+      201,
+      13475,
+      54138,
+      188927,
+      1114894,
+      253,
+      1992,
+      655,
+      580,
+      1855,
+      314,
+      67198,
+      82491,
+      85949,
+      85948,
+      106393,
+      103516,
+      249278,
+      223530
+    ]
+  },
+  "attribution": [
+    {
+      "name": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q18043309",
+      "license": "CC0 1.0"
+    },
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/"
+    }
+  ],
+  "flags": {},
+  "groups": [
+    {
+      "id": "star-trek-the-next-generation",
+      "title": "Star Trek: The Next Generation"
+    },
+    {
+      "id": "star-trek-deep-space-nine",
+      "title": "Star Trek: Deep Space Nine"
+    }
+  ],
+  "entries": [
+    {
+      "id": "star-trek-s1",
+      "type": "season",
+      "title": "Star Trek",
+      "tmdb": 253,
+      "imdb": "tt0060028",
+      "tvdb": 77526,
+      "season": 1,
+      "released": "1966-09-08",
+      "poster": "/cTXQJqgWyAiaMWpfsjkNVi5Eov9.jpg"
+    },
+    {
+      "id": "star-trek-s2",
+      "type": "season",
+      "title": "Star Trek",
+      "tmdb": 253,
+      "imdb": "tt0060028",
+      "tvdb": 77526,
+      "season": 2,
+      "released": "1967-09-14",
+      "poster": "/2X0AzpGtCU1OBEdTwYdzkQgkCu3.jpg"
+    },
+    {
+      "id": "star-trek-s3",
+      "type": "season",
+      "title": "Star Trek",
+      "tmdb": 253,
+      "imdb": "tt0060028",
+      "tvdb": 77526,
+      "season": 3,
+      "released": "1968-09-20",
+      "poster": "/rMy0icwqYxSiGci2t5qW3Rc1PjR.jpg"
+    },
+    {
+      "id": "star-trek-s1-1973",
+      "type": "season",
+      "title": "Star Trek",
+      "tmdb": 1992,
+      "imdb": "tt0069637",
+      "tvdb": 73566,
+      "season": 1,
+      "released": "1973-09-08",
+      "poster": "/4HzSH3fsCqA09HEXSyQNmtD5MhY.jpg"
+    },
+    {
+      "id": "star-trek-s2-1974",
+      "type": "season",
+      "title": "Star Trek",
+      "tmdb": 1992,
+      "imdb": "tt0069637",
+      "tvdb": 73566,
+      "season": 2,
+      "released": "1974-09-07",
+      "poster": "/wiRoqHvTUNeBGbVRWkpAkAJGreQ.jpg"
+    },
+    {
+      "id": "star-trek-the-motion-picture",
+      "type": "movie",
+      "title": "Star Trek: The Motion Picture",
+      "tmdb": 152,
+      "imdb": "tt0079945",
+      "released": "1979-12-07",
+      "poster": "/wfiAfNwH6CMKxz4vRaW8CPTabtk.jpg"
+    },
+    {
+      "id": "star-trek-ii-the-wrath-of-khan",
+      "type": "movie",
+      "title": "Star Trek II: The Wrath of Khan",
+      "tmdb": 154,
+      "imdb": "tt0084726",
+      "released": "1982-06-04",
+      "poster": "/uPyLsKl8Z0LOoxeaFXsY5MxhR5s.jpg"
+    },
+    {
+      "id": "star-trek-iii-the-search-for-spock",
+      "type": "movie",
+      "title": "Star Trek III: The Search for Spock",
+      "tmdb": 157,
+      "imdb": "tt0088170",
+      "released": "1984-06-01",
+      "poster": "/yqEj0oPfKBMCz7YcCARHDgH7VFm.jpg"
+    },
+    {
+      "id": "star-trek-the-cage",
+      "type": "movie",
+      "title": "Star Trek: The Cage",
+      "tmdb": 1143894,
+      "imdb": "tt0059753",
+      "released": "1965-02-01",
+      "poster": "/nFs8Hlp7nrjGkbBq9jYJtgg8YeK.jpg"
+    },
+    {
+      "id": "star-trek-iv-the-voyage-home",
+      "type": "movie",
+      "title": "Star Trek IV: The Voyage Home",
+      "tmdb": 168,
+      "imdb": "tt0092007",
+      "released": "1986-11-26",
+      "poster": "/xY5TzGXJOB3L9rhZ1MbbPyVlW5J.jpg"
+    },
+    {
+      "id": "star-trek-the-next-generation-s1",
+      "type": "season",
+      "title": "Star Trek: The Next Generation",
+      "tmdb": 655,
+      "imdb": "tt0092455",
+      "tvdb": 71470,
+      "season": 1,
+      "released": "1987-09-28",
+      "poster": "/t1g6GLBQj8pfAla4qA0r5TnLw0R.jpg"
+    },
+    {
+      "id": "star-trek-the-next-generation-s2",
+      "type": "season",
+      "title": "Star Trek: The Next Generation",
+      "tmdb": 655,
+      "imdb": "tt0092455",
+      "tvdb": 71470,
+      "season": 2,
+      "released": "1988-11-21",
+      "poster": "/3recmOpquLOM31YOvVNQlR6U94H.jpg"
+    },
+    {
+      "id": "star-trek-the-next-generation-s3",
+      "type": "season",
+      "title": "Star Trek: The Next Generation",
+      "tmdb": 655,
+      "imdb": "tt0092455",
+      "tvdb": 71470,
+      "season": 3,
+      "released": "1989-09-25",
+      "poster": "/odNdFj4dblGPRfwdDo7U0599fWI.jpg"
+    },
+    {
+      "id": "star-trek-the-next-generation-s4",
+      "type": "season",
+      "title": "Star Trek: The Next Generation",
+      "tmdb": 655,
+      "imdb": "tt0092455",
+      "tvdb": 71470,
+      "season": 4,
+      "released": "1990-09-24",
+      "poster": "/x56cmiHHvKIDRBHSTUohNYxtDHS.jpg"
+    },
+    {
+      "id": "star-trek-the-next-generation-s5",
+      "type": "season",
+      "title": "Star Trek: The Next Generation",
+      "tmdb": 655,
+      "imdb": "tt0092455",
+      "tvdb": 71470,
+      "season": 5,
+      "released": "1991-09-23",
+      "poster": "/eVlZ16kGyaHMHKc6YwzvoGBmZ1e.jpg"
+    },
+    {
+      "id": "star-trek-the-next-generation-s6",
+      "type": "season",
+      "title": "Star Trek: The Next Generation",
+      "tmdb": 655,
+      "imdb": "tt0092455",
+      "tvdb": 71470,
+      "season": 6,
+      "released": "1992-09-21",
+      "poster": "/l6POnlAk5vQgmru2dxm1Yns9kYl.jpg"
+    },
+    {
+      "id": "star-trek-the-next-generation-s7",
+      "type": "season",
+      "title": "Star Trek: The Next Generation",
+      "tmdb": 655,
+      "imdb": "tt0092455",
+      "tvdb": 71470,
+      "season": 7,
+      "released": "1993-09-20",
+      "poster": "/8l5YMZo4KwvE9dQMvrr53nXkR28.jpg"
+    },
+    {
+      "id": "star-trek-v-the-final-frontier",
+      "type": "movie",
+      "title": "Star Trek V: The Final Frontier",
+      "tmdb": 172,
+      "imdb": "tt0098382",
+      "released": "1989-06-09",
+      "poster": "/uiXr41VLYsuug3CZbFrKLSNahuZ.jpg"
+    },
+    {
+      "id": "star-trek-the-next-generation-the-best-of-both-worlds",
+      "type": "movie",
+      "title": "Star Trek: The Next Generation - The Best of Both Worlds",
+      "tmdb": 731926,
+      "imdb": "tt0708785",
+      "released": "2013-04-25",
+      "poster": "/uS6HdlcG2x52HcWOLIgBTORzuse.jpg",
+      "groups": [
+        "star-trek-the-next-generation"
+      ]
+    },
+    {
+      "id": "star-trek-vi-the-undiscovered-country",
+      "type": "movie",
+      "title": "Star Trek VI: The Undiscovered Country",
+      "tmdb": 174,
+      "imdb": "tt0102975",
+      "released": "1991-12-06",
+      "poster": "/tvTOJD7Gz668GLy2nNdLRQvpPsv.jpg"
+    },
+    {
+      "id": "star-trek-deep-space-nine-s1",
+      "type": "season",
+      "title": "Star Trek: Deep Space Nine",
+      "tmdb": 580,
+      "imdb": "tt0106145",
+      "tvdb": 72073,
+      "season": 1,
+      "released": "1993-01-03",
+      "poster": "/ubJSW2VQ5dzWC7lduFG0Ee3kALq.jpg"
+    },
+    {
+      "id": "star-trek-deep-space-nine-s2",
+      "type": "season",
+      "title": "Star Trek: Deep Space Nine",
+      "tmdb": 580,
+      "imdb": "tt0106145",
+      "tvdb": 72073,
+      "season": 2,
+      "released": "1993-09-26",
+      "poster": "/q5Cx2AwECtgjp91VHggtlRIOFsh.jpg"
+    },
+    {
+      "id": "star-trek-deep-space-nine-s3",
+      "type": "season",
+      "title": "Star Trek: Deep Space Nine",
+      "tmdb": 580,
+      "imdb": "tt0106145",
+      "tvdb": 72073,
+      "season": 3,
+      "released": "1994-09-26",
+      "poster": "/fyY1D5BRzDTEBjPrhcDxE5DeHPt.jpg"
+    },
+    {
+      "id": "star-trek-deep-space-nine-s4",
+      "type": "season",
+      "title": "Star Trek: Deep Space Nine",
+      "tmdb": 580,
+      "imdb": "tt0106145",
+      "tvdb": 72073,
+      "season": 4,
+      "released": "1995-10-02",
+      "poster": "/1G1iV3xEs3zYrCUnTO4zGtzQq96.jpg"
+    },
+    {
+      "id": "star-trek-deep-space-nine-s5",
+      "type": "season",
+      "title": "Star Trek: Deep Space Nine",
+      "tmdb": 580,
+      "imdb": "tt0106145",
+      "tvdb": 72073,
+      "season": 5,
+      "released": "1996-09-30",
+      "poster": "/zcgUGgWVOT3KaJjDTfXyAci7ZVA.jpg"
+    },
+    {
+      "id": "star-trek-deep-space-nine-s6",
+      "type": "season",
+      "title": "Star Trek: Deep Space Nine",
+      "tmdb": 580,
+      "imdb": "tt0106145",
+      "tvdb": 72073,
+      "season": 6,
+      "released": "1997-09-29",
+      "poster": "/qn5S1d0seG5k9gXr9z9II8GS3GM.jpg"
+    },
+    {
+      "id": "star-trek-deep-space-nine-s7",
+      "type": "season",
+      "title": "Star Trek: Deep Space Nine",
+      "tmdb": 580,
+      "imdb": "tt0106145",
+      "tvdb": 72073,
+      "season": 7,
+      "released": "1998-09-30",
+      "poster": "/5kxjiNHcFPo4MdRoivXCh1m1c1Q.jpg"
+    },
+    {
+      "id": "star-trek-generations",
+      "type": "movie",
+      "title": "Star Trek: Generations",
+      "tmdb": 193,
+      "imdb": "tt0111280",
+      "released": "1994-11-18",
+      "poster": "/gh0ZZRwSmlzEZTIZee3ZCN9Jssx.jpg"
+    },
+    {
+      "id": "star-trek-voyager-s1",
+      "type": "season",
+      "title": "Star Trek: Voyager",
+      "tmdb": 1855,
+      "imdb": "tt0112178",
+      "tvdb": 74550,
+      "season": 1,
+      "released": "1995-01-16",
+      "poster": "/7XtNLDCcKQe6N11X1cyrJRYl4JE.jpg"
+    },
+    {
+      "id": "star-trek-voyager-s2",
+      "type": "season",
+      "title": "Star Trek: Voyager",
+      "tmdb": 1855,
+      "imdb": "tt0112178",
+      "tvdb": 74550,
+      "season": 2,
+      "released": "1995-08-28",
+      "poster": "/lun9USO2YwAByRFxEzo2eygtfhx.jpg"
+    },
+    {
+      "id": "star-trek-voyager-s3",
+      "type": "season",
+      "title": "Star Trek: Voyager",
+      "tmdb": 1855,
+      "imdb": "tt0112178",
+      "tvdb": 74550,
+      "season": 3,
+      "released": "1996-09-04",
+      "poster": "/aEWmLsXPQKKTzFkHZhuxrxYhfkH.jpg"
+    },
+    {
+      "id": "star-trek-voyager-s4",
+      "type": "season",
+      "title": "Star Trek: Voyager",
+      "tmdb": 1855,
+      "imdb": "tt0112178",
+      "tvdb": 74550,
+      "season": 4,
+      "released": "1997-09-03",
+      "poster": "/4ALy9tEwhGoELY13qXKTkeTxVtH.jpg"
+    },
+    {
+      "id": "star-trek-voyager-s5",
+      "type": "season",
+      "title": "Star Trek: Voyager",
+      "tmdb": 1855,
+      "imdb": "tt0112178",
+      "tvdb": 74550,
+      "season": 5,
+      "released": "1998-10-14",
+      "poster": "/lOcILt6umTmgbeDu9Xc3eV0F7u0.jpg"
+    },
+    {
+      "id": "star-trek-voyager-s6",
+      "type": "season",
+      "title": "Star Trek: Voyager",
+      "tmdb": 1855,
+      "imdb": "tt0112178",
+      "tvdb": 74550,
+      "season": 6,
+      "released": "1999-09-22",
+      "poster": "/mjIzh9Nok3ZmEdAHPr8EcYlj8fF.jpg"
+    },
+    {
+      "id": "star-trek-voyager-s7",
+      "type": "season",
+      "title": "Star Trek: Voyager",
+      "tmdb": 1855,
+      "imdb": "tt0112178",
+      "tvdb": 74550,
+      "season": 7,
+      "released": "2000-10-04",
+      "poster": "/iMXLuGqkpgKOgcKbNWo9Oncz8fC.jpg"
+    },
+    {
+      "id": "star-trek-deep-space-nine-the-way-of-the-warrior",
+      "type": "movie",
+      "title": "Star Trek: Deep Space Nine - The Way of the Warrior",
+      "tmdb": 927124,
+      "imdb": "tt0394906",
+      "released": "1995-10-02",
+      "poster": "/aR00vbbYpRwuT8xXjga82GQYFaG.jpg",
+      "groups": [
+        "star-trek-deep-space-nine"
+      ]
+    },
+    {
+      "id": "star-trek-first-contact",
+      "type": "movie",
+      "title": "Star Trek: First Contact",
+      "tmdb": 199,
+      "imdb": "tt0117731",
+      "released": "1996-11-22",
+      "poster": "/iqhHe893Vcf07jNkNQ31tu85dKG.jpg"
+    },
+    {
+      "id": "star-trek-insurrection",
+      "type": "movie",
+      "title": "Star Trek: Insurrection",
+      "tmdb": 200,
+      "imdb": "tt0120844",
+      "released": "1998-12-11",
+      "poster": "/xQCMAHeg5M9HpDIqanYbWdr4brB.jpg"
+    },
+    {
+      "id": "star-trek-voyager-dark-frontier",
+      "type": "movie",
+      "title": "Star Trek: Voyager - Dark Frontier",
+      "tmdb": 573374,
+      "released": "1999-02-17",
+      "poster": "/7fNDaZFryiez6nsnzLu0DLLomSv.jpg"
+    },
+    {
+      "id": "star-trek-enterprise-s1",
+      "type": "season",
+      "title": "Star Trek: Enterprise",
+      "tmdb": 314,
+      "imdb": "tt0244365",
+      "tvdb": 73893,
+      "season": 1,
+      "released": "2001-09-26",
+      "poster": "/qMhPIPDRigBaqrjyzeWtnS8hazv.jpg"
+    },
+    {
+      "id": "star-trek-enterprise-s2",
+      "type": "season",
+      "title": "Star Trek: Enterprise",
+      "tmdb": 314,
+      "imdb": "tt0244365",
+      "tvdb": 73893,
+      "season": 2,
+      "released": "2002-09-08",
+      "poster": "/tsbBTABtNgu0ycsFpnIhiQ5woOM.jpg"
+    },
+    {
+      "id": "star-trek-enterprise-s3",
+      "type": "season",
+      "title": "Star Trek: Enterprise",
+      "tmdb": 314,
+      "imdb": "tt0244365",
+      "tvdb": 73893,
+      "season": 3,
+      "released": "2003-09-10",
+      "poster": "/ag7kPi1ifDYHk2sUZuf72rHS9J5.jpg"
+    },
+    {
+      "id": "star-trek-enterprise-s4",
+      "type": "season",
+      "title": "Star Trek: Enterprise",
+      "tmdb": 314,
+      "imdb": "tt0244365",
+      "tvdb": 73893,
+      "season": 4,
+      "released": "2004-10-08",
+      "poster": "/6akvhEy1cRoQY7ocQwsmiaOTGW4.jpg"
+    },
+    {
+      "id": "star-trek-nemesis",
+      "type": "movie",
+      "title": "Star Trek: Nemesis",
+      "tmdb": 201,
+      "imdb": "tt0253754",
+      "released": "2002-12-13",
+      "poster": "/cldAwhvBmOv9jrd3bXWuqRHoXyq.jpg"
+    },
+    {
+      "id": "star-trek-into-darkness",
+      "type": "movie",
+      "title": "Star Trek Into Darkness",
+      "tmdb": 54138,
+      "imdb": "tt1408101",
+      "released": "2013-05-05",
+      "poster": "/Aim3kVNh1MPIxPEFeJrl9e9Uf1a.jpg"
+    },
+    {
+      "id": "star-trek-discovery-s1",
+      "type": "season",
+      "title": "Star Trek: Discovery",
+      "tmdb": 67198,
+      "imdb": "tt5171438",
+      "tvdb": 328711,
+      "season": 1,
+      "released": "2017-09-24",
+      "poster": "/qVDvVdAjCwlQ9t301tPg11Ksq4o.jpg"
+    },
+    {
+      "id": "star-trek-discovery-s2",
+      "type": "season",
+      "title": "Star Trek: Discovery",
+      "tmdb": 67198,
+      "imdb": "tt5171438",
+      "tvdb": 328711,
+      "season": 2,
+      "released": "2019-01-17",
+      "poster": "/ztdmT2JzCumvuXb4olmxzBRVKGe.jpg"
+    },
+    {
+      "id": "star-trek-discovery-s3",
+      "type": "season",
+      "title": "Star Trek: Discovery",
+      "tmdb": 67198,
+      "imdb": "tt5171438",
+      "tvdb": 328711,
+      "season": 3,
+      "released": "2020-10-15",
+      "poster": "/izoaRR70PCvF1c1amaRpgkEfWXp.jpg"
+    },
+    {
+      "id": "star-trek-discovery-s4",
+      "type": "season",
+      "title": "Star Trek: Discovery",
+      "tmdb": 67198,
+      "imdb": "tt5171438",
+      "tvdb": 328711,
+      "season": 4,
+      "released": "2021-11-18",
+      "poster": "/zh7GLsorxecv0D8d7QAVkQUe1ju.jpg"
+    },
+    {
+      "id": "star-trek-discovery-s5",
+      "type": "season",
+      "title": "Star Trek: Discovery",
+      "tmdb": 67198,
+      "imdb": "tt5171438",
+      "tvdb": 328711,
+      "season": 5,
+      "released": "2024-04-04",
+      "poster": "/ee75T1MQ4taB5wlnVxVSgUfRWy7.jpg"
+    },
+    {
+      "id": "star-trek-picard-s1",
+      "type": "season",
+      "title": "Star Trek: Picard",
+      "tmdb": 85949,
+      "imdb": "tt8806524",
+      "tvdb": 364093,
+      "season": 1,
+      "released": "2020-01-23",
+      "poster": "/sdijbulvQJxv3mz5T6YsIphtgnu.jpg"
+    },
+    {
+      "id": "star-trek-picard-s2",
+      "type": "season",
+      "title": "Star Trek: Picard",
+      "tmdb": 85949,
+      "imdb": "tt8806524",
+      "tvdb": 364093,
+      "season": 2,
+      "released": "2022-03-03",
+      "poster": "/qGrHmHbMvodVTyxRDIxljyg4f4T.jpg"
+    },
+    {
+      "id": "star-trek-picard-s3",
+      "type": "season",
+      "title": "Star Trek: Picard",
+      "tmdb": 85949,
+      "imdb": "tt8806524",
+      "tvdb": 364093,
+      "season": 3,
+      "released": "2023-02-16",
+      "poster": "/19ubneUqyXFaS82om1vFgrEzUZ6.jpg"
+    },
+    {
+      "id": "star-trek-lower-decks-s1",
+      "type": "season",
+      "title": "Star Trek: Lower Decks",
+      "tmdb": 85948,
+      "imdb": "tt9184820",
+      "tvdb": 367138,
+      "season": 1,
+      "released": "2020-08-06",
+      "poster": "/115b8vxm1DhFqzU8zVp1AjiHpoY.jpg"
+    },
+    {
+      "id": "star-trek-lower-decks-s2",
+      "type": "season",
+      "title": "Star Trek: Lower Decks",
+      "tmdb": 85948,
+      "imdb": "tt9184820",
+      "tvdb": 367138,
+      "season": 2,
+      "released": "2021-08-12",
+      "poster": "/gw6PbZmwu46ZlWqQXbmUCuMXUzP.jpg"
+    },
+    {
+      "id": "star-trek-lower-decks-s3",
+      "type": "season",
+      "title": "Star Trek: Lower Decks",
+      "tmdb": 85948,
+      "imdb": "tt9184820",
+      "tvdb": 367138,
+      "season": 3,
+      "released": "2022-08-25",
+      "poster": "/aNnbTh6w4jtuKVXN3pI5IOvjrcG.jpg"
+    },
+    {
+      "id": "star-trek-lower-decks-s4",
+      "type": "season",
+      "title": "Star Trek: Lower Decks",
+      "tmdb": 85948,
+      "imdb": "tt9184820",
+      "tvdb": 367138,
+      "season": 4,
+      "released": "2023-09-07",
+      "poster": "/pwnAsk9i1wmXWOjqCDn4r5bRxIt.jpg"
+    },
+    {
+      "id": "star-trek-lower-decks-s5",
+      "type": "season",
+      "title": "Star Trek: Lower Decks",
+      "tmdb": 85948,
+      "imdb": "tt9184820",
+      "tvdb": 367138,
+      "season": 5,
+      "released": "2024-10-24",
+      "poster": "/gKfusipzJyKm2zn99I2Alr3ETX3.jpg"
+    },
+    {
+      "id": "star-trek-prodigy-s1",
+      "type": "season",
+      "title": "Star Trek: Prodigy",
+      "tmdb": 106393,
+      "imdb": "tt9795876",
+      "tvdb": 385811,
+      "season": 1,
+      "released": "2021-10-28",
+      "poster": "/qiIHiqCwVu5SGa7Fkg0AVZkRGSR.jpg"
+    },
+    {
+      "id": "star-trek-prodigy-s2",
+      "type": "season",
+      "title": "Star Trek: Prodigy",
+      "tmdb": 106393,
+      "imdb": "tt9795876",
+      "tvdb": 385811,
+      "season": 2,
+      "released": "2024-07-01",
+      "poster": "/hUzSjQYNZ1T0yiKDTzvxsTJR4of.jpg"
+    },
+    {
+      "id": "star-trek-strange-new-worlds-s1",
+      "type": "season",
+      "title": "Star Trek: Strange New Worlds",
+      "tmdb": 103516,
+      "imdb": "tt12327578",
+      "tvdb": 382389,
+      "season": 1,
+      "released": "2022-05-05",
+      "poster": "/iwIdajr5Y4zq2ibvq75VnDAJBr.jpg"
+    },
+    {
+      "id": "star-trek-strange-new-worlds-s2",
+      "type": "season",
+      "title": "Star Trek: Strange New Worlds",
+      "tmdb": 103516,
+      "imdb": "tt12327578",
+      "tvdb": 382389,
+      "season": 2,
+      "released": "2023-06-15",
+      "poster": "/7Cp5w4X8xH2x4xDk67C5kMC5ePA.jpg"
+    },
+    {
+      "id": "star-trek-strange-new-worlds-s3",
+      "type": "season",
+      "title": "Star Trek: Strange New Worlds",
+      "tmdb": 103516,
+      "imdb": "tt12327578",
+      "tvdb": 382389,
+      "season": 3,
+      "released": "2025-07-17",
+      "poster": "/w6KapI2JvrCkOPmQhkwYPJNjqeo.jpg"
+    },
+    {
+      "id": "star-trek-strange-new-worlds-s4",
+      "type": "season",
+      "title": "Star Trek: Strange New Worlds",
+      "tmdb": 103516,
+      "imdb": "tt12327578",
+      "tvdb": 382389,
+      "season": 4,
+      "released": "2026-07-23",
+      "poster": "/fW8uT1hiZPpd5k8tryEyOclkW1p.jpg"
+    },
+    {
+      "id": "star-trek-very-short-treks-s1",
+      "type": "season",
+      "title": "Star Trek: very Short Treks",
+      "tmdb": 249278,
+      "imdb": "tt29064560",
+      "tvdb": 439233,
+      "season": 1,
+      "released": "2023-09-08",
+      "poster": "/sMkx1MoLbs1JBt9ICbNsXs8vBzu.jpg"
+    },
+    {
+      "id": "star-trek-section-31",
+      "type": "movie",
+      "title": "Star Trek: Section 31",
+      "tmdb": 1114894,
+      "imdb": "tt9603060",
+      "released": "2025-01-15",
+      "poster": "/fNu6P4jYU55Cb3CC2SndtAKvois.jpg"
+    },
+    {
+      "id": "star-trek-starfleet-academy-s1",
+      "type": "season",
+      "title": "Star Trek: Starfleet Academy",
+      "tmdb": 223530,
+      "imdb": "tt8622160",
+      "tvdb": 433120,
+      "season": 1,
+      "released": "2026-01-15",
+      "poster": "/eOxwyGkGKq4WZCgdVlU1pr2XcCG.jpg"
+    },
+    {
+      "id": "star-trek-scouts-s1",
+      "type": "season",
+      "title": "Star Trek: Scouts",
+      "tmdb": 300355,
+      "imdb": "tt38221314",
+      "season": 1,
+      "released": "2025-09-07",
+      "poster": "/7sJCF4kqr1CMI0j2bDMoa3bEAur.jpg"
+    },
+    {
+      "id": "star-trek-scouts-s2",
+      "type": "season",
+      "title": "Star Trek: Scouts",
+      "tmdb": 300355,
+      "imdb": "tt38221314",
+      "season": 2,
+      "released": "2026-01-23",
+      "poster": "/eQ7PZcL64EgPt3GAE6sNxSWVg6m.jpg"
+    }
+  ],
+  "orders": [
+    {
+      "id": "star-trek-the-next-generation",
+      "title": "Star Trek: The Next Generation",
+      "derive": {
+        "groups": [
+          "star-trek-the-next-generation"
+        ],
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "star-trek-deep-space-nine",
+      "title": "Star Trek: Deep Space Nine",
+      "derive": {
+        "groups": [
+          "star-trek-deep-space-nine"
+        ],
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "release",
+      "title": "Release Order",
+      "description": "Everything in the order it was released.",
+      "derive": {
+        "sortBy": "released"
+      }
+    }
+  ],
+  "hub": {
+    "rows": [
+      "star-trek-the-next-generation",
+      "star-trek-deep-space-nine",
+      "release"
+    ]
+  }
+}
