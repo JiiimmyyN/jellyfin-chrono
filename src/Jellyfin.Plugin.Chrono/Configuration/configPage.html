@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Chrono</title>
+</head>
+<body>
+    <div id="ChronoConfigPage" data-role="page" class="page type-interior pluginConfigurationPage" data-require="emby-input,emby-button,emby-select,emby-checkbox,emby-textarea">
+        <div data-role="content">
+            <div class="content-primary">
+                <form id="ChronoConfigForm">
+                    <div class="verticalSection">
+                        <div class="sectionTitleContainer flex align-items-center">
+                            <h2 class="sectionTitle">Chrono</h2>
+                        </div>
+                        <p>Disney+-style universe hubs. Users open them from <b>Universes</b> in the menu (web client and mobile apps). <a is="emby-linkbutton" class="button-link" href="#/chrono">Open the hub</a></p>
+                        <div id="chronoRefreshInfo" class="fieldDescription"></div>
+                        <button is="emby-button" type="button" id="chronoRefresh" class="raised"><span>Refresh now</span></button>
+                    </div>
+
+                    <div class="verticalSection">
+                        <h2 class="sectionTitle">Universes</h2>
+                        <div id="chronoErrors"></div>
+                        <div id="chronoUniverses"></div>
+                    </div>
+
+                    <div class="verticalSection">
+                        <h2 class="sectionTitle">Add a universe</h2>
+                        <p class="fieldDescription">Build a universe from Wikidata (titles that belong to a franchise, in release order), a TMDB collection in your library, or a ranked MDBList/Trakt list (custom order, e.g. a chronological list). Combine several sources: the first ranked list becomes the main timeline.</p>
+                        <div id="chronoSuggestions"></div>
+                        <div class="inputContainer">
+                            <input is="emby-input" type="text" id="chronoNewName" label="Name" />
+                        </div>
+                        <div class="inputContainer">
+                            <input is="emby-input" type="text" id="chronoNewDescription" label="Description (optional)" />
+                        </div>
+                        <div id="chronoNewSources"></div>
+                        <div class="flex" style="gap:.5em;flex-wrap:wrap">
+                            <button is="emby-button" type="button" id="chronoAddSource" class="raised"><span>Add source</span></button>
+                            <button is="emby-button" type="button" id="chronoCreateUniverse" class="raised button-submit"><span>Create universe</span></button>
+                        </div>
+                        <div class="inputContainer" style="margin-top:1.5em">
+                            <input is="emby-input" type="search" id="chronoWikidataSearch" label="Find a Wikidata franchise id" />
+                            <div class="fieldDescription">Type a franchise name (e.g. "Middle-earth", "Wizarding World") and press Enter.</div>
+                        </div>
+                        <div id="chronoWikidataResults"></div>
+                    </div>
+
+                    <div class="verticalSection">
+                        <h2 class="sectionTitle">Requests (Seerr / Jellyseerr)</h2>
+                        <div class="checkboxContainer">
+                            <label><input is="emby-checkbox" type="checkbox" id="chronoSeerrEnabled" /><span>Connect to Seerr</span></label>
+                        </div>
+                        <div class="inputContainer">
+                            <input is="emby-input" type="url" id="chronoSeerrUrl" label="Seerr URL" placeholder="http://jellyseerr:5055" />
+                        </div>
+                        <div class="inputContainer">
+                            <input is="emby-input" type="password" id="chronoSeerrApiKey" label="API key" />
+                            <div class="fieldDescription">Settings → General → API Key in Seerr. Requests are made on behalf of the matching Seerr user (linked Jellyfin account); otherwise as the API key owner.</div>
+                        </div>
+                        <div class="checkboxContainer">
+                            <label><input is="emby-checkbox" type="checkbox" id="chronoSeerrAllowRequests" /><span>Let users request missing titles from the hub</span></label>
+                        </div>
+                        <button is="emby-button" type="button" id="chronoSeerrTest" class="raised"><span>Test connection</span></button>
+                        <span id="chronoSeerrResult" style="margin-left:1em"></span>
+                    </div>
+
+                    <div class="verticalSection">
+                        <h2 class="sectionTitle">Playlists</h2>
+                        <div class="selectContainer">
+                            <select is="emby-select" id="chronoPlaylistOwner" label="Playlist owner"></select>
+                            <div class="fieldDescription">Generated playlists are public; Jellyfin still requires an owner.</div>
+                        </div>
+                    </div>
+
+                    <div class="verticalSection">
+                        <h2 class="sectionTitle">Advanced</h2>
+                        <div class="checkboxContainer">
+                            <label><input is="emby-checkbox" type="checkbox" id="chronoInjectWebClient" /><span>Add the hub to the web client</span></label>
+                        </div>
+                        <div class="checkboxContainer">
+                            <label><input is="emby-checkbox" type="checkbox" id="chronoAddMenuLink" /><span>Add "Universes" to the main menu</span></label>
+                        </div>
+                        <div class="inputContainer">
+                            <textarea is="emby-textarea" id="chronoRegistryUrls" label="Registry URLs (one per line)" rows="3"></textarea>
+                            <div class="fieldDescription">Curated universe registries. Universes from later registries win when their revision is newer. The plugin also ships a bundled copy of the default registry. Local universe files can be placed in the plugin's data folder under <code>universes/*.json</code>.</div>
+                        </div>
+                        <div class="inputContainer">
+                            <input is="emby-input" type="number" min="1" id="chronoRegistryRefreshHours" label="Registry and list refresh interval (hours)" />
+                        </div>
+                        <div class="inputContainer">
+                            <input is="emby-input" type="number" min="1" id="chronoDiscoveryRefreshHours" label="Wikidata refresh interval (hours)" />
+                        </div>
+                        <div class="inputContainer">
+                            <input is="emby-input" type="text" id="chronoTraktClientId" label="Trakt client id (for Trakt lists)" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <button is="emby-button" type="submit" class="raised button-submit block emby-button"><span>Save</span></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript">
+            (function () {
+                var pluginId = '4b1c2a8e-7c39-4d2e-9a51-0f6c3e8d2b17';
+                var page = document.querySelector('#ChronoConfigPage');
+                var state = { config: null, status: null, newSources: [] };
+                var sourceTypes = [
+                    { value: 'Wikidata', label: 'Wikidata franchise (Q-id)', placeholder: 'Q642878' },
+                    { value: 'TmdbCollection', label: 'TMDB collection id', placeholder: '1241' },
+                    { value: 'MdbList', label: 'MDBList list URL', placeholder: 'https://mdblist.com/lists/user/list' },
+                    { value: 'Trakt', label: 'Trakt list URL', placeholder: 'https://trakt.tv/users/user/lists/list' }
+                ];
+
+                function esc(text) {
+                    var div = document.createElement('div');
+                    div.textContent = text == null ? '' : String(text);
+                    return div.innerHTML;
+                }
+
+                function api(method, path, body) {
+                    var options = { type: method, url: ApiClient.getUrl(path) };
+                    if (body !== undefined) {
+                        options.data = JSON.stringify(body);
+                        options.contentType = 'application/json';
+                    }
+                    if (method === 'GET') {
+                        options.dataType = 'json';
+                    }
+                    return ApiClient.ajax(options);
+                }
+
+                function sourceTypeName(value) {
+                    if (typeof value === 'number') {
+                        return sourceTypes[value] ? sourceTypes[value].value : 'Wikidata';
+                    }
+                    return value;
+                }
+
+                function settingsFor(id) {
+                    var list = state.config.Universes || [];
+                    for (var i = 0; i < list.length; i++) {
+                        if (list[i].Id === id) {
+                            return list[i];
+                        }
+                    }
+                    return null;
+                }
+
+                function ensureSettings(id, isCustom) {
+                    var existing = settingsFor(id);
+                    if (existing) {
+                        return existing;
+                    }
+                    var created = {
+                        Id: id, Enabled: false, HiddenFlags: [], ShowMissing: !isCustom, IncludeDiscovered: true,
+                        CreatePlaylists: false, PlaylistRows: [], CreateCollections: false
+                    };
+                    state.config.Universes = (state.config.Universes || []).concat([created]);
+                    return created;
+                }
+
+                function statusFor(id) {
+                    var list = (state.status && state.status.universes) || [];
+                    for (var i = 0; i < list.length; i++) {
+                        if (list[i].id === id) {
+                            return list[i];
+                        }
+                    }
+                    return null;
+                }
+
+                function renderUniverses() {
+                    var container = page.querySelector('#chronoUniverses');
+                    var available = (state.status && state.status.available) || [];
+                    var errors = (state.status && state.status.errors) || {};
+                    var errorKeys = Object.keys(errors);
+                    page.querySelector('#chronoErrors').innerHTML = errorKeys.length === 0 ? '' : errorKeys.map(function (key) {
+                        return '<div class="fieldDescription" style="color:#e57373">' + esc(key) + ': ' + esc(errors[key]) + '</div>';
+                    }).join('');
+
+                    if (available.length === 0) {
+                        container.innerHTML = '<p>No universes found yet. Press "Refresh now".</p>';
+                        return;
+                    }
+
+                    container.innerHTML = available.map(function (universe) {
+                        var settings = ensureSettings(universe.id, universe.custom);
+                        var status = statusFor(universe.id);
+                        var summary = status
+                            ? status.ownedCount + ' of ' + status.entryCount + ' titles in your library'
+                            : (settings.Enabled ? 'Enabled — refresh to see the library match.' : 'Disabled');
+                        var origin = universe.custom ? 'custom' : (universe.origin === 'bundled' ? 'bundled registry' : universe.origin);
+                        var html = '<div class="paperList" style="padding:1em;margin-bottom:1em" data-universe="' + esc(universe.id) + '">';
+                        html += '<div class="flex align-items-center" style="justify-content:space-between;gap:1em;flex-wrap:wrap">';
+                        html += '<div><h3 style="margin:0">' + esc(universe.name) + '</h3><div class="fieldDescription">' + esc(summary) + ' · ' + esc(origin) + (universe.revision ? ' · rev ' + esc(universe.revision) : '') + '</div></div>';
+                        html += '<label class="checkboxContainer" style="margin:0"><input is="emby-checkbox" type="checkbox" data-field="Enabled"' + (settings.Enabled ? ' checked' : '') + ' /><span>Enabled</span></label>';
+                        html += '</div>';
+                        if (settings.Enabled) {
+                            html += '<div class="checkboxContainer"><label><input is="emby-checkbox" type="checkbox" data-field="ShowMissing"' + (settings.ShowMissing ? ' checked' : '') + ' /><span>Show titles that are not in the library</span></label></div>';
+                            if (!universe.custom) {
+                                html += '<div class="checkboxContainer"><label><input is="emby-checkbox" type="checkbox" data-field="IncludeDiscovered"' + (settings.IncludeDiscovered ? ' checked' : '') + ' /><span>Include owned titles found on Wikidata that are not curated yet</span></label></div>';
+                            }
+                            html += '<div class="checkboxContainer"><label><input is="emby-checkbox" type="checkbox" data-field="CreatePlaylists"' + (settings.CreatePlaylists ? ' checked' : '') + ' /><span>Create public playlists (play in order on any client)</span></label></div>';
+                            if (settings.CreatePlaylists && status) {
+                                html += '<div style="margin-left:2.5em">' + status.rows.map(function (row) {
+                                    var checked = settings.PlaylistRows.length === 0 ? row.id === status.primaryRowId : settings.PlaylistRows.indexOf(row.id) >= 0;
+                                    return '<label class="checkboxContainer" style="display:block;margin:.2em 0"><input is="emby-checkbox" type="checkbox" data-playlist-row="' + esc(row.id) + '"' + (checked ? ' checked' : '') + ' /><span>' + esc(row.title) + ' (' + row.count + ')</span></label>';
+                                }).join('') + '</div>';
+                            }
+                            html += '<div class="checkboxContainer"><label><input is="emby-checkbox" type="checkbox" data-field="CreateCollections"' + (settings.CreateCollections ? ' checked' : '') + ' /><span>Create collections (one per row, for clients without the hub)</span></label></div>';
+                            if (status && status.flags.length > 0) {
+                                html += '<div class="fieldDescription" style="margin-top:.8em">Hide for everyone:</div><div style="display:flex;flex-wrap:wrap;gap:0 1.5em">' + status.flags.map(function (flag) {
+                                    return '<label class="checkboxContainer" style="margin:.2em 0"><input is="emby-checkbox" type="checkbox" data-hidden-flag="' + esc(flag.id) + '"' + (settings.HiddenFlags.indexOf(flag.id) >= 0 ? ' checked' : '') + ' /><span>' + esc(flag.label) + '</span></label>';
+                                }).join('') + '</div>';
+                            }
+                            if (status && status.warnings.length > 0) {
+                                html += status.warnings.map(function (w) { return '<div class="fieldDescription" style="color:#ffb74d">' + esc(w) + '</div>'; }).join('');
+                            }
+                            if (status && status.missing.length > 0) {
+                                html += '<details style="margin-top:.6em"><summary>' + status.missing.length + ' titles not in the library</summary><ul>' + status.missing.map(function (m) {
+                                    return '<li>' + esc(m.title) + (m.season != null ? ' — Season ' + m.season : '') + (m.released ? ' (' + esc(m.released.substring(0, 4)) + ')' : '') + ' · <a href="https://www.themoviedb.org/' + (m.type === 'movie' ? 'movie/' : 'tv/') + m.tmdb + (m.season != null ? '/season/' + m.season : '') + '" target="_blank" rel="noopener">TMDB</a></li>';
+                                }).join('') + '</ul></details>';
+                            }
+                        }
+                        if (universe.custom) {
+                            html += '<button is="emby-button" type="button" class="raised" data-remove-custom="' + esc(universe.id) + '" style="margin-top:.8em"><span>Remove universe</span></button>';
+                        }
+                        html += '</div>';
+                        return html;
+                    }).join('');
+                }
+
+                function renderNewSources() {
+                    var container = page.querySelector('#chronoNewSources');
+                    if (state.newSources.length === 0) {
+                        state.newSources.push({ Type: 'Wikidata', Value: '', Title: '' });
+                    }
+                    container.innerHTML = state.newSources.map(function (source, index) {
+                        var type = sourceTypes.filter(function (t) { return t.value === source.Type; })[0] || sourceTypes[0];
+                        return '<div class="flex" style="gap:.5em;flex-wrap:wrap;align-items:flex-end" data-source-index="' + index + '">'
+                            + '<div class="selectContainer" style="flex:1 1 12em;margin-bottom:.5em"><select is="emby-select" data-source-field="Type" label="Source">'
+                            + sourceTypes.map(function (t) { return '<option value="' + t.value + '"' + (t.value === source.Type ? ' selected' : '') + '>' + esc(t.label) + '</option>'; }).join('')
+                            + '</select></div>'
+                            + '<div class="inputContainer" style="flex:2 1 16em;margin-bottom:.5em"><input is="emby-input" type="text" data-source-field="Value" label="Value" placeholder="' + esc(type.placeholder) + '" value="' + esc(source.Value) + '" /></div>'
+                            + '<div class="inputContainer" style="flex:1 1 10em;margin-bottom:.5em"><input is="emby-input" type="text" data-source-field="Title" label="Row title (lists)" value="' + esc(source.Title) + '" /></div>'
+                            + '<button is="emby-button" type="button" class="raised" data-remove-source="' + index + '" style="margin-bottom:1em"><span>Remove</span></button>'
+                            + '</div>';
+                    }).join('');
+                }
+
+                function renderSuggestions(list) {
+                    var container = page.querySelector('#chronoSuggestions');
+                    if (!list || list.length === 0) {
+                        container.innerHTML = '';
+                        return;
+                    }
+                    container.innerHTML = '<div class="fieldDescription">Found in your library:</div><div style="display:flex;flex-wrap:wrap;gap:.5em;margin:.5em 0 1em">' + list.map(function (s) {
+                        return '<button is="emby-button" type="button" class="raised" data-suggestion-type="' + esc(s.type) + '" data-suggestion-value="' + esc(s.value) + '" data-suggestion-name="' + esc(s.name) + '"><span>' + esc(s.name) + ' (' + s.ownedCount + ')</span></button>';
+                    }).join('') + '</div>';
+                }
+
+                function loadStatus() {
+                    return api('GET', 'Chrono/Admin/Status').then(function (status) {
+                        state.status = status;
+                        var info = status.lastRefresh ? 'Last refreshed ' + new Date(status.lastRefresh).toLocaleString() : 'Not refreshed yet.';
+                        if (status.lastError) {
+                            info += ' — last error: ' + status.lastError;
+                        }
+                        page.querySelector('#chronoRefreshInfo').textContent = info;
+                        renderUniverses();
+                    });
+                }
+
+                function loadSuggestions() {
+                    api('GET', 'Chrono/Admin/Suggestions').then(renderSuggestions, function () { renderSuggestions([]); });
+                }
+
+                function load() {
+                    Dashboard.showLoadingMsg();
+                    Promise.all([ApiClient.getPluginConfiguration(pluginId), ApiClient.getUsers()]).then(function (results) {
+                        var config = results[0];
+                        var users = results[1];
+                        state.config = config;
+                        (config.CustomUniverses || []).forEach(function (c) {
+                            (c.Sources || []).forEach(function (s) { s.Type = sourceTypeName(s.Type); });
+                        });
+                        page.querySelector('#chronoSeerrEnabled').checked = !!config.SeerrEnabled;
+                        page.querySelector('#chronoSeerrUrl').value = config.SeerrUrl || '';
+                        page.querySelector('#chronoSeerrApiKey').value = config.SeerrApiKey || '';
+                        page.querySelector('#chronoSeerrAllowRequests').checked = !!config.SeerrAllowRequests;
+                        page.querySelector('#chronoInjectWebClient').checked = !!config.InjectWebClient;
+                        page.querySelector('#chronoAddMenuLink').checked = !!config.AddMenuLink;
+                        page.querySelector('#chronoRegistryUrls').value = (config.RegistryUrls || []).join('\n');
+                        page.querySelector('#chronoRegistryRefreshHours').value = config.RegistryRefreshHours;
+                        page.querySelector('#chronoDiscoveryRefreshHours').value = config.DiscoveryRefreshHours;
+                        page.querySelector('#chronoTraktClientId').value = config.TraktClientId || '';
+                        var owner = page.querySelector('#chronoPlaylistOwner');
+                        owner.innerHTML = '<option value="">First administrator</option>' + users.map(function (u) {
+                            return '<option value="' + u.Id + '"' + (u.Id === config.PlaylistOwnerUserId ? ' selected' : '') + '>' + esc(u.Name) + '</option>';
+                        }).join('');
+                        renderNewSources();
+                        return loadStatus();
+                    }).then(function () {
+                        Dashboard.hideLoadingMsg();
+                        loadSuggestions();
+                    }, function (err) {
+                        Dashboard.hideLoadingMsg();
+                        console.error(err);
+                    });
+                }
+
+                function collectForm() {
+                    var config = state.config;
+                    config.SeerrEnabled = page.querySelector('#chronoSeerrEnabled').checked;
+                    config.SeerrUrl = page.querySelector('#chronoSeerrUrl').value.trim();
+                    config.SeerrApiKey = page.querySelector('#chronoSeerrApiKey').value.trim();
+                    config.SeerrAllowRequests = page.querySelector('#chronoSeerrAllowRequests').checked;
+                    config.InjectWebClient = page.querySelector('#chronoInjectWebClient').checked;
+                    config.AddMenuLink = page.querySelector('#chronoAddMenuLink').checked;
+                    config.RegistryUrls = page.querySelector('#chronoRegistryUrls').value.split('\n').map(function (u) { return u.trim(); }).filter(Boolean);
+                    config.RegistryRefreshHours = parseInt(page.querySelector('#chronoRegistryRefreshHours').value, 10) || 24;
+                    config.DiscoveryRefreshHours = parseInt(page.querySelector('#chronoDiscoveryRefreshHours').value, 10) || 168;
+                    config.TraktClientId = page.querySelector('#chronoTraktClientId').value.trim();
+                    config.PlaylistOwnerUserId = page.querySelector('#chronoPlaylistOwner').value;
+                    return config;
+                }
+
+                function save(reloadAfter) {
+                    Dashboard.showLoadingMsg();
+                    return ApiClient.updatePluginConfiguration(pluginId, collectForm()).then(function (result) {
+                        Dashboard.processPluginConfigurationUpdateResult(result);
+                        if (reloadAfter) {
+                            setTimeout(loadStatus, 2500);
+                        }
+                    });
+                }
+
+                function slugify(text) {
+                    return text.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+                }
+
+                page.addEventListener('pageshow', load);
+
+                page.querySelector('#ChronoConfigForm').addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    save(true);
+                    return false;
+                });
+
+                page.querySelector('#chronoRefresh').addEventListener('click', function () {
+                    Dashboard.showLoadingMsg();
+                    api('POST', 'Chrono/Admin/Refresh?force=true').then(loadStatus).then(function () {
+                        Dashboard.hideLoadingMsg();
+                    }, function () {
+                        Dashboard.hideLoadingMsg();
+                    });
+                });
+
+                page.querySelector('#chronoUniverses').addEventListener('change', function (e) {
+                    var card = e.target.closest('[data-universe]');
+                    if (!card) {
+                        return;
+                    }
+                    var settings = settingsFor(card.getAttribute('data-universe'));
+                    var field = e.target.getAttribute('data-field');
+                    if (field) {
+                        settings[field] = e.target.checked;
+                        renderUniverses();
+                        return;
+                    }
+                    var flag = e.target.getAttribute('data-hidden-flag');
+                    if (flag) {
+                        settings.HiddenFlags = settings.HiddenFlags.filter(function (f) { return f !== flag; });
+                        if (e.target.checked) {
+                            settings.HiddenFlags.push(flag);
+                        }
+                        return;
+                    }
+                    var row = e.target.getAttribute('data-playlist-row');
+                    if (row) {
+                        var status = statusFor(settings.Id);
+                        if (settings.PlaylistRows.length === 0 && status) {
+                            settings.PlaylistRows = [status.primaryRowId];
+                        }
+                        settings.PlaylistRows = settings.PlaylistRows.filter(function (r) { return r !== row; });
+                        if (e.target.checked) {
+                            settings.PlaylistRows.push(row);
+                        }
+                    }
+                });
+
+                page.querySelector('#chronoUniverses').addEventListener('click', function (e) {
+                    var button = e.target.closest('[data-remove-custom]');
+                    if (!button) {
+                        return;
+                    }
+                    var id = button.getAttribute('data-remove-custom');
+                    state.config.CustomUniverses = (state.config.CustomUniverses || []).filter(function (c) { return c.Id !== id; });
+                    state.config.Universes = (state.config.Universes || []).filter(function (u) { return u.Id !== id; });
+                    state.status.available = state.status.available.filter(function (a) { return a.id !== id; });
+                    save(true).then(renderUniverses);
+                });
+
+                page.querySelector('#chronoNewSources').addEventListener('change', function (e) {
+                    var row = e.target.closest('[data-source-index]');
+                    var field = e.target.getAttribute('data-source-field');
+                    if (row && field) {
+                        state.newSources[parseInt(row.getAttribute('data-source-index'), 10)][field] = e.target.value;
+                        if (field === 'Type') {
+                            renderNewSources();
+                        }
+                    }
+                });
+
+                page.querySelector('#chronoNewSources').addEventListener('click', function (e) {
+                    var button = e.target.closest('[data-remove-source]');
+                    if (button) {
+                        state.newSources.splice(parseInt(button.getAttribute('data-remove-source'), 10), 1);
+                        renderNewSources();
+                    }
+                });
+
+                page.querySelector('#chronoAddSource').addEventListener('click', function () {
+                    state.newSources.push({ Type: 'MdbList', Value: '', Title: 'Timeline' });
+                    renderNewSources();
+                });
+
+                page.querySelector('#chronoSuggestions').addEventListener('click', function (e) {
+                    var button = e.target.closest('[data-suggestion-type]');
+                    if (!button) {
+                        return;
+                    }
+                    var type = button.getAttribute('data-suggestion-type') === 'wikidata' ? 'Wikidata' : 'TmdbCollection';
+                    page.querySelector('#chronoNewName').value = button.getAttribute('data-suggestion-name');
+                    state.newSources = [{ Type: type, Value: button.getAttribute('data-suggestion-value'), Title: '' }];
+                    renderNewSources();
+                    page.querySelector('#chronoNewName').focus();
+                });
+
+                page.querySelector('#chronoCreateUniverse').addEventListener('click', function () {
+                    var name = page.querySelector('#chronoNewName').value.trim();
+                    var sources = state.newSources.filter(function (s) { return s.Value && s.Value.trim(); }).map(function (s) {
+                        return { Type: s.Type, Value: s.Value.trim(), Title: (s.Title || '').trim() };
+                    });
+                    if (!name || sources.length === 0) {
+                        Dashboard.alert('Enter a name and at least one source.');
+                        return;
+                    }
+                    var id = slugify(name) || ('universe-' + Date.now());
+                    var taken = (state.status.available || []).some(function (a) { return a.id === id; });
+                    if (taken) {
+                        id = id + '-custom';
+                    }
+                    state.config.CustomUniverses = (state.config.CustomUniverses || []).concat([{
+                        Id: id, Name: name, Description: page.querySelector('#chronoNewDescription').value.trim(), Sources: sources
+                    }]);
+                    var settings = ensureSettings(id, true);
+                    settings.Enabled = true;
+                    state.newSources = [];
+                    page.querySelector('#chronoNewName').value = '';
+                    page.querySelector('#chronoNewDescription').value = '';
+                    renderNewSources();
+                    save(true);
+                });
+
+                page.querySelector('#chronoWikidataSearch').addEventListener('keydown', function (e) {
+                    if (e.key !== 'Enter') {
+                        return;
+                    }
+                    e.preventDefault();
+                    var q = e.target.value.trim();
+                    if (!q) {
+                        return;
+                    }
+                    api('GET', 'Chrono/Admin/Wikidata/Search?q=' + encodeURIComponent(q)).then(function (results) {
+                        page.querySelector('#chronoWikidataResults').innerHTML = results.length === 0 ? '<p>No results.</p>' : '<ul>' + results.map(function (r) {
+                            return '<li><a href="#" data-wikidata-id="' + esc(r.id) + '" data-wikidata-label="' + esc(r.label) + '">' + esc(r.label) + '</a> <code>' + esc(r.id) + '</code> — ' + esc(r.description || '') + '</li>';
+                        }).join('') + '</ul>';
+                    });
+                });
+
+                page.querySelector('#chronoWikidataResults').addEventListener('click', function (e) {
+                    var link = e.target.closest('[data-wikidata-id]');
+                    if (!link) {
+                        return;
+                    }
+                    e.preventDefault();
+                    var empty = state.newSources.filter(function (s) { return s.Type === 'Wikidata' && !s.Value; })[0];
+                    if (empty) {
+                        empty.Value = link.getAttribute('data-wikidata-id');
+                    } else {
+                        state.newSources.push({ Type: 'Wikidata', Value: link.getAttribute('data-wikidata-id'), Title: '' });
+                    }
+                    if (!page.querySelector('#chronoNewName').value) {
+                        page.querySelector('#chronoNewName').value = link.getAttribute('data-wikidata-label');
+                    }
+                    renderNewSources();
+                });
+
+                page.querySelector('#chronoSeerrTest').addEventListener('click', function () {
+                    var result = page.querySelector('#chronoSeerrResult');
+                    result.textContent = 'Testing…';
+                    api('POST', 'Chrono/Admin/Seerr/Test', {
+                        url: page.querySelector('#chronoSeerrUrl').value.trim(),
+                        apiKey: page.querySelector('#chronoSeerrApiKey').value.trim()
+                    }).then(function (response) {
+                        return response.json ? response.json() : response;
+                    }).then(function (data) {
+                        result.textContent = (data.ok ? '✔ ' : '✖ ') + data.message;
+                    }, function () {
+                        result.textContent = '✖ Request failed.';
+                    });
+                });
+            })();
+        </script>
+    </div>
+</body>
+</html>

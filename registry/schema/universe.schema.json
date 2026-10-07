@@ -1,0 +1,357 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/JiiimmyyN/jellyfin-chrono/main/registry/schema/universe.schema.json",
+  "title": "Jellyfin Chrono universe definition",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "name",
+    "revision",
+    "entries",
+    "orders"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "$ref": "#/$defs/slug"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string"
+    },
+    "revision": {
+      "type": "string",
+      "description": "Date-based revision, bumped on every change. Format YYYY.MM.DD or YYYY.MM.DD.N.",
+      "pattern": "^\\d{4}\\.\\d{2}\\.\\d{2}(\\.\\d+)?$"
+    },
+    "discover": {
+      "type": "object",
+      "description": "Anchors used to discover titles that belong to this universe but are not (yet) curated.",
+      "additionalProperties": false,
+      "properties": {
+        "wikidata": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^Q\\d+$"
+          }
+        },
+        "tmdbCollections": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "exclude": {
+          "type": "array",
+          "description": "Titles Wikidata links to this universe that curators decided do not belong (documentaries, parodies, LEGO, other studios). Format movie:<tmdb> or tv:<tmdb>.",
+          "items": {
+            "type": "string",
+            "pattern": "^(movie|tv):\\d+$"
+          }
+        }
+      }
+    },
+    "attribution": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "license": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "flags": {
+      "type": "object",
+      "description": "Flag id -> human-readable label. Every flag used by an entry must be declared here.",
+      "propertyNames": {
+        "$ref": "#/$defs/slug"
+      },
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/slug"
+          },
+          "title": {
+            "type": "string"
+          },
+          "parent": {
+            "$ref": "#/$defs/slug"
+          }
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entry"
+      }
+    },
+    "orders": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/order"
+      }
+    },
+    "hub": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "rows": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/slug"
+          }
+        },
+        "pages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "title",
+              "rows"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/slug"
+              },
+              "title": {
+                "type": "string"
+              },
+              "rows": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/slug"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "entry": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "title",
+        "tmdb"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/slug"
+        },
+        "type": {
+          "enum": [
+            "movie",
+            "series",
+            "season"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "description": "Movie or series title (without season suffix)."
+        },
+        "tmdb": {
+          "type": "integer",
+          "description": "TMDB movie id for movies, TMDB tv id for series and seasons."
+        },
+        "imdb": {
+          "type": "string",
+          "pattern": "^tt\\d+$",
+          "description": "IMDb id of the movie or series (not the season)."
+        },
+        "tvdb": {
+          "type": "integer",
+          "description": "TVDB series id (series and seasons only)."
+        },
+        "season": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Required for type=season. TMDB season number."
+        },
+        "released": {
+          "$ref": "#/$defs/date",
+          "description": "Movie release date, or first air date of the series/season."
+        },
+        "poster": {
+          "type": "string",
+          "pattern": "^/[A-Za-z0-9]+\\.(jpg|png)$",
+          "description": "TMDB image path (season poster for seasons)."
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/slug"
+          }
+        },
+        "flags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/slug"
+          }
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "if": {
+        "properties": {
+          "type": {
+            "const": "season"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "season"
+        ]
+      },
+      "else": {
+        "not": {
+          "required": [
+            "season"
+          ]
+        }
+      }
+    },
+    "order": {
+      "type": "object",
+      "required": [
+        "id",
+        "title"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/slug"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "basis": {
+          "type": "string",
+          "description": "Where this order comes from (e.g. 'marvel.com, 2026-06-02')."
+        },
+        "items": {
+          "type": "array",
+          "description": "Entry ids in order. Mutually exclusive with derive.",
+          "items": {
+            "$ref": "#/$defs/slug"
+          }
+        },
+        "derive": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "from": {
+              "$ref": "#/$defs/slug",
+              "description": "Start from another order instead of all entries."
+            },
+            "types": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "movie",
+                  "series",
+                  "season"
+                ]
+              }
+            },
+            "groups": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/slug"
+              },
+              "description": "Keep entries in any of these groups (child groups included)."
+            },
+            "flags": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/slug"
+              },
+              "description": "Keep entries having any of these flags."
+            },
+            "excludeFlags": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/slug"
+              }
+            },
+            "sortBy": {
+              "enum": [
+                "source",
+                "released",
+                "title"
+              ],
+              "default": "source"
+            }
+          }
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "items"
+          ]
+        },
+        {
+          "required": [
+            "derive"
+          ]
+        }
+      ]
+    }
+  }
+}

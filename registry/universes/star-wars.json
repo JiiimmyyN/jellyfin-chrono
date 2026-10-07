@@ -1,0 +1,1237 @@
+{
+  "$schema": "../schema/universe.schema.json",
+  "schemaVersion": 1,
+  "id": "star-wars",
+  "name": "Star Wars",
+  "description": "Lucasfilm's Star Wars films and series (Disney-era canon, plus the non-canon Visions anthology), placed per season.",
+  "revision": "2026.10.07.1",
+  "discover": {
+    "wikidata": [
+      "Q462"
+    ],
+    "tmdbCollections": [
+      10
+    ],
+    "exclude": [
+      "tv:114969",
+      "movie:1470789",
+      "tv:66487",
+      "tv:85536",
+      "tv:71412",
+      "tv:66837",
+      "tv:63722",
+      "movie:287663",
+      "movie:136406",
+      "movie:394387",
+      "movie:81233",
+      "tv:6472",
+      "movie:81234",
+      "tv:3122",
+      "movie:1126842",
+      "movie:10372",
+      "tv:25",
+      "tv:3478",
+      "movie:1884",
+      "movie:72803",
+      "movie:74849"
+    ]
+  },
+  "attribution": [
+    {
+      "name": "StarWars.com — Star Wars Movies and Series Viewing Guide",
+      "url": "https://www.starwars.com/news/star-wars-movies-and-series-guide"
+    },
+    {
+      "name": "StarWars.com — Official Timeline: The Eras of Star Wars",
+      "url": "https://www.starwars.com/eras"
+    },
+    {
+      "name": "StarWars.com — Star Wars: The Clone Wars chronological episode order",
+      "url": "https://www.starwars.com/news/star-wars-the-clone-wars-chronological-episodeorder"
+    },
+    {
+      "name": "Wikidata",
+      "url": "https://www.wikidata.org",
+      "license": "CC0-1.0"
+    },
+    {
+      "name": "Wookieepedia — Timeline of canon media",
+      "url": "https://starwars.fandom.com/wiki/Timeline_of_canon_media",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "name": "TVmaze",
+      "url": "https://www.tvmaze.com",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "name": "The Movie Database (TMDB)",
+      "url": "https://www.themoviedb.org"
+    }
+  ],
+  "flags": {
+    "animated": "Animation",
+    "live-action": "Live action",
+    "non-canon": "Non-canon",
+    "kids": "For younger viewers"
+  },
+  "groups": [
+    {
+      "id": "skywalker-saga",
+      "title": "The Skywalker Saga"
+    },
+    {
+      "id": "anthology",
+      "title": "Anthology Films"
+    },
+    {
+      "id": "high-republic",
+      "title": "The High Republic"
+    },
+    {
+      "id": "fall-of-the-jedi",
+      "title": "Fall of the Jedi"
+    },
+    {
+      "id": "reign-of-the-empire",
+      "title": "Reign of the Empire"
+    },
+    {
+      "id": "age-of-rebellion",
+      "title": "Age of Rebellion"
+    },
+    {
+      "id": "new-republic",
+      "title": "The New Republic"
+    },
+    {
+      "id": "rise-of-the-first-order",
+      "title": "Rise of the First Order"
+    }
+  ],
+  "entries": [
+    {
+      "id": "the-phantom-menace",
+      "type": "movie",
+      "title": "Star Wars: Episode I – The Phantom Menace",
+      "tmdb": 1893,
+      "imdb": "tt0120915",
+      "released": "1999-05-19",
+      "poster": "/6wkfovpn7Eq8dYNKaG5PY3q2oq6.jpg",
+      "groups": [
+        "skywalker-saga",
+        "fall-of-the-jedi"
+      ],
+      "flags": [
+        "live-action"
+      ]
+    },
+    {
+      "id": "attack-of-the-clones",
+      "type": "movie",
+      "title": "Star Wars: Episode II – Attack of the Clones",
+      "tmdb": 1894,
+      "imdb": "tt0121765",
+      "released": "2002-05-16",
+      "poster": "/oZNPzxqM2s5DyVWab09NTQScDQt.jpg",
+      "groups": [
+        "skywalker-saga",
+        "fall-of-the-jedi"
+      ],
+      "flags": [
+        "live-action"
+      ]
+    },
+    {
+      "id": "revenge-of-the-sith",
+      "type": "movie",
+      "title": "Star Wars: Episode III – Revenge of the Sith",
+      "tmdb": 1895,
+      "imdb": "tt0121766",
+      "released": "2005-05-19",
+      "poster": "/xfSAoBEm9MNBjmlNcDYLvLSMlnq.jpg",
+      "groups": [
+        "skywalker-saga",
+        "fall-of-the-jedi"
+      ],
+      "flags": [
+        "live-action"
+      ]
+    },
+    {
+      "id": "a-new-hope",
+      "type": "movie",
+      "title": "Star Wars: Episode IV – A New Hope",
+      "tmdb": 11,
+      "imdb": "tt0076759",
+      "released": "1977-05-25",
+      "poster": "/fai0rspsNeJCS69wHNjOdWxcI7P.jpg",
+      "groups": [
+        "skywalker-saga",
+        "age-of-rebellion"
+      ],
+      "flags": [
+        "live-action"
+      ]
+    },
+    {
+      "id": "the-empire-strikes-back",
+      "type": "movie",
+      "title": "Star Wars: Episode V – The Empire Strikes Back",
+      "tmdb": 1891,
+      "imdb": "tt0080684",
+      "released": "1980-05-21",
+      "poster": "/nNAeTmF4CtdSgMDplXTDPOpYzsX.jpg",
+      "groups": [
+        "skywalker-saga",
+        "age-of-rebellion"
+      ],
+      "flags": [
+        "live-action"
+      ]
+    },
+    {
+      "id": "return-of-the-jedi",
+      "type": "movie",
+      "title": "Star Wars: Episode VI – Return of the Jedi",
+      "tmdb": 1892,
+      "imdb": "tt0086190",
+      "released": "1983-05-25",
+      "poster": "/jQYlydvHm3kUix1f8prMucrplhm.jpg",
+      "groups": [
+        "skywalker-saga",
+        "age-of-rebellion"
+      ],
+      "flags": [
+        "live-action"
+      ]
+    },
+    {
+      "id": "the-force-awakens",
+      "type": "movie",
+      "title": "Star Wars: Episode VII – The Force Awakens",
+      "tmdb": 140607,
+      "imdb": "tt2488496",
+      "released": "2015-12-18",
+      "poster": "/wqnLdwVXoBjKibFRR5U3y0aDUhs.jpg",
+      "groups": [
+        "skywalker-saga",
+        "rise-of-the-first-order"
+      ],
+      "flags": [
+        "live-action"
+      ]
+    },
+    {
+      "id": "the-last-jedi",
+      "type": "movie",
+      "title": "Star Wars: Episode VIII – The Last Jedi",
+      "tmdb": 181808,
+      "imdb": "tt2527336",
+      "released": "2017-12-15",
+      "poster": "/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
+      "groups": [
+        "skywalker-saga",
+        "rise-of-the-first-order"
+      ],
+      "flags": [
+        "live-action"
+      ]
+    },
+    {
+      "id": "the-rise-of-skywalker",
+      "type": "movie",
+      "title": "Star Wars: Episode IX – The Rise of Skywalker",
+      "tmdb": 181812,
+      "imdb": "tt2527338",
+      "released": "2019-12-20",
+      "poster": "/db32LaOibwEliAmSL2jjDF6oDdj.jpg",
+      "groups": [
+        "skywalker-saga",
+        "rise-of-the-first-order"
+      ],
+      "flags": [
+        "live-action"
+      ]
+    },
+    {
+      "id": "rogue-one",
+      "type": "movie",
+      "title": "Rogue One: A Star Wars Story",
+      "tmdb": 330459,
+      "imdb": "tt3748528",
+      "released": "2016-12-16",
+      "poster": "/i0yw1mFbB7sNGHCs7EXZPzFkdA1.jpg",
+      "groups": [
+        "anthology",
+        "reign-of-the-empire"
+      ],
+      "flags": [
+        "live-action"
+      ]
+    },
+    {
+      "id": "solo",
+      "type": "movie",
+      "title": "Solo: A Star Wars Story",
+      "tmdb": 348350,
+      "imdb": "tt3778644",
+      "released": "2018-05-25",
+      "poster": "/4oD6VEccFkorEBTEDXtpLAaz0Rl.jpg",
+      "groups": [
+        "anthology",
+        "reign-of-the-empire"
+      ],
+      "flags": [
+        "live-action"
+      ]
+    },
+    {
+      "id": "the-clone-wars-film",
+      "type": "movie",
+      "title": "Star Wars: The Clone Wars",
+      "tmdb": 12180,
+      "imdb": "tt1185834",
+      "released": "2008-08-15",
+      "poster": "/iJQfixW818LUdSXlCDL3JZm0S0g.jpg",
+      "groups": [
+        "fall-of-the-jedi"
+      ],
+      "flags": [
+        "animated"
+      ],
+      "note": "The official Clone Wars chronological order puts the film after S2 \"Cat and Mouse\" and S1 \"Hidden Enemy\" but before the rest of Season 1."
+    },
+    {
+      "id": "the-mandalorian-and-grogu",
+      "type": "movie",
+      "title": "The Mandalorian and Grogu",
+      "tmdb": 1228710,
+      "imdb": "tt30825738",
+      "released": "2026-05-22",
+      "poster": "/uwMKWjcNID0D9jjplsjkQS2OrB4.jpg",
+      "groups": [
+        "new-republic"
+      ],
+      "flags": [
+        "live-action"
+      ],
+      "note": "Follows The Mandalorian Season 3."
+    },
+    {
+      "id": "starfighter",
+      "type": "movie",
+      "title": "Star Wars: Starfighter",
+      "tmdb": 1417668,
+      "imdb": "tt28069611",
+      "released": "2027-05-28",
+      "poster": "/6LJetiEQjXUE9kDpXavXpZN1Vjk.jpg",
+      "groups": [
+        "anthology"
+      ],
+      "flags": [
+        "live-action"
+      ],
+      "note": "Announced standalone film set about five years after The Rise of Skywalker. StarWars.com has not assigned it an era yet."
+    },
+    {
+      "id": "young-jedi-adventures-s1",
+      "type": "season",
+      "title": "Star Wars: Young Jedi Adventures",
+      "tmdb": 202998,
+      "imdb": "tt20674124",
+      "tvdb": 420658,
+      "season": 1,
+      "released": "2023-05-04",
+      "poster": "/oqTS9LOmp8ibRY1nsjBjP660mCb.jpg",
+      "groups": [
+        "high-republic"
+      ],
+      "flags": [
+        "animated",
+        "kids"
+      ],
+      "note": "Preschool series set in the High Republic (~232 BBY). Not part of StarWars.com's viewing guide, so it is left out of the Timeline row; it appears under Animation and Release Order."
+    },
+    {
+      "id": "young-jedi-adventures-s2",
+      "type": "season",
+      "title": "Star Wars: Young Jedi Adventures",
+      "tmdb": 202998,
+      "imdb": "tt20674124",
+      "tvdb": 420658,
+      "season": 2,
+      "released": "2024-08-14",
+      "poster": "/hWydZFPESXxrFYNwwIzZwMKJN0g.jpg",
+      "groups": [
+        "high-republic"
+      ],
+      "flags": [
+        "animated",
+        "kids"
+      ],
+      "note": "Preschool series set in the High Republic (~232 BBY). Not part of StarWars.com's viewing guide, so it is left out of the Timeline row; it appears under Animation and Release Order."
+    },
+    {
+      "id": "young-jedi-adventures-s3",
+      "type": "season",
+      "title": "Star Wars: Young Jedi Adventures",
+      "tmdb": 202998,
+      "imdb": "tt20674124",
+      "tvdb": 420658,
+      "season": 3,
+      "released": "2025-12-08",
+      "poster": "/eV3ruplnFsKt4TflUJssAvhjQAU.jpg",
+      "groups": [
+        "high-republic"
+      ],
+      "flags": [
+        "animated",
+        "kids"
+      ],
+      "note": "Preschool series set in the High Republic (~232 BBY). Not part of StarWars.com's viewing guide, so it is left out of the Timeline row; it appears under Animation and Release Order."
+    },
+    {
+      "id": "the-acolyte-s1",
+      "type": "season",
+      "title": "The Acolyte",
+      "tmdb": 114479,
+      "imdb": "tt12262202",
+      "tvdb": 393197,
+      "season": 1,
+      "released": "2024-06-04",
+      "poster": "/uk60hHZW6Svot6DLPLKwAkD9BlN.jpg",
+      "groups": [
+        "high-republic"
+      ],
+      "flags": [
+        "live-action"
+      ],
+      "note": "Set around 132 BBY, at the end of the High Republic era. Flashbacks go back to 148 BBY."
+    },
+    {
+      "id": "the-clone-wars-s1",
+      "type": "season",
+      "title": "Star Wars: The Clone Wars",
+      "tmdb": 4194,
+      "imdb": "tt0458290",
+      "tvdb": 83268,
+      "season": 1,
+      "released": "2008-10-03",
+      "poster": "/A3ahBR0y45LjKQeLEu6PU5UwTQs.jpg",
+      "groups": [
+        "fall-of-the-jedi"
+      ],
+      "flags": [
+        "animated"
+      ],
+      "note": "The official episode order interleaves Seasons 1–3. For example, S3 \"Clone Cadets\" and \"Supply Lines\" come before S1 \"Ambush\". The seasons are kept in sequence here."
+    },
+    {
+      "id": "the-clone-wars-s2",
+      "type": "season",
+      "title": "Star Wars: The Clone Wars",
+      "tmdb": 4194,
+      "imdb": "tt0458290",
+      "tvdb": 83268,
+      "season": 2,
+      "released": "2009-10-02",
+      "poster": "/pENwUUU7AWX7qtBtAscPHXHngP.jpg",
+      "groups": [
+        "fall-of-the-jedi"
+      ],
+      "flags": [
+        "animated"
+      ]
+    },
+    {
+      "id": "the-clone-wars-s3",
+      "type": "season",
+      "title": "Star Wars: The Clone Wars",
+      "tmdb": 4194,
+      "imdb": "tt0458290",
+      "tvdb": 83268,
+      "season": 3,
+      "released": "2010-09-17",
+      "poster": "/syoaEVFyv5Zpc4lMWEn3VGPzyHg.jpg",
+      "groups": [
+        "fall-of-the-jedi"
+      ],
+      "flags": [
+        "animated"
+      ]
+    },
+    {
+      "id": "the-clone-wars-s4",
+      "type": "season",
+      "title": "Star Wars: The Clone Wars",
+      "tmdb": 4194,
+      "imdb": "tt0458290",
+      "tvdb": 83268,
+      "season": 4,
+      "released": "2011-09-16",
+      "poster": "/7eNONbOHJGh3Bw38sdtbnfG1ULW.jpg",
+      "groups": [
+        "fall-of-the-jedi"
+      ],
+      "flags": [
+        "animated"
+      ]
+    },
+    {
+      "id": "the-clone-wars-s5",
+      "type": "season",
+      "title": "Star Wars: The Clone Wars",
+      "tmdb": 4194,
+      "imdb": "tt0458290",
+      "tvdb": 83268,
+      "season": 5,
+      "released": "2012-09-29",
+      "poster": "/2lTwwcBAZlMlokhJsNCAxQlbU7l.jpg",
+      "groups": [
+        "fall-of-the-jedi"
+      ],
+      "flags": [
+        "animated"
+      ]
+    },
+    {
+      "id": "the-clone-wars-s6",
+      "type": "season",
+      "title": "Star Wars: The Clone Wars",
+      "tmdb": 4194,
+      "imdb": "tt0458290",
+      "tvdb": 83268,
+      "season": 6,
+      "released": "2014-03-07",
+      "poster": "/omT6WfAydY9D0Pkd9zJuhlBgjyY.jpg",
+      "groups": [
+        "fall-of-the-jedi"
+      ],
+      "flags": [
+        "animated"
+      ],
+      "note": "\"The Lost Missions\", first released on Netflix."
+    },
+    {
+      "id": "the-clone-wars-s7",
+      "type": "season",
+      "title": "Star Wars: The Clone Wars",
+      "tmdb": 4194,
+      "imdb": "tt0458290",
+      "tvdb": 83268,
+      "season": 7,
+      "released": "2020-02-21",
+      "poster": "/n2cmQLAOOs5ikqBFoIldpLeVCLK.jpg",
+      "groups": [
+        "fall-of-the-jedi"
+      ],
+      "flags": [
+        "animated"
+      ],
+      "note": "Episodes 1–9 take place before Revenge of the Sith. The Siege of Mandalore finale (episodes 10–12) runs alongside the film and ends after The Bad Batch premiere."
+    },
+    {
+      "id": "tales-of-the-jedi-s1",
+      "type": "season",
+      "title": "Star Wars: Tales of the Jedi",
+      "tmdb": 203085,
+      "imdb": "tt20723374",
+      "tvdb": 420659,
+      "season": 1,
+      "released": "2022-10-26",
+      "poster": "/l6p2eG9YDt7x6OgTC2PCW8yvVqb.jpg",
+      "groups": [
+        "fall-of-the-jedi"
+      ],
+      "flags": [
+        "animated"
+      ],
+      "note": "Anthology that spans about 68–18 BBY (Dooku and Ahsoka). Placed before Revenge of the Sith, as in the StarWars.com guide."
+    },
+    {
+      "id": "tales-of-the-empire-s1",
+      "type": "season",
+      "title": "Star Wars: Tales of the Empire",
+      "tmdb": 251091,
+      "imdb": "tt32019314",
+      "tvdb": 448549,
+      "season": 1,
+      "released": "2024-05-04",
+      "poster": "/qA28nLteurVboSSzltuyYt1lvlC.jpg",
+      "groups": [
+        "reign-of-the-empire"
+      ],
+      "flags": [
+        "animated"
+      ],
+      "note": "Anthology that spans about 20 BBY–9 ABY (Morgan Elsbeth and Barriss Offee). Placed after Revenge of the Sith, as in the StarWars.com guide."
+    },
+    {
+      "id": "tales-of-the-underworld-s1",
+      "type": "season",
+      "title": "Star Wars: Tales of the Underworld",
+      "tmdb": 288055,
+      "imdb": "tt36414431",
+      "tvdb": 462199,
+      "season": 1,
+      "released": "2025-05-04",
+      "poster": "/qv1hagzp08cDJF6C04LyJVhcI1x.jpg",
+      "groups": [
+        "reign-of-the-empire"
+      ],
+      "flags": [
+        "animated"
+      ],
+      "note": "Anthology: Asajj Ventress after the Clone Wars, and Cad Bane's youth decades earlier. Placed as in the StarWars.com guide."
+    },
+    {
+      "id": "the-bad-batch-s1",
+      "type": "season",
+      "title": "Star Wars: The Bad Batch",
+      "tmdb": 105971,
+      "imdb": "tt12708542",
+      "tvdb": 385376,
+      "season": 1,
+      "released": "2021-05-04",
+      "poster": "/WjQmEWFrOf98nT5aEfUfVYz9N2.jpg",
+      "groups": [
+        "reign-of-the-empire"
+      ],
+      "flags": [
+        "animated"
+      ],
+      "note": "The premiere \"Aftermath\" overlaps Order 66 and the end of The Clone Wars Season 7."
+    },
+    {
+      "id": "the-bad-batch-s2",
+      "type": "season",
+      "title": "Star Wars: The Bad Batch",
+      "tmdb": 105971,
+      "imdb": "tt12708542",
+      "tvdb": 385376,
+      "season": 2,
+      "released": "2023-01-04",
+      "poster": "/omCWaPxWFOeLSKlBPSxwIZDN8WF.jpg",
+      "groups": [
+        "reign-of-the-empire"
+      ],
+      "flags": [
+        "animated"
+      ]
+    },
+    {
+      "id": "the-bad-batch-s3",
+      "type": "season",
+      "title": "Star Wars: The Bad Batch",
+      "tmdb": 105971,
+      "imdb": "tt12708542",
+      "tvdb": 385376,
+      "season": 3,
+      "released": "2024-02-21",
+      "poster": "/zJCU9amMVSg1zA86QnwKKyss3Xs.jpg",
+      "groups": [
+        "reign-of-the-empire"
+      ],
+      "flags": [
+        "animated"
+      ]
+    },
+    {
+      "id": "maul-shadow-lord-s1",
+      "type": "season",
+      "title": "Star Wars: Maul – Shadow Lord",
+      "tmdb": 289219,
+      "imdb": "tt36594331",
+      "tvdb": 462715,
+      "season": 1,
+      "released": "2026-04-06",
+      "poster": "/fTfLd3s9yBNOzbFHD2aXvwEs93H.jpg",
+      "groups": [
+        "reign-of-the-empire"
+      ],
+      "flags": [
+        "animated"
+      ],
+      "note": "Set around 17 BBY."
+    },
+    {
+      "id": "obi-wan-kenobi-s1",
+      "type": "season",
+      "title": "Obi-Wan Kenobi",
+      "tmdb": 92830,
+      "imdb": "tt8466564",
+      "tvdb": 393199,
+      "season": 1,
+      "released": "2022-05-27",
+      "poster": "/oPkm7vwYCa1McT8jEIFWLj393s4.jpg",
+      "groups": [
+        "reign-of-the-empire"
+      ],
+      "flags": [
+        "live-action"
+      ]
+    },
+    {
+      "id": "andor-s1",
+      "type": "season",
+      "title": "Andor",
+      "tmdb": 83867,
+      "imdb": "tt9253284",
+      "tvdb": 393189,
+      "season": 1,
+      "released": "2022-09-21",
+      "poster": "/59SVNwLfoMnZPPB6ukW6dlPxAdI.jpg",
+      "groups": [
+        "reign-of-the-empire"
+      ],
+      "flags": [
+        "live-action"
+      ],
+      "note": "Set in 5 BBY. Andor and Rebels run at the same time and both lead into Rogue One."
+    },
+    {
+      "id": "rebels-s1",
+      "type": "season",
+      "title": "Star Wars Rebels",
+      "tmdb": 60554,
+      "imdb": "tt2930604",
+      "tvdb": 283468,
+      "season": 1,
+      "released": "2014-10-03",
+      "poster": "/zPu9N90wS3GecpnmdVJIlKEbwsc.jpg",
+      "groups": [
+        "reign-of-the-empire"
+      ],
+      "flags": [
+        "animated"
+      ],
+      "note": "Starts in 5 BBY, alongside Andor Season 1. TMDB lists the premiere film \"Spark of Rebellion\" under Specials."
+    },
+    {
+      "id": "andor-s2",
+      "type": "season",
+      "title": "Andor",
+      "tmdb": 83867,
+      "imdb": "tt9253284",
+      "tvdb": 393189,
+      "season": 2,
+      "released": "2025-04-22",
+      "poster": "/ugkhd9olFiJwDgO3tK1ZrPxUdxQ.jpg",
+      "groups": [
+        "reign-of-the-empire"
+      ],
+      "flags": [
+        "live-action"
+      ],
+      "note": "Its arcs span 4–1 BBY; placed directly before Rogue One because the season's finale leads straight into the film."
+    },
+    {
+      "id": "rebels-s2",
+      "type": "season",
+      "title": "Star Wars Rebels",
+      "tmdb": 60554,
+      "imdb": "tt2930604",
+      "tvdb": 283468,
+      "season": 2,
+      "released": "2015-06-20",
+      "poster": "/9qJT1qBBZK87Bc3S1Rd2xTYNDcX.jpg",
+      "groups": [
+        "reign-of-the-empire"
+      ],
+      "flags": [
+        "animated"
+      ],
+      "note": "TMDB lists the premiere film \"The Siege of Lothal\" under Specials."
+    },
+    {
+      "id": "rebels-s3",
+      "type": "season",
+      "title": "Star Wars Rebels",
+      "tmdb": 60554,
+      "imdb": "tt2930604",
+      "tvdb": 283468,
+      "season": 3,
+      "released": "2016-09-24",
+      "poster": "/t7WMciuAG89Sz6B39Z8eBj2IH5z.jpg",
+      "groups": [
+        "reign-of-the-empire"
+      ],
+      "flags": [
+        "animated"
+      ]
+    },
+    {
+      "id": "rebels-s4",
+      "type": "season",
+      "title": "Star Wars Rebels",
+      "tmdb": 60554,
+      "imdb": "tt2930604",
+      "tvdb": 283468,
+      "season": 4,
+      "released": "2017-10-16",
+      "poster": "/4iMmQdiPUCWTOt2T4MYk1oHsy4U.jpg",
+      "groups": [
+        "reign-of-the-empire"
+      ],
+      "flags": [
+        "animated"
+      ],
+      "note": "The main story ends shortly before Rogue One. The epilogue jumps ahead to after Return of the Jedi."
+    },
+    {
+      "id": "the-mandalorian-s1",
+      "type": "season",
+      "title": "The Mandalorian",
+      "tmdb": 82856,
+      "imdb": "tt8111088",
+      "tvdb": 361753,
+      "season": 1,
+      "released": "2019-11-12",
+      "poster": "/K45A0qGcnGsxNKEvaOItvfVrZx.jpg",
+      "groups": [
+        "new-republic"
+      ],
+      "flags": [
+        "live-action"
+      ]
+    },
+    {
+      "id": "the-mandalorian-s2",
+      "type": "season",
+      "title": "The Mandalorian",
+      "tmdb": 82856,
+      "imdb": "tt8111088",
+      "tvdb": 361753,
+      "season": 2,
+      "released": "2020-10-30",
+      "poster": "/pQ33MqEUEQGChyknPtvWODUza1q.jpg",
+      "groups": [
+        "new-republic"
+      ],
+      "flags": [
+        "live-action"
+      ]
+    },
+    {
+      "id": "the-book-of-boba-fett-s1",
+      "type": "season",
+      "title": "The Book of Boba Fett",
+      "tmdb": 115036,
+      "imdb": "tt13668894",
+      "tvdb": 393589,
+      "season": 1,
+      "released": "2021-12-29",
+      "poster": "/gNbdjDi1HamTCrfvM9JeA94bNi2.jpg",
+      "groups": [
+        "new-republic"
+      ],
+      "flags": [
+        "live-action"
+      ],
+      "note": "Takes place between The Mandalorian Seasons 2 and 3. Chapters 5–7 continue Din Djarin's story."
+    },
+    {
+      "id": "the-mandalorian-s3",
+      "type": "season",
+      "title": "The Mandalorian",
+      "tmdb": 82856,
+      "imdb": "tt8111088",
+      "tvdb": 361753,
+      "season": 3,
+      "released": "2023-03-01",
+      "poster": "/mYmFUlheJrXCLoZdS94kezG8Nuw.jpg",
+      "groups": [
+        "new-republic"
+      ],
+      "flags": [
+        "live-action"
+      ]
+    },
+    {
+      "id": "ahsoka-s1",
+      "type": "season",
+      "title": "Ahsoka",
+      "tmdb": 114461,
+      "imdb": "tt13622776",
+      "tvdb": 393187,
+      "season": 1,
+      "released": "2023-08-22",
+      "poster": "/laCJxobHoPVaLQTKxc14Y2zV64J.jpg",
+      "groups": [
+        "new-republic"
+      ],
+      "flags": [
+        "live-action"
+      ]
+    },
+    {
+      "id": "ahsoka-s2",
+      "type": "season",
+      "title": "Ahsoka",
+      "tmdb": 114461,
+      "imdb": "tt13622776",
+      "tvdb": 393187,
+      "season": 2,
+      "released": "2027-01-20",
+      "poster": "/dVElGqAtvJo6AyhSawr69nkPWjU.jpg",
+      "groups": [
+        "new-republic"
+      ],
+      "flags": [
+        "live-action"
+      ],
+      "note": "Announced for 2027-01-20. Placed provisionally after Season 1 until official chronology is published."
+    },
+    {
+      "id": "skeleton-crew-s1",
+      "type": "season",
+      "title": "Star Wars: Skeleton Crew",
+      "tmdb": 202879,
+      "imdb": "tt20600980",
+      "tvdb": 420600,
+      "season": 1,
+      "released": "2024-12-02",
+      "poster": "/f05sgCPYJvYcy28xwyGX15OMyLR.jpg",
+      "groups": [
+        "new-republic"
+      ],
+      "flags": [
+        "live-action"
+      ]
+    },
+    {
+      "id": "resistance-s1",
+      "type": "season",
+      "title": "Star Wars Resistance",
+      "tmdb": 79093,
+      "imdb": "tt8336340",
+      "tvdb": 351575,
+      "season": 1,
+      "released": "2018-10-07",
+      "poster": "/hHPbh6mJkpxGREMKgJ9FpZNlxPd.jpg",
+      "groups": [
+        "rise-of-the-first-order"
+      ],
+      "flags": [
+        "animated"
+      ],
+      "note": "Starts shortly before The Force Awakens. The two-part finale takes place after it."
+    },
+    {
+      "id": "resistance-s2",
+      "type": "season",
+      "title": "Star Wars Resistance",
+      "tmdb": 79093,
+      "imdb": "tt8336340",
+      "tvdb": 351575,
+      "season": 2,
+      "released": "2019-10-06",
+      "poster": "/xul6SG8rar3wkHPY8YusUtxcdlZ.jpg",
+      "groups": [
+        "rise-of-the-first-order"
+      ],
+      "flags": [
+        "animated"
+      ],
+      "note": "The premiere comes before The Last Jedi, but most of the season follows it and leads up to The Rise of Skywalker."
+    },
+    {
+      "id": "visions-s1",
+      "type": "season",
+      "title": "Star Wars: Visions",
+      "tmdb": 114478,
+      "imdb": "tt13622982",
+      "tvdb": 393190,
+      "season": 1,
+      "released": "2021-09-22",
+      "poster": "/iVSuIqEiLzOd8rnEsYehqzfvPOq.jpg",
+      "flags": [
+        "animated",
+        "non-canon"
+      ],
+      "note": "Non-canon anthology of animated shorts. Not part of the timeline."
+    },
+    {
+      "id": "visions-s2",
+      "type": "season",
+      "title": "Star Wars: Visions",
+      "tmdb": 114478,
+      "imdb": "tt13622982",
+      "tvdb": 393190,
+      "season": 2,
+      "released": "2023-05-04",
+      "poster": "/1H7BPccgrk6v94608TuXS8F4rJv.jpg",
+      "flags": [
+        "animated",
+        "non-canon"
+      ]
+    },
+    {
+      "id": "visions-s3",
+      "type": "season",
+      "title": "Star Wars: Visions",
+      "tmdb": 114478,
+      "imdb": "tt13622982",
+      "tvdb": 393190,
+      "season": 3,
+      "released": "2025-10-29",
+      "poster": "/wL5zwYsIY20H5ZDJwxHY860H2Mt.jpg",
+      "flags": [
+        "animated",
+        "non-canon"
+      ]
+    },
+    {
+      "id": "visions-presents-the-ninth-jedi-s1",
+      "type": "season",
+      "title": "Star Wars: Visions Presents – The Ninth Jedi",
+      "tmdb": 289324,
+      "imdb": "tt43337681",
+      "tvdb": 462774,
+      "season": 1,
+      "released": "2026-08-05",
+      "poster": "/wkcpOO4wyk7VY9Gn4ZrWM4BKs1D.jpg",
+      "flags": [
+        "animated",
+        "non-canon"
+      ],
+      "note": "Non-canon Visions spin-off that expands the Volume 1 short \"The Ninth Jedi\"."
+    }
+  ],
+  "orders": [
+    {
+      "id": "timeline",
+      "title": "Timeline",
+      "description": "Every canon film and series season in in-universe chronological order.",
+      "basis": "StarWars.com viewing guide (2026-09-03), split per season using Wookieepedia",
+      "items": [
+        "the-acolyte-s1",
+        "the-phantom-menace",
+        "attack-of-the-clones",
+        "the-clone-wars-film",
+        "the-clone-wars-s1",
+        "the-clone-wars-s2",
+        "the-clone-wars-s3",
+        "the-clone-wars-s4",
+        "the-clone-wars-s5",
+        "the-clone-wars-s6",
+        "the-clone-wars-s7",
+        "tales-of-the-jedi-s1",
+        "revenge-of-the-sith",
+        "tales-of-the-empire-s1",
+        "tales-of-the-underworld-s1",
+        "the-bad-batch-s1",
+        "the-bad-batch-s2",
+        "the-bad-batch-s3",
+        "maul-shadow-lord-s1",
+        "solo",
+        "obi-wan-kenobi-s1",
+        "andor-s1",
+        "rebels-s1",
+        "rebels-s2",
+        "rebels-s3",
+        "rebels-s4",
+        "andor-s2",
+        "rogue-one",
+        "a-new-hope",
+        "the-empire-strikes-back",
+        "return-of-the-jedi",
+        "the-mandalorian-s1",
+        "the-mandalorian-s2",
+        "the-book-of-boba-fett-s1",
+        "the-mandalorian-s3",
+        "ahsoka-s1",
+        "ahsoka-s2",
+        "skeleton-crew-s1",
+        "the-mandalorian-and-grogu",
+        "resistance-s1",
+        "the-force-awakens",
+        "the-last-jedi",
+        "resistance-s2",
+        "the-rise-of-skywalker",
+        "starfighter"
+      ]
+    },
+    {
+      "id": "release",
+      "title": "Release Order",
+      "description": "Every film and series season in the order it was released.",
+      "derive": {
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "skywalker-saga",
+      "title": "The Skywalker Saga",
+      "description": "The nine episodes of the Skywalker Saga in episode order, I to IX.",
+      "items": [
+        "the-phantom-menace",
+        "attack-of-the-clones",
+        "revenge-of-the-sith",
+        "a-new-hope",
+        "the-empire-strikes-back",
+        "return-of-the-jedi",
+        "the-force-awakens",
+        "the-last-jedi",
+        "the-rise-of-skywalker"
+      ]
+    },
+    {
+      "id": "skywalker-saga-release",
+      "title": "Skywalker Saga (Release Order)",
+      "description": "The nine Skywalker Saga episodes in theatrical release order.",
+      "derive": {
+        "groups": [
+          "skywalker-saga"
+        ],
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "anthology",
+      "title": "Anthology Films",
+      "description": "Standalone films outside the Skywalker Saga, in release order.",
+      "derive": {
+        "groups": [
+          "anthology"
+        ],
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "live-action-series",
+      "title": "Live-Action Series",
+      "description": "Live-action series seasons in timeline order.",
+      "derive": {
+        "from": "timeline",
+        "types": [
+          "season"
+        ],
+        "flags": [
+          "live-action"
+        ]
+      }
+    },
+    {
+      "id": "animation",
+      "title": "Animation",
+      "description": "Canon animated films and series seasons in timeline order.",
+      "derive": {
+        "flags": [
+          "animated"
+        ],
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "movies-timeline",
+      "title": "Movie Timeline",
+      "description": "Every canon film in in-universe chronological order.",
+      "derive": {
+        "from": "timeline",
+        "types": [
+          "movie"
+        ]
+      }
+    },
+    {
+      "id": "high-republic",
+      "title": "The High Republic",
+      "description": "Stories from the golden age of the Republic and its Jedi, in timeline order.",
+      "derive": {
+        "from": "timeline",
+        "groups": [
+          "high-republic"
+        ]
+      }
+    },
+    {
+      "id": "fall-of-the-jedi",
+      "title": "Fall of the Jedi",
+      "description": "The prequel era, from The Phantom Menace through the Clone Wars to Revenge of the Sith, in timeline order.",
+      "derive": {
+        "from": "timeline",
+        "groups": [
+          "fall-of-the-jedi"
+        ]
+      }
+    },
+    {
+      "id": "reign-of-the-empire",
+      "title": "Reign of the Empire",
+      "description": "The Empire's rule, from Order 66 to the theft of the Death Star plans, in timeline order.",
+      "derive": {
+        "from": "timeline",
+        "groups": [
+          "reign-of-the-empire"
+        ]
+      }
+    },
+    {
+      "id": "age-of-rebellion",
+      "title": "Age of Rebellion",
+      "description": "The original trilogy era of the Galactic Civil War, in timeline order.",
+      "derive": {
+        "from": "timeline",
+        "groups": [
+          "age-of-rebellion"
+        ]
+      }
+    },
+    {
+      "id": "new-republic",
+      "title": "The New Republic",
+      "description": "The years after Return of the Jedi, from The Mandalorian to Skeleton Crew, in timeline order.",
+      "derive": {
+        "from": "timeline",
+        "groups": [
+          "new-republic"
+        ]
+      }
+    },
+    {
+      "id": "rise-of-the-first-order",
+      "title": "Rise of the First Order",
+      "description": "The sequel era, from Resistance to The Rise of Skywalker, in timeline order.",
+      "derive": {
+        "from": "timeline",
+        "groups": [
+          "rise-of-the-first-order"
+        ]
+      }
+    }
+  ],
+  "hub": {
+    "rows": [
+      "timeline",
+      "skywalker-saga",
+      "movies-timeline",
+      "live-action-series",
+      "animation",
+      "anthology",
+      "release"
+    ],
+    "pages": [
+      {
+        "id": "eras",
+        "title": "Eras",
+        "rows": [
+          "high-republic",
+          "fall-of-the-jedi",
+          "reign-of-the-empire",
+          "age-of-rebellion",
+          "new-republic",
+          "rise-of-the-first-order"
+        ]
+      },
+      {
+        "id": "more",
+        "title": "More",
+        "rows": [
+          "skywalker-saga-release"
+        ]
+      }
+    ]
+  }
+}

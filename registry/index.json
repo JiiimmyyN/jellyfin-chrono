@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "name": "Jellyfin Chrono default registry",
+  "universes": [
+    {
+      "id": "mcu",
+      "name": "Marvel Cinematic Universe",
+      "description": "Every MCU film and series, from Marvel Studios and Marvel Television, in timeline, phase and release order.",
+      "file": "universes/mcu.json"
+    },
+    {
+      "id": "star-wars",
+      "name": "Star Wars",
+      "description": "The Skywalker Saga, anthology films and every canon series, season by season.",
+      "file": "universes/star-wars.json"
+    }
+  ]
+}

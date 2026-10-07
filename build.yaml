@@ -1,0 +1,19 @@
+---
+name: "Chrono"
+guid: "4b1c2a8e-7c39-4d2e-9a51-0f6c3e8d2b17"
+version: "0.1.0.0"
+targetAbi: "12.0.0.0"
+framework: "net10.0"
+overview: "Disney+-style universe hubs for Jellyfin"
+description: >
+  Browse movie and TV universes such as the Marvel Cinematic Universe and Star Wars the way
+  Disney+ presents them: complete timeline, official timeline, sagas, phases and release order,
+  with series placed season by season. Includes public playlists for playing in order, optional
+  collections, Wikidata/TMDB/MDBList/Trakt sources for any franchise, and Seerr requests for
+  missing titles.
+category: "General"
+owner: "JiiimmyyN"
+artifacts:
+- "Jellyfin.Plugin.Chrono.dll"
+changelog: >
+  Initial release.

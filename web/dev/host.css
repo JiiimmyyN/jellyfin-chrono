@@ -1,0 +1,116 @@
+html {
+  font-size: 93%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #101010;
+  color: #eee;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+.MuiAppBar-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 56px;
+  padding: 0 8px;
+  background: transparent;
+  color: #fff;
+}
+
+.MuiAppBar-root a,
+.MuiAppBar-root button {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 20px;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.MuiAppBar-root a:hover,
+.MuiAppBar-root button:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.fake-spacer {
+  flex: 1;
+}
+
+.MuiModal-root {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+}
+
+.MuiModal-hidden {
+  display: none;
+}
+
+.MuiBackdrop-root {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.fake-drawer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 260px;
+  padding: 16px 0;
+  background: #202020;
+}
+
+.fake-drawer a {
+  display: block;
+  padding: 12px 20px;
+  color: #eee;
+  text-decoration: none;
+}
+
+.fake-drawer a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.page {
+  padding: 72px 3.3% 24px;
+}
+
+.padded-left {
+  padding-left: 3.3%;
+}
+
+.padded-right {
+  padding-right: 3.3%;
+}
+
+.fake-section {
+  margin: 24px 0;
+}
+
+.fake-section-row {
+  display: flex;
+  gap: 12px;
+}
+
+.fake-section-row div {
+  width: 140px;
+  aspect-ratio: 2 / 3;
+  border-radius: 4px;
+  background: #2a2a2a;
+}

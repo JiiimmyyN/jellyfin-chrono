@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>Jellyfin.Plugin.Chrono</RootNamespace>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <JellyfinVersion>12.2.0</JellyfinVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Jellyfin.Controller" Version="$(JellyfinVersion)">
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+    <PackageReference Include="Jellyfin.Model" Version="$(JellyfinVersion)">
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Configuration\configPage.html" />
+    <EmbeddedResource Include="..\..\registry\index.json" LogicalName="Jellyfin.Plugin.Chrono.Registry.index.json" />
+    <EmbeddedResource Include="..\..\registry\universes\*.json" LogicalName="Jellyfin.Plugin.Chrono.Registry.universes.%(Filename)%(Extension)" />
+    <EmbeddedResource Include="..\..\web\dist\chrono.js" LogicalName="Jellyfin.Plugin.Chrono.Client.chrono.js" Condition="Exists('..\..\web\dist\chrono.js')" />
+    <EmbeddedResource Include="..\..\web\dist\chrono.css" LogicalName="Jellyfin.Plugin.Chrono.Client.chrono.css" Condition="Exists('..\..\web\dist\chrono.css')" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Jellyfin.Plugin.Chrono.Tests" />
+    <InternalsVisibleTo Include="Chrono.RegistryTool" />
+  </ItemGroup>
+
+</Project>

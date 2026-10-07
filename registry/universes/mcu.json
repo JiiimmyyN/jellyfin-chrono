@@ -1,0 +1,1910 @@
+{
+  "$schema": "../schema/universe.schema.json",
+  "schemaVersion": 1,
+  "id": "mcu",
+  "name": "Marvel Cinematic Universe",
+  "description": "Marvel Studios films, Disney+ series and specials, and the Marvel Television series from ABC, Netflix, Hulu and Freeform.",
+  "revision": "2026.10.07",
+  "discover": {
+    "wikidata": [
+      "Q642878"
+    ],
+    "tmdbCollections": [
+      86311,
+      131292,
+      131295,
+      131296,
+      284433,
+      422834,
+      529892,
+      531241,
+      618529,
+      623911
+    ],
+    "exclude": [
+      "tv:69069",
+      "tv:118924",
+      "movie:567604",
+      "movie:383498",
+      "movie:293660",
+      "movie:505945",
+      "movie:413279",
+      "movie:474227",
+      "movie:558144"
+    ]
+  },
+  "attribution": [
+    {
+      "name": "Marvel.com: See the Complete MCU Timeline on Disney+",
+      "url": "https://www.marvel.com/articles/movies/mcu-timeline-order-disney-plus"
+    },
+    {
+      "name": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q642878",
+      "license": "CC0 1.0"
+    },
+    {
+      "name": "Marvel Cinematic Universe Wiki (Fandom): Chronological Order / Viewing Timeline",
+      "url": "https://marvelcinematicuniverse.fandom.com/wiki/Chronological_Order/Viewing_Timeline",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "name": "TVmaze",
+      "url": "https://www.tvmaze.com",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "name": "The Movie Database (TMDB)",
+      "url": "https://www.themoviedb.org"
+    }
+  ],
+  "flags": {
+    "marvel-television": "Marvel Television (ABC, Netflix, Hulu, Freeform)",
+    "one-shot": "Marvel One-Shots",
+    "special": "Specials",
+    "animated": "Animation",
+    "alternate-universe": "Alternate universes",
+    "not-on-official-timeline": "Not on Marvel's official timeline"
+  },
+  "groups": [
+    {
+      "id": "infinity-saga",
+      "title": "The Infinity Saga"
+    },
+    {
+      "id": "multiverse-saga",
+      "title": "The Multiverse Saga"
+    },
+    {
+      "id": "phase-1",
+      "title": "Phase One",
+      "parent": "infinity-saga"
+    },
+    {
+      "id": "phase-2",
+      "title": "Phase Two",
+      "parent": "infinity-saga"
+    },
+    {
+      "id": "phase-3",
+      "title": "Phase Three",
+      "parent": "infinity-saga"
+    },
+    {
+      "id": "phase-4",
+      "title": "Phase Four",
+      "parent": "multiverse-saga"
+    },
+    {
+      "id": "phase-5",
+      "title": "Phase Five",
+      "parent": "multiverse-saga"
+    },
+    {
+      "id": "phase-6",
+      "title": "Phase Six",
+      "parent": "multiverse-saga"
+    }
+  ],
+  "entries": [
+    {
+      "id": "iron-man",
+      "type": "movie",
+      "title": "Iron Man",
+      "tmdb": 1726,
+      "imdb": "tt0371746",
+      "released": "2008-05-02",
+      "poster": "/78lPtwv72eTNqFW9COBYI0dWDJa.jpg",
+      "groups": [
+        "phase-1"
+      ]
+    },
+    {
+      "id": "the-incredible-hulk",
+      "type": "movie",
+      "title": "The Incredible Hulk",
+      "tmdb": 1724,
+      "imdb": "tt0800080",
+      "released": "2008-06-13",
+      "poster": "/gKzYx79y0AQTL4UAk1cBQJ3nvrm.jpg",
+      "groups": [
+        "phase-1"
+      ]
+    },
+    {
+      "id": "iron-man-2",
+      "type": "movie",
+      "title": "Iron Man 2",
+      "tmdb": 10138,
+      "imdb": "tt1228705",
+      "released": "2010-05-07",
+      "poster": "/6WBeq4fCfn7AN0o21W9qNcRF2l9.jpg",
+      "groups": [
+        "phase-1"
+      ]
+    },
+    {
+      "id": "thor",
+      "type": "movie",
+      "title": "Thor",
+      "tmdb": 10195,
+      "imdb": "tt0800369",
+      "released": "2011-05-06",
+      "poster": "/prSfAi1xGrhLQNxVSUFh61xQ4Qy.jpg",
+      "groups": [
+        "phase-1"
+      ]
+    },
+    {
+      "id": "captain-america-the-first-avenger",
+      "type": "movie",
+      "title": "Captain America: The First Avenger",
+      "tmdb": 1771,
+      "imdb": "tt0458339",
+      "released": "2011-07-22",
+      "poster": "/vSNxAJTlD0r02V9sPYpOjqDZXUK.jpg",
+      "groups": [
+        "phase-1"
+      ]
+    },
+    {
+      "id": "the-avengers",
+      "type": "movie",
+      "title": "The Avengers",
+      "tmdb": 24428,
+      "imdb": "tt0848228",
+      "released": "2012-05-04",
+      "poster": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "groups": [
+        "phase-1"
+      ]
+    },
+    {
+      "id": "iron-man-3",
+      "type": "movie",
+      "title": "Iron Man 3",
+      "tmdb": 68721,
+      "imdb": "tt1300854",
+      "released": "2013-05-03",
+      "poster": "/qhPtAc1TKbMPqNvcdXSOn9Bn7hZ.jpg",
+      "groups": [
+        "phase-2"
+      ]
+    },
+    {
+      "id": "thor-the-dark-world",
+      "type": "movie",
+      "title": "Thor: The Dark World",
+      "tmdb": 76338,
+      "imdb": "tt1981115",
+      "released": "2013-11-08",
+      "poster": "/wp6OxE4poJ4G7c0U2ZIXasTSMR7.jpg",
+      "groups": [
+        "phase-2"
+      ]
+    },
+    {
+      "id": "captain-america-the-winter-soldier",
+      "type": "movie",
+      "title": "Captain America: The Winter Soldier",
+      "tmdb": 100402,
+      "imdb": "tt1843866",
+      "released": "2014-04-04",
+      "poster": "/tVFRpFw3xTedgPGqxW0AOI8Qhh0.jpg",
+      "groups": [
+        "phase-2"
+      ]
+    },
+    {
+      "id": "guardians-of-the-galaxy",
+      "type": "movie",
+      "title": "Guardians of the Galaxy",
+      "tmdb": 118340,
+      "imdb": "tt2015381",
+      "released": "2014-08-01",
+      "poster": "/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg",
+      "groups": [
+        "phase-2"
+      ]
+    },
+    {
+      "id": "avengers-age-of-ultron",
+      "type": "movie",
+      "title": "Avengers: Age of Ultron",
+      "tmdb": 99861,
+      "imdb": "tt2395427",
+      "released": "2015-05-01",
+      "poster": "/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg",
+      "groups": [
+        "phase-2"
+      ]
+    },
+    {
+      "id": "ant-man",
+      "type": "movie",
+      "title": "Ant-Man",
+      "tmdb": 102899,
+      "imdb": "tt0478970",
+      "released": "2015-07-17",
+      "poster": "/rQRnQfUl3kfp78nCWq8Ks04vnq1.jpg",
+      "groups": [
+        "phase-2"
+      ]
+    },
+    {
+      "id": "captain-america-civil-war",
+      "type": "movie",
+      "title": "Captain America: Civil War",
+      "tmdb": 271110,
+      "imdb": "tt3498820",
+      "released": "2016-05-06",
+      "poster": "/rAGiXaUfPzY7CDEyNKUofk3Kw2e.jpg",
+      "groups": [
+        "phase-3"
+      ]
+    },
+    {
+      "id": "doctor-strange",
+      "type": "movie",
+      "title": "Doctor Strange",
+      "tmdb": 284052,
+      "imdb": "tt1211837",
+      "released": "2016-11-04",
+      "poster": "/uGBVj3bEbCoZbDjjl9wTxcygko1.jpg",
+      "groups": [
+        "phase-3"
+      ]
+    },
+    {
+      "id": "guardians-of-the-galaxy-vol-2",
+      "type": "movie",
+      "title": "Guardians of the Galaxy Vol. 2",
+      "tmdb": 283995,
+      "imdb": "tt3896198",
+      "released": "2017-05-05",
+      "poster": "/y4MBh0EjBlMuOzv9axM4qJlmhzz.jpg",
+      "groups": [
+        "phase-3"
+      ]
+    },
+    {
+      "id": "spider-man-homecoming",
+      "type": "movie",
+      "title": "Spider-Man: Homecoming",
+      "tmdb": 315635,
+      "imdb": "tt2250912",
+      "released": "2017-07-07",
+      "poster": "/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg",
+      "groups": [
+        "phase-3"
+      ]
+    },
+    {
+      "id": "thor-ragnarok",
+      "type": "movie",
+      "title": "Thor: Ragnarok",
+      "tmdb": 284053,
+      "imdb": "tt3501632",
+      "released": "2017-11-03",
+      "poster": "/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg",
+      "groups": [
+        "phase-3"
+      ]
+    },
+    {
+      "id": "black-panther",
+      "type": "movie",
+      "title": "Black Panther",
+      "tmdb": 284054,
+      "imdb": "tt1825683",
+      "released": "2018-02-16",
+      "poster": "/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
+      "groups": [
+        "phase-3"
+      ]
+    },
+    {
+      "id": "avengers-infinity-war",
+      "type": "movie",
+      "title": "Avengers: Infinity War",
+      "tmdb": 299536,
+      "imdb": "tt4154756",
+      "released": "2018-04-27",
+      "poster": "/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+      "groups": [
+        "phase-3"
+      ]
+    },
+    {
+      "id": "ant-man-and-the-wasp",
+      "type": "movie",
+      "title": "Ant-Man and the Wasp",
+      "tmdb": 363088,
+      "imdb": "tt5095030",
+      "released": "2018-07-06",
+      "poster": "/cFQEO687n1K6umXbInzocxcnAQz.jpg",
+      "groups": [
+        "phase-3"
+      ]
+    },
+    {
+      "id": "captain-marvel",
+      "type": "movie",
+      "title": "Captain Marvel",
+      "tmdb": 299537,
+      "imdb": "tt4154664",
+      "released": "2019-03-08",
+      "poster": "/AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg",
+      "groups": [
+        "phase-3"
+      ]
+    },
+    {
+      "id": "avengers-endgame",
+      "type": "movie",
+      "title": "Avengers: Endgame",
+      "tmdb": 299534,
+      "imdb": "tt4154796",
+      "released": "2019-04-26",
+      "poster": "/ulzhLuWrPK07P1YkdWQLZnQh1JL.jpg",
+      "groups": [
+        "phase-3"
+      ]
+    },
+    {
+      "id": "spider-man-far-from-home",
+      "type": "movie",
+      "title": "Spider-Man: Far From Home",
+      "tmdb": 429617,
+      "imdb": "tt6320628",
+      "released": "2019-07-02",
+      "poster": "/4q2NNj4S5dG2RLF9CpXsej7yXl.jpg",
+      "groups": [
+        "phase-3"
+      ]
+    },
+    {
+      "id": "black-widow",
+      "type": "movie",
+      "title": "Black Widow",
+      "tmdb": 497698,
+      "imdb": "tt3480822",
+      "released": "2021-07-09",
+      "poster": "/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg",
+      "groups": [
+        "phase-4"
+      ]
+    },
+    {
+      "id": "shang-chi-and-the-legend-of-the-ten-rings",
+      "type": "movie",
+      "title": "Shang-Chi and the Legend of the Ten Rings",
+      "tmdb": 566525,
+      "imdb": "tt9376612",
+      "released": "2021-09-03",
+      "poster": "/9f2Q0U3IOsLgrI2HkvldwSABZy5.jpg",
+      "groups": [
+        "phase-4"
+      ]
+    },
+    {
+      "id": "eternals",
+      "type": "movie",
+      "title": "Eternals",
+      "tmdb": 524434,
+      "imdb": "tt9032400",
+      "released": "2021-11-05",
+      "poster": "/lFByFSLV5WDJEv3KabbdAF959F2.jpg",
+      "groups": [
+        "phase-4"
+      ]
+    },
+    {
+      "id": "spider-man-no-way-home",
+      "type": "movie",
+      "title": "Spider-Man: No Way Home",
+      "tmdb": 634649,
+      "imdb": "tt10872600",
+      "released": "2021-12-17",
+      "poster": "/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
+      "groups": [
+        "phase-4"
+      ]
+    },
+    {
+      "id": "doctor-strange-in-the-multiverse-of-madness",
+      "type": "movie",
+      "title": "Doctor Strange in the Multiverse of Madness",
+      "tmdb": 453395,
+      "imdb": "tt9419884",
+      "released": "2022-05-06",
+      "poster": "/ddJcSKbcp4rKZTmuyWaMhuwcfMz.jpg",
+      "groups": [
+        "phase-4"
+      ]
+    },
+    {
+      "id": "thor-love-and-thunder",
+      "type": "movie",
+      "title": "Thor: Love and Thunder",
+      "tmdb": 616037,
+      "imdb": "tt10648342",
+      "released": "2022-07-08",
+      "poster": "/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg",
+      "groups": [
+        "phase-4"
+      ]
+    },
+    {
+      "id": "black-panther-wakanda-forever",
+      "type": "movie",
+      "title": "Black Panther: Wakanda Forever",
+      "tmdb": 505642,
+      "imdb": "tt9114286",
+      "released": "2022-11-11",
+      "poster": "/sv1xJUazXeYqALzczSZ3O6nkH75.jpg",
+      "groups": [
+        "phase-4"
+      ]
+    },
+    {
+      "id": "ant-man-and-the-wasp-quantumania",
+      "type": "movie",
+      "title": "Ant-Man and the Wasp: Quantumania",
+      "tmdb": 640146,
+      "imdb": "tt10954600",
+      "released": "2023-02-17",
+      "poster": "/qnqGbB22YJ7dSs4o6M7exTpNxPz.jpg",
+      "groups": [
+        "phase-5"
+      ]
+    },
+    {
+      "id": "guardians-of-the-galaxy-vol-3",
+      "type": "movie",
+      "title": "Guardians of the Galaxy Vol. 3",
+      "tmdb": 447365,
+      "imdb": "tt6791350",
+      "released": "2023-05-05",
+      "poster": "/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg",
+      "groups": [
+        "phase-5"
+      ]
+    },
+    {
+      "id": "the-marvels",
+      "type": "movie",
+      "title": "The Marvels",
+      "tmdb": 609681,
+      "imdb": "tt10676048",
+      "released": "2023-11-10",
+      "poster": "/9GBhzXMFjgcZ3FdR9w3bUMMTps5.jpg",
+      "groups": [
+        "phase-5"
+      ]
+    },
+    {
+      "id": "deadpool-and-wolverine",
+      "type": "movie",
+      "title": "Deadpool & Wolverine",
+      "tmdb": 533535,
+      "imdb": "tt6263850",
+      "released": "2024-07-26",
+      "poster": "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+      "groups": [
+        "phase-5"
+      ]
+    },
+    {
+      "id": "captain-america-brave-new-world",
+      "type": "movie",
+      "title": "Captain America: Brave New World",
+      "tmdb": 822119,
+      "imdb": "tt14513804",
+      "released": "2025-02-14",
+      "poster": "/pzIddUEMWhWzfvLI3TwxUG2wGoi.jpg",
+      "groups": [
+        "phase-5"
+      ]
+    },
+    {
+      "id": "thunderbolts",
+      "type": "movie",
+      "title": "Thunderbolts*",
+      "tmdb": 986056,
+      "imdb": "tt20969586",
+      "released": "2025-05-02",
+      "poster": "/hqcexYHbiTBfDIdDWxrxPtVndBX.jpg",
+      "groups": [
+        "phase-5"
+      ]
+    },
+    {
+      "id": "the-fantastic-four-first-steps",
+      "type": "movie",
+      "title": "The Fantastic Four: First Steps",
+      "tmdb": 617126,
+      "imdb": "tt10676052",
+      "released": "2025-07-25",
+      "poster": "/nf5qaSEvyYSNeFH0YhSs5EsBLX9.jpg",
+      "groups": [
+        "phase-6"
+      ],
+      "note": "Set on Earth-828."
+    },
+    {
+      "id": "spider-man-brand-new-day",
+      "type": "movie",
+      "title": "Spider-Man: Brand New Day",
+      "tmdb": 969681,
+      "imdb": "tt22084616",
+      "released": "2026-07-31",
+      "poster": "/bjiS5ipwxb9JFy3XRRN4OAilSeX.jpg",
+      "groups": [
+        "phase-6"
+      ],
+      "flags": [
+        "not-on-official-timeline"
+      ],
+      "note": "Released after Marvel.com's June 2026 timeline update; placed after The Punisher: One Last Kill (MCU Wiki: fall 2028)."
+    },
+    {
+      "id": "avengers-doomsday",
+      "type": "movie",
+      "title": "Avengers: Doomsday",
+      "tmdb": 1003596,
+      "imdb": "tt21357150",
+      "released": "2026-12-18",
+      "poster": "/jzPwsojjFStf5lR5Nm07w2hH56G.jpg",
+      "groups": [
+        "phase-6"
+      ],
+      "flags": [
+        "not-on-official-timeline"
+      ],
+      "note": "Upcoming. Not yet placed by Marvel; appended at the end of the complete timeline after all released stories."
+    },
+    {
+      "id": "avengers-secret-wars",
+      "type": "movie",
+      "title": "Avengers: Secret Wars",
+      "tmdb": 1003598,
+      "imdb": "tt21361444",
+      "released": "2027-12-17",
+      "poster": "/f0YBuh4hyiAheXhh4JnJWoKi9g5.jpg",
+      "groups": [
+        "phase-6"
+      ],
+      "flags": [
+        "not-on-official-timeline"
+      ],
+      "note": "Upcoming. Sequel to Avengers: Doomsday; appended after it."
+    },
+    {
+      "id": "one-shot-the-consultant",
+      "type": "movie",
+      "title": "Marvel One-Shot: The Consultant",
+      "tmdb": 76122,
+      "imdb": "tt2011118",
+      "released": "2011-09-13",
+      "poster": "/xqNLXUUvBnfVk6m3QFGGU0Grgs7.jpg",
+      "groups": [
+        "phase-1"
+      ],
+      "flags": [
+        "one-shot"
+      ],
+      "note": "Released on the Thor home media. Phase assignment follows its release window; Marvel Studios never formally listed the One-Shots in a phase."
+    },
+    {
+      "id": "one-shot-a-funny-thing-happened-on-the-way-to-thors-hammer",
+      "type": "movie",
+      "title": "Marvel One-Shot: A Funny Thing Happened on the Way to Thor's Hammer",
+      "tmdb": 76535,
+      "imdb": "tt2011109",
+      "released": "2011-10-25",
+      "poster": "/njrOqsmFH4pxBrhcoslqLfw2OGk.jpg",
+      "groups": [
+        "phase-1"
+      ],
+      "flags": [
+        "one-shot"
+      ],
+      "note": "Released on the Captain America: The First Avenger home media. Phase assignment follows its release window."
+    },
+    {
+      "id": "one-shot-item-47",
+      "type": "movie",
+      "title": "Marvel One-Shot: Item 47",
+      "tmdb": 119569,
+      "imdb": "tt2247732",
+      "released": "2012-09-25",
+      "poster": "/hnSxG8clwLuAXEkp9emc8HCUcHD.jpg",
+      "groups": [
+        "phase-1"
+      ],
+      "flags": [
+        "one-shot"
+      ],
+      "note": "Released on The Avengers home media. Phase assignment follows its release window."
+    },
+    {
+      "id": "one-shot-agent-carter",
+      "type": "movie",
+      "title": "Marvel One-Shot: Agent Carter",
+      "tmdb": 211387,
+      "imdb": "tt3067038",
+      "released": "2013-09-03",
+      "poster": "/4vFKKWPvCVDJTOWiwReBfpAMScP.jpg",
+      "groups": [
+        "phase-2"
+      ],
+      "flags": [
+        "one-shot"
+      ],
+      "note": "Released digitally with Iron Man 3 (physical release 2013-09-24). Phase assignment follows its release window."
+    },
+    {
+      "id": "one-shot-all-hail-the-king",
+      "type": "movie",
+      "title": "Marvel One-Shot: All Hail the King",
+      "tmdb": 253980,
+      "imdb": "tt3438640",
+      "released": "2014-02-04",
+      "poster": "/y0QYZPWgeGKOvyrzi6Oz3aJPxJa.jpg",
+      "groups": [
+        "phase-2"
+      ],
+      "flags": [
+        "one-shot"
+      ],
+      "note": "Released digitally with Thor: The Dark World (physical release 2014-02-25). Phase assignment follows its release window."
+    },
+    {
+      "id": "werewolf-by-night",
+      "type": "movie",
+      "title": "Werewolf by Night",
+      "tmdb": 894205,
+      "imdb": "tt15318872",
+      "released": "2022-10-07",
+      "poster": "/mvIvNKRIJPPS7WSFarFhOAGIVnU.jpg",
+      "groups": [
+        "phase-4"
+      ],
+      "flags": [
+        "special"
+      ]
+    },
+    {
+      "id": "the-guardians-of-the-galaxy-holiday-special",
+      "type": "movie",
+      "title": "The Guardians of the Galaxy Holiday Special",
+      "tmdb": 774752,
+      "imdb": "tt13623136",
+      "released": "2022-11-25",
+      "poster": "/8dqXyslZ2hv49Oiob9UjlGSHSTR.jpg",
+      "groups": [
+        "phase-4"
+      ],
+      "flags": [
+        "special"
+      ]
+    },
+    {
+      "id": "the-punisher-one-last-kill",
+      "type": "movie",
+      "title": "The Punisher: One Last Kill",
+      "tmdb": 1439930,
+      "imdb": "tt36042156",
+      "released": "2026-05-12",
+      "poster": "/qQclTgLMDvGBuUBFGHRipxkEwWR.jpg",
+      "groups": [
+        "phase-6"
+      ],
+      "flags": [
+        "special"
+      ],
+      "note": "Marvel Television Special Presentation on Disney+; TMDB lists it as a movie."
+    },
+    {
+      "id": "agents-of-shield-s1",
+      "type": "season",
+      "title": "Agents of S.H.I.E.L.D.",
+      "tmdb": 1403,
+      "imdb": "tt2364582",
+      "tvdb": 263365,
+      "season": 1,
+      "released": "2013-09-24",
+      "poster": "/1CaKyPcZvzzMSwbNFJObxNsxTkK.jpg",
+      "flags": [
+        "marvel-television",
+        "not-on-official-timeline"
+      ],
+      "note": "Starts September 2013, after The Avengers; placed where it starts. Episodes 1.16-1.22 tie into Captain America: The Winter Soldier, so consider pausing before 1.16 to watch it."
+    },
+    {
+      "id": "agents-of-shield-s2",
+      "type": "season",
+      "title": "Agents of S.H.I.E.L.D.",
+      "tmdb": 1403,
+      "imdb": "tt2364582",
+      "tvdb": 263365,
+      "season": 2,
+      "released": "2014-09-23",
+      "poster": "/p8Qy60OIf0OaJ29KPw6ld51MSP7.jpg",
+      "flags": [
+        "marvel-television",
+        "not-on-official-timeline"
+      ],
+      "note": "Opens mid-2014 but episodes 2.04-2.19 run early to April 2015 alongside Jessica Jones S1, so it is placed with that bulk after Daredevil S1. The final three episodes follow Avengers: Age of Ultron."
+    },
+    {
+      "id": "agents-of-shield-s3",
+      "type": "season",
+      "title": "Agents of S.H.I.E.L.D.",
+      "tmdb": 1403,
+      "imdb": "tt2364582",
+      "tvdb": 263365,
+      "season": 3,
+      "released": "2015-09-29",
+      "poster": "/y0cxxcvCk9lEG4DEorTz5GxC9sj.jpg",
+      "flags": [
+        "marvel-television",
+        "not-on-official-timeline"
+      ],
+      "note": "Starts November 2015 alongside Daredevil S2 and Luke Cage S1 and runs to mid-2016; its final episodes are set around Captain America: Civil War."
+    },
+    {
+      "id": "agents-of-shield-s4",
+      "type": "season",
+      "title": "Agents of S.H.I.E.L.D.",
+      "tmdb": 1403,
+      "imdb": "tt2364582",
+      "tvdb": 263365,
+      "season": 4,
+      "released": "2016-09-20",
+      "poster": "/mgyMzTTIFVdKoejD0gKIyaCgWOP.jpg",
+      "flags": [
+        "marvel-television",
+        "not-on-official-timeline"
+      ],
+      "note": "Set March-May 2017, after Doctor Strange and Cloak & Dagger S1 (MCU Wiki)."
+    },
+    {
+      "id": "agents-of-shield-s5",
+      "type": "season",
+      "title": "Agents of S.H.I.E.L.D.",
+      "tmdb": 1403,
+      "imdb": "tt2364582",
+      "tvdb": 263365,
+      "season": 5,
+      "released": "2017-12-01",
+      "poster": "/pwZedE4CB3E73lvH9A5yRaszll0.jpg",
+      "flags": [
+        "marvel-television",
+        "not-on-official-timeline"
+      ],
+      "note": "Present-day frame begins in late 2017 just before Thor: Ragnarok; episodes 5.01-5.10 are set in 2091, the rest runs December 2017-May 2018, and the finale (May 2018) leads into Avengers: Infinity War."
+    },
+    {
+      "id": "agents-of-shield-s6",
+      "type": "season",
+      "title": "Agents of S.H.I.E.L.D.",
+      "tmdb": 1403,
+      "imdb": "tt2364582",
+      "tvdb": 263365,
+      "season": 6,
+      "released": "2019-05-10",
+      "poster": "/QU0NjcvDonZLKhjRuxRv6AVo5l.jpg",
+      "flags": [
+        "marvel-television",
+        "not-on-official-timeline"
+      ],
+      "note": "Set in mid-2019 during the Blip, between Avengers: Infinity War and Avengers: Endgame (MCU Wiki). Ignores the events of Endgame's ending."
+    },
+    {
+      "id": "agents-of-shield-s7",
+      "type": "season",
+      "title": "Agents of S.H.I.E.L.D.",
+      "tmdb": 1403,
+      "imdb": "tt2364582",
+      "tvdb": 263365,
+      "season": 7,
+      "released": "2020-05-27",
+      "poster": "/qM95u55G8xVyfgoSZ2qTlY3MDl6.jpg",
+      "flags": [
+        "marvel-television",
+        "not-on-official-timeline"
+      ],
+      "note": "Time-travel season (1931-1983) that returns to mid-2019; follows S6 (MCU Wiki)."
+    },
+    {
+      "id": "agent-carter-s1",
+      "type": "season",
+      "title": "Agent Carter",
+      "tmdb": 61550,
+      "imdb": "tt3475734",
+      "tvdb": 281485,
+      "season": 1,
+      "released": "2015-01-06",
+      "poster": "/gqyjmfFOrKY8iouNTXWj9KW7cC5.jpg",
+      "flags": [
+        "marvel-television",
+        "not-on-official-timeline"
+      ],
+      "note": "Set in April-May 1946, right after the Agent Carter One-Shot (MCU Wiki)."
+    },
+    {
+      "id": "agent-carter-s2",
+      "type": "season",
+      "title": "Agent Carter",
+      "tmdb": 61550,
+      "imdb": "tt3475734",
+      "tvdb": 281485,
+      "season": 2,
+      "released": "2016-01-19",
+      "poster": "/h3yPRRiWZk6HrFD2oo3xqpLt6bc.jpg",
+      "flags": [
+        "marvel-television",
+        "not-on-official-timeline"
+      ],
+      "note": "Set in July 1947 (MCU Wiki)."
+    },
+    {
+      "id": "daredevil-s1",
+      "type": "season",
+      "title": "Daredevil",
+      "tmdb": 61889,
+      "imdb": "tt3322312",
+      "tvdb": 281662,
+      "season": 1,
+      "released": "2015-04-10",
+      "poster": "/zFmJQzl6bFrdpHhDkxXmboyykqD.jpg",
+      "flags": [
+        "marvel-television"
+      ]
+    },
+    {
+      "id": "daredevil-s2",
+      "type": "season",
+      "title": "Daredevil",
+      "tmdb": 61889,
+      "imdb": "tt3322312",
+      "tvdb": 281662,
+      "season": 2,
+      "released": "2016-03-18",
+      "poster": "/opHoslNCxkgoCaGhfO66fvCSH83.jpg",
+      "flags": [
+        "marvel-television"
+      ]
+    },
+    {
+      "id": "daredevil-s3",
+      "type": "season",
+      "title": "Daredevil",
+      "tmdb": 61889,
+      "imdb": "tt3322312",
+      "tvdb": 281662,
+      "season": 3,
+      "released": "2018-10-19",
+      "poster": "/zH6sgePlr1XX0jSZypbfQmr70Lf.jpg",
+      "flags": [
+        "marvel-television"
+      ]
+    },
+    {
+      "id": "jessica-jones-s1",
+      "type": "season",
+      "title": "Jessica Jones",
+      "tmdb": 38472,
+      "imdb": "tt2357547",
+      "tvdb": 284190,
+      "season": 1,
+      "released": "2015-11-20",
+      "poster": "/9wwfowgVJDouHQdUsIcNhgbIUlG.jpg",
+      "flags": [
+        "marvel-television"
+      ]
+    },
+    {
+      "id": "jessica-jones-s2",
+      "type": "season",
+      "title": "Jessica Jones",
+      "tmdb": 38472,
+      "imdb": "tt2357547",
+      "tvdb": 284190,
+      "season": 2,
+      "released": "2018-03-08",
+      "poster": "/tKirVNmDmwYjqehjPpyjr1n3U2F.jpg",
+      "flags": [
+        "marvel-television"
+      ]
+    },
+    {
+      "id": "jessica-jones-s3",
+      "type": "season",
+      "title": "Jessica Jones",
+      "tmdb": 38472,
+      "imdb": "tt2357547",
+      "tvdb": 284190,
+      "season": 3,
+      "released": "2019-06-14",
+      "poster": "/dOPx3bj3x6eXYXQJUUIHXvWRSSB.jpg",
+      "flags": [
+        "marvel-television"
+      ]
+    },
+    {
+      "id": "luke-cage-s1",
+      "type": "season",
+      "title": "Luke Cage",
+      "tmdb": 62126,
+      "imdb": "tt3322314",
+      "tvdb": 304219,
+      "season": 1,
+      "released": "2016-09-30",
+      "poster": "/hBbPrnlkpxod0Zq14wsPlaLOemG.jpg",
+      "flags": [
+        "marvel-television"
+      ]
+    },
+    {
+      "id": "luke-cage-s2",
+      "type": "season",
+      "title": "Luke Cage",
+      "tmdb": 62126,
+      "imdb": "tt3322314",
+      "tvdb": 304219,
+      "season": 2,
+      "released": "2018-06-22",
+      "poster": "/xe9VGtjJ1vsSKtAnoXEnVdUqyxb.jpg",
+      "flags": [
+        "marvel-television"
+      ]
+    },
+    {
+      "id": "iron-fist-s1",
+      "type": "season",
+      "title": "Iron Fist",
+      "tmdb": 62127,
+      "imdb": "tt3322310",
+      "tvdb": 317953,
+      "season": 1,
+      "released": "2017-03-17",
+      "poster": "/usGfoL4RfX15f1sQcX3Sgw4YRf4.jpg",
+      "flags": [
+        "marvel-television"
+      ]
+    },
+    {
+      "id": "iron-fist-s2",
+      "type": "season",
+      "title": "Iron Fist",
+      "tmdb": 62127,
+      "imdb": "tt3322310",
+      "tvdb": 317953,
+      "season": 2,
+      "released": "2018-09-07",
+      "poster": "/vXYvfCWvz5W0rErCpNIq09urhzW.jpg",
+      "flags": [
+        "marvel-television"
+      ]
+    },
+    {
+      "id": "the-defenders-s1",
+      "type": "season",
+      "title": "The Defenders",
+      "tmdb": 62285,
+      "imdb": "tt4230076",
+      "tvdb": 326490,
+      "season": 1,
+      "released": "2017-08-18",
+      "poster": "/4COAMPA6LPkPBd1xdm9paN4LCD8.jpg",
+      "flags": [
+        "marvel-television"
+      ]
+    },
+    {
+      "id": "inhumans-s1",
+      "type": "season",
+      "title": "Inhumans",
+      "tmdb": 68716,
+      "imdb": "tt4154858",
+      "tvdb": 320558,
+      "season": 1,
+      "released": "2017-09-29",
+      "poster": "/doCIoaV9ffAJbK3TW2AsGp4ytOQ.jpg",
+      "flags": [
+        "marvel-television",
+        "not-on-official-timeline"
+      ],
+      "note": "Set mid-2016, after Black Panther and before Spider-Man: Homecoming (MCU Wiki)."
+    },
+    {
+      "id": "the-punisher-s1",
+      "type": "season",
+      "title": "The Punisher",
+      "tmdb": 67178,
+      "imdb": "tt5675620",
+      "tvdb": 331980,
+      "season": 1,
+      "released": "2017-11-17",
+      "poster": "/dOkJ6TJKQjsz2XwXyp2VYpkeE5g.jpg",
+      "flags": [
+        "marvel-television"
+      ]
+    },
+    {
+      "id": "the-punisher-s2",
+      "type": "season",
+      "title": "The Punisher",
+      "tmdb": 67178,
+      "imdb": "tt5675620",
+      "tvdb": 331980,
+      "season": 2,
+      "released": "2019-01-18",
+      "poster": "/agNYq5XZnGfmYetUMyyM2RdPY70.jpg",
+      "flags": [
+        "marvel-television"
+      ]
+    },
+    {
+      "id": "runaways-s1",
+      "type": "season",
+      "title": "Runaways",
+      "tmdb": 67466,
+      "imdb": "tt1236246",
+      "tvdb": 332027,
+      "season": 1,
+      "released": "2017-11-21",
+      "poster": "/hMsaGkDyCM3Y3EWcdYK5Uu8qEok.jpg",
+      "flags": [
+        "marvel-television",
+        "not-on-official-timeline"
+      ],
+      "note": "Set October 2017, between Iron Fist S2 and Daredevil S3 (MCU Wiki)."
+    },
+    {
+      "id": "runaways-s2",
+      "type": "season",
+      "title": "Runaways",
+      "tmdb": 67466,
+      "imdb": "tt1236246",
+      "tvdb": 332027,
+      "season": 2,
+      "released": "2018-12-21",
+      "poster": "/r2e50wFzTsMgsSVLAyIB8uX1EGu.jpg",
+      "flags": [
+        "marvel-television",
+        "not-on-official-timeline"
+      ],
+      "note": "Set late October-November 2017, after the start of Daredevil S3 (MCU Wiki)."
+    },
+    {
+      "id": "runaways-s3",
+      "type": "season",
+      "title": "Runaways",
+      "tmdb": 67466,
+      "imdb": "tt1236246",
+      "tvdb": 332027,
+      "season": 3,
+      "released": "2019-12-13",
+      "poster": "/m83skvEvoFQoo1szIMpFQ6kbCe6.jpg",
+      "flags": [
+        "marvel-television",
+        "not-on-official-timeline"
+      ],
+      "note": "Starts November 2017 and ends May 2018 (crossover with Cloak & Dagger); placed where it starts, before Thor: Ragnarok."
+    },
+    {
+      "id": "cloak-and-dagger-s1",
+      "type": "season",
+      "title": "Cloak & Dagger",
+      "tmdb": 66190,
+      "imdb": "tt5614844",
+      "tvdb": 341455,
+      "season": 1,
+      "released": "2018-06-07",
+      "poster": "/nluzawv8wEo0AeECpnLo3wO2YLZ.jpg",
+      "flags": [
+        "marvel-television",
+        "not-on-official-timeline"
+      ],
+      "note": "Set February 2017, right after Doctor Strange (MCU Wiki)."
+    },
+    {
+      "id": "cloak-and-dagger-s2",
+      "type": "season",
+      "title": "Cloak & Dagger",
+      "tmdb": 66190,
+      "imdb": "tt5614844",
+      "tvdb": 341455,
+      "season": 2,
+      "released": "2019-04-04",
+      "poster": "/pYnRJuBPEqZO1o4fcxBTgmKNHfy.jpg",
+      "flags": [
+        "marvel-television",
+        "not-on-official-timeline"
+      ],
+      "note": "Set late October-early November 2017, between Runaways S2 and S3 (MCU Wiki)."
+    },
+    {
+      "id": "helstrom-s1",
+      "type": "season",
+      "title": "Helstrom",
+      "tmdb": 88987,
+      "imdb": "tt10266874",
+      "tvdb": 364038,
+      "season": 1,
+      "released": "2020-10-16",
+      "poster": "/8fPIcaRIZgsoBcgA5yAm3GNz61M.jpg",
+      "flags": [
+        "marvel-television",
+        "not-on-official-timeline"
+      ],
+      "note": "Set in fall 2020 during the Blip, before Avengers: Endgame's 2023 return (MCU Wiki)."
+    },
+    {
+      "id": "wandavision-s1",
+      "type": "season",
+      "title": "WandaVision",
+      "tmdb": 85271,
+      "imdb": "tt9140560",
+      "tvdb": 362392,
+      "season": 1,
+      "released": "2021-01-15",
+      "poster": "/8BSVNGpZwZDScVv8e5S1c8XIjeJ.jpg",
+      "groups": [
+        "phase-4"
+      ]
+    },
+    {
+      "id": "the-falcon-and-the-winter-soldier-s1",
+      "type": "season",
+      "title": "The Falcon and the Winter Soldier",
+      "tmdb": 88396,
+      "imdb": "tt9208876",
+      "tvdb": 362496,
+      "season": 1,
+      "released": "2021-03-19",
+      "poster": "/6kbAMLteGO8yyewYau6bJ683sw7.jpg",
+      "groups": [
+        "phase-4"
+      ]
+    },
+    {
+      "id": "loki-s1",
+      "type": "season",
+      "title": "Loki",
+      "tmdb": 84958,
+      "imdb": "tt9140554",
+      "tvdb": 362472,
+      "season": 1,
+      "released": "2021-06-09",
+      "poster": "/8uVqe9ThcuYVNdh4O0kuijIWMLL.jpg",
+      "groups": [
+        "phase-4"
+      ]
+    },
+    {
+      "id": "loki-s2",
+      "type": "season",
+      "title": "Loki",
+      "tmdb": 84958,
+      "imdb": "tt9140554",
+      "tvdb": 362472,
+      "season": 2,
+      "released": "2023-10-05",
+      "poster": "/oJdVHUYrjdS2IqiNztVIP4GPB1p.jpg",
+      "groups": [
+        "phase-5"
+      ]
+    },
+    {
+      "id": "what-if-s1",
+      "type": "season",
+      "title": "What If...?",
+      "tmdb": 91363,
+      "imdb": "tt10168312",
+      "tvdb": 367147,
+      "season": 1,
+      "released": "2021-08-11",
+      "poster": "/lztz5XBMG1x6Y5ubz7CxfPFsAcW.jpg",
+      "groups": [
+        "phase-4"
+      ],
+      "flags": [
+        "animated",
+        "alternate-universe"
+      ]
+    },
+    {
+      "id": "what-if-s2",
+      "type": "season",
+      "title": "What If...?",
+      "tmdb": 91363,
+      "imdb": "tt10168312",
+      "tvdb": 367147,
+      "season": 2,
+      "released": "2023-12-22",
+      "poster": "/3yhoq5LVMgKy9rEriH6ytq9BoJV.jpg",
+      "groups": [
+        "phase-5"
+      ],
+      "flags": [
+        "animated",
+        "alternate-universe"
+      ]
+    },
+    {
+      "id": "what-if-s3",
+      "type": "season",
+      "title": "What If...?",
+      "tmdb": 91363,
+      "imdb": "tt10168312",
+      "tvdb": 367147,
+      "season": 3,
+      "released": "2024-12-22",
+      "poster": "/bbGeKXKoualYRYqvFYiv8fPZK0d.jpg",
+      "groups": [
+        "phase-5"
+      ],
+      "flags": [
+        "animated",
+        "alternate-universe"
+      ]
+    },
+    {
+      "id": "hawkeye-s1",
+      "type": "season",
+      "title": "Hawkeye",
+      "tmdb": 88329,
+      "imdb": "tt10160804",
+      "tvdb": 367146,
+      "season": 1,
+      "released": "2021-11-24",
+      "poster": "/nGcqeKieycPFvsxOeLJssCTt3mL.jpg",
+      "groups": [
+        "phase-4"
+      ]
+    },
+    {
+      "id": "moon-knight-s1",
+      "type": "season",
+      "title": "Moon Knight",
+      "tmdb": 92749,
+      "imdb": "tt10234724",
+      "tvdb": 368611,
+      "season": 1,
+      "released": "2022-03-30",
+      "poster": "/zPFm8ZbvdzoViRHnLi8cH7TBS1B.jpg",
+      "groups": [
+        "phase-4"
+      ]
+    },
+    {
+      "id": "ms-marvel-s1",
+      "type": "season",
+      "title": "Ms. Marvel",
+      "tmdb": 92782,
+      "imdb": "tt10857164",
+      "tvdb": 368612,
+      "season": 1,
+      "released": "2022-06-08",
+      "poster": "/4qoFtoPvFGjlIXYfFVNKhOwZ6zD.jpg",
+      "groups": [
+        "phase-4"
+      ]
+    },
+    {
+      "id": "she-hulk-attorney-at-law-s1",
+      "type": "season",
+      "title": "She-Hulk: Attorney at Law",
+      "tmdb": 92783,
+      "imdb": "tt10857160",
+      "tvdb": 368613,
+      "season": 1,
+      "released": "2022-08-18",
+      "poster": "/41Iekrap0j80u808Z2004t88r6o.jpg",
+      "groups": [
+        "phase-4"
+      ]
+    },
+    {
+      "id": "i-am-groot-s1",
+      "type": "season",
+      "title": "I Am Groot",
+      "tmdb": 232125,
+      "imdb": "tt13623148",
+      "tvdb": 393201,
+      "season": 1,
+      "released": "2022-08-10",
+      "poster": "/oZmqHnWJVQLOKOibDa34W4iGBZU.jpg",
+      "groups": [
+        "phase-4"
+      ],
+      "flags": [
+        "animated"
+      ]
+    },
+    {
+      "id": "i-am-groot-s2",
+      "type": "season",
+      "title": "I Am Groot",
+      "tmdb": 232125,
+      "imdb": "tt13623148",
+      "tvdb": 393201,
+      "season": 2,
+      "released": "2023-09-06",
+      "poster": "/7b4qBnExIjuANVDKWyVN8gVVOXS.jpg",
+      "groups": [
+        "phase-5"
+      ],
+      "flags": [
+        "animated"
+      ]
+    },
+    {
+      "id": "secret-invasion-s1",
+      "type": "season",
+      "title": "Secret Invasion",
+      "tmdb": 114472,
+      "imdb": "tt13157618",
+      "tvdb": 393203,
+      "season": 1,
+      "released": "2023-06-21",
+      "poster": "/8fQckSuTR8NEN3mXeledSQCISZJ.jpg",
+      "groups": [
+        "phase-5"
+      ]
+    },
+    {
+      "id": "echo-s1",
+      "type": "season",
+      "title": "Echo",
+      "tmdb": 122226,
+      "imdb": "tt13966962",
+      "tvdb": 412431,
+      "season": 1,
+      "released": "2024-01-09",
+      "poster": "/eVqz9zgvGYVqvHOg1QlHWrGTpz3.jpg",
+      "groups": [
+        "phase-5"
+      ]
+    },
+    {
+      "id": "agatha-all-along-s1",
+      "type": "season",
+      "title": "Agatha All Along",
+      "tmdb": 138501,
+      "imdb": "tt15571732",
+      "tvdb": 412429,
+      "season": 1,
+      "released": "2024-09-18",
+      "poster": "/cXEE6EsLJNwEwOCedX04Uixfq5O.jpg",
+      "groups": [
+        "phase-5"
+      ]
+    },
+    {
+      "id": "your-friendly-neighborhood-spider-man-s1",
+      "type": "season",
+      "title": "Your Friendly Neighborhood Spider-Man",
+      "tmdb": 138503,
+      "imdb": "tt16027074",
+      "tvdb": 412427,
+      "season": 1,
+      "released": "2025-01-29",
+      "poster": "/bifTEU63VFt2ugUte9LqNBb1Dno.jpg",
+      "groups": [
+        "phase-5"
+      ],
+      "flags": [
+        "animated",
+        "alternate-universe",
+        "not-on-official-timeline"
+      ],
+      "note": "Alternate universe. Placed after What If...? S3, as on the MCU Wiki viewing timeline."
+    },
+    {
+      "id": "daredevil-born-again-s1",
+      "type": "season",
+      "title": "Daredevil: Born Again",
+      "tmdb": 202555,
+      "imdb": "tt18923754",
+      "tvdb": 422712,
+      "season": 1,
+      "released": "2025-03-04",
+      "poster": "/9lLuhV703HGCbnz6FxnqCwIwzAZ.jpg",
+      "groups": [
+        "phase-5"
+      ]
+    },
+    {
+      "id": "daredevil-born-again-s2",
+      "type": "season",
+      "title": "Daredevil: Born Again",
+      "tmdb": 202555,
+      "imdb": "tt18923754",
+      "tvdb": 422712,
+      "season": 2,
+      "released": "2026-03-24",
+      "poster": "/timvsedxh5ce795tsv6EDTZmmXW.jpg",
+      "groups": [
+        "phase-6"
+      ]
+    },
+    {
+      "id": "ironheart-s1",
+      "type": "season",
+      "title": "Ironheart",
+      "tmdb": 114471,
+      "imdb": "tt13623126",
+      "tvdb": 393204,
+      "season": 1,
+      "released": "2025-06-24",
+      "poster": "/1V4rcxP9Dk0TKHkVAc2sigcdDXc.jpg",
+      "groups": [
+        "phase-5"
+      ]
+    },
+    {
+      "id": "eyes-of-wakanda-s1",
+      "type": "season",
+      "title": "Eyes of Wakanda",
+      "tmdb": 241388,
+      "imdb": "tt13968252",
+      "tvdb": 443358,
+      "season": 1,
+      "released": "2025-08-01",
+      "poster": "/64RsvJMVUfhs5CDV7xXRjiLK4w6.jpg",
+      "groups": [
+        "phase-6"
+      ],
+      "flags": [
+        "animated"
+      ],
+      "note": "Anthology spanning 1260 BC to 1896."
+    },
+    {
+      "id": "marvel-zombies-s1",
+      "type": "season",
+      "title": "Marvel Zombies",
+      "tmdb": 138505,
+      "imdb": "tt16027014",
+      "tvdb": 412428,
+      "season": 1,
+      "released": "2025-09-24",
+      "poster": "/wofiHMsXxmp0lTafcBrgciSxBVx.jpg",
+      "groups": [
+        "phase-6"
+      ],
+      "flags": [
+        "animated",
+        "alternate-universe"
+      ],
+      "note": "Alternate universe from What If...? S1 episode 5."
+    },
+    {
+      "id": "wonder-man-s1",
+      "type": "season",
+      "title": "Wonder Man",
+      "tmdb": 198178,
+      "imdb": "tt21066182",
+      "tvdb": 428629,
+      "season": 1,
+      "released": "2026-01-27",
+      "poster": "/z5xlxga7oc2eGVpS9vw38ULA9nr.jpg",
+      "groups": [
+        "phase-6"
+      ]
+    },
+    {
+      "id": "visionquest-s1",
+      "type": "season",
+      "title": "VisionQuest",
+      "tmdb": 213375,
+      "imdb": "tt23112594",
+      "tvdb": 426606,
+      "season": 1,
+      "released": "2026-10-14",
+      "poster": "/xK27l5uwaVyZSlENWnmLlWwDQNS.jpg",
+      "groups": [
+        "phase-6"
+      ],
+      "flags": [
+        "not-on-official-timeline"
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": "timeline",
+      "title": "Complete Timeline",
+      "description": "Disney+ timeline with every ABC, Hulu and Freeform series and newer release slotted in at its in-universe point.",
+      "basis": "marvel.com 2026 timeline + network shows placed by in-universe dates (MCU Wiki)",
+      "items": [
+        "eyes-of-wakanda-s1",
+        "captain-america-the-first-avenger",
+        "one-shot-agent-carter",
+        "agent-carter-s1",
+        "agent-carter-s2",
+        "captain-marvel",
+        "iron-man",
+        "iron-man-2",
+        "the-incredible-hulk",
+        "one-shot-a-funny-thing-happened-on-the-way-to-thors-hammer",
+        "thor",
+        "one-shot-the-consultant",
+        "the-avengers",
+        "one-shot-item-47",
+        "agents-of-shield-s1",
+        "thor-the-dark-world",
+        "iron-man-3",
+        "one-shot-all-hail-the-king",
+        "captain-america-the-winter-soldier",
+        "guardians-of-the-galaxy",
+        "guardians-of-the-galaxy-vol-2",
+        "i-am-groot-s1",
+        "i-am-groot-s2",
+        "daredevil-s1",
+        "agents-of-shield-s2",
+        "jessica-jones-s1",
+        "avengers-age-of-ultron",
+        "ant-man",
+        "daredevil-s2",
+        "luke-cage-s1",
+        "agents-of-shield-s3",
+        "iron-fist-s1",
+        "the-defenders-s1",
+        "captain-america-civil-war",
+        "black-widow",
+        "black-panther",
+        "inhumans-s1",
+        "spider-man-homecoming",
+        "the-punisher-s1",
+        "doctor-strange",
+        "cloak-and-dagger-s1",
+        "agents-of-shield-s4",
+        "jessica-jones-s2",
+        "luke-cage-s2",
+        "iron-fist-s2",
+        "runaways-s1",
+        "daredevil-s3",
+        "runaways-s2",
+        "cloak-and-dagger-s2",
+        "runaways-s3",
+        "agents-of-shield-s5",
+        "thor-ragnarok",
+        "the-punisher-s2",
+        "jessica-jones-s3",
+        "ant-man-and-the-wasp",
+        "avengers-infinity-war",
+        "agents-of-shield-s6",
+        "agents-of-shield-s7",
+        "helstrom-s1",
+        "avengers-endgame",
+        "loki-s1",
+        "what-if-s1",
+        "marvel-zombies-s1",
+        "wandavision-s1",
+        "shang-chi-and-the-legend-of-the-ten-rings",
+        "the-falcon-and-the-winter-soldier-s1",
+        "spider-man-far-from-home",
+        "eternals",
+        "spider-man-no-way-home",
+        "doctor-strange-in-the-multiverse-of-madness",
+        "hawkeye-s1",
+        "moon-knight-s1",
+        "black-panther-wakanda-forever",
+        "echo-s1",
+        "she-hulk-attorney-at-law-s1",
+        "ms-marvel-s1",
+        "thor-love-and-thunder",
+        "ironheart-s1",
+        "werewolf-by-night",
+        "the-guardians-of-the-galaxy-holiday-special",
+        "ant-man-and-the-wasp-quantumania",
+        "guardians-of-the-galaxy-vol-3",
+        "secret-invasion-s1",
+        "the-marvels",
+        "loki-s2",
+        "what-if-s2",
+        "deadpool-and-wolverine",
+        "agatha-all-along-s1",
+        "what-if-s3",
+        "your-friendly-neighborhood-spider-man-s1",
+        "daredevil-born-again-s1",
+        "captain-america-brave-new-world",
+        "thunderbolts",
+        "the-fantastic-four-first-steps",
+        "wonder-man-s1",
+        "daredevil-born-again-s2",
+        "the-punisher-one-last-kill",
+        "spider-man-brand-new-day",
+        "avengers-doomsday",
+        "avengers-secret-wars"
+      ]
+    },
+    {
+      "id": "official-timeline",
+      "title": "Disney+ Timeline",
+      "description": "The complete MCU timeline exactly as Marvel publishes it for Disney+, with series split by season.",
+      "basis": "marvel.com, 2026-06-02",
+      "items": [
+        "eyes-of-wakanda-s1",
+        "captain-america-the-first-avenger",
+        "one-shot-agent-carter",
+        "captain-marvel",
+        "iron-man",
+        "iron-man-2",
+        "the-incredible-hulk",
+        "one-shot-a-funny-thing-happened-on-the-way-to-thors-hammer",
+        "thor",
+        "one-shot-the-consultant",
+        "the-avengers",
+        "one-shot-item-47",
+        "thor-the-dark-world",
+        "iron-man-3",
+        "one-shot-all-hail-the-king",
+        "captain-america-the-winter-soldier",
+        "guardians-of-the-galaxy",
+        "guardians-of-the-galaxy-vol-2",
+        "i-am-groot-s1",
+        "i-am-groot-s2",
+        "daredevil-s1",
+        "jessica-jones-s1",
+        "avengers-age-of-ultron",
+        "ant-man",
+        "daredevil-s2",
+        "luke-cage-s1",
+        "iron-fist-s1",
+        "the-defenders-s1",
+        "captain-america-civil-war",
+        "black-widow",
+        "black-panther",
+        "spider-man-homecoming",
+        "the-punisher-s1",
+        "doctor-strange",
+        "jessica-jones-s2",
+        "luke-cage-s2",
+        "iron-fist-s2",
+        "daredevil-s3",
+        "thor-ragnarok",
+        "the-punisher-s2",
+        "jessica-jones-s3",
+        "ant-man-and-the-wasp",
+        "avengers-infinity-war",
+        "avengers-endgame",
+        "loki-s1",
+        "what-if-s1",
+        "marvel-zombies-s1",
+        "wandavision-s1",
+        "shang-chi-and-the-legend-of-the-ten-rings",
+        "the-falcon-and-the-winter-soldier-s1",
+        "spider-man-far-from-home",
+        "eternals",
+        "spider-man-no-way-home",
+        "doctor-strange-in-the-multiverse-of-madness",
+        "hawkeye-s1",
+        "moon-knight-s1",
+        "black-panther-wakanda-forever",
+        "echo-s1",
+        "she-hulk-attorney-at-law-s1",
+        "ms-marvel-s1",
+        "thor-love-and-thunder",
+        "ironheart-s1",
+        "werewolf-by-night",
+        "the-guardians-of-the-galaxy-holiday-special",
+        "ant-man-and-the-wasp-quantumania",
+        "guardians-of-the-galaxy-vol-3",
+        "secret-invasion-s1",
+        "the-marvels",
+        "loki-s2",
+        "what-if-s2",
+        "deadpool-and-wolverine",
+        "agatha-all-along-s1",
+        "what-if-s3",
+        "daredevil-born-again-s1",
+        "captain-america-brave-new-world",
+        "thunderbolts",
+        "the-fantastic-four-first-steps",
+        "wonder-man-s1",
+        "daredevil-born-again-s2",
+        "the-punisher-one-last-kill"
+      ]
+    },
+    {
+      "id": "movie-timeline",
+      "title": "Movie Timeline",
+      "description": "Just the films, in in-universe chronological order.",
+      "derive": {
+        "from": "timeline",
+        "types": [
+          "movie"
+        ],
+        "excludeFlags": [
+          "one-shot",
+          "special"
+        ]
+      }
+    },
+    {
+      "id": "release",
+      "title": "Release Order",
+      "description": "Everything in the order it was released.",
+      "derive": {
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "infinity-saga",
+      "title": "The Infinity Saga",
+      "description": "Phases One to Three, from Iron Man to Spider-Man: Far From Home, in release order.",
+      "derive": {
+        "groups": [
+          "infinity-saga"
+        ],
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "multiverse-saga",
+      "title": "The Multiverse Saga",
+      "description": "Phases Four to Six, from WandaVision to Avengers: Secret Wars, in release order.",
+      "derive": {
+        "groups": [
+          "multiverse-saga"
+        ],
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "phase-1",
+      "title": "Phase One",
+      "description": "From Iron Man to The Avengers, in release order.",
+      "derive": {
+        "groups": [
+          "phase-1"
+        ],
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "phase-2",
+      "title": "Phase Two",
+      "description": "From Iron Man 3 to Ant-Man, in release order.",
+      "derive": {
+        "groups": [
+          "phase-2"
+        ],
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "phase-3",
+      "title": "Phase Three",
+      "description": "From Captain America: Civil War to Spider-Man: Far From Home, in release order.",
+      "derive": {
+        "groups": [
+          "phase-3"
+        ],
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "phase-4",
+      "title": "Phase Four",
+      "description": "From WandaVision to The Guardians of the Galaxy Holiday Special, in release order.",
+      "derive": {
+        "groups": [
+          "phase-4"
+        ],
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "phase-5",
+      "title": "Phase Five",
+      "description": "From Ant-Man and the Wasp: Quantumania to Ironheart, in release order.",
+      "derive": {
+        "groups": [
+          "phase-5"
+        ],
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "phase-6",
+      "title": "Phase Six",
+      "description": "From The Fantastic Four: First Steps to Avengers: Secret Wars, in release order.",
+      "derive": {
+        "groups": [
+          "phase-6"
+        ],
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "marvel-television",
+      "title": "Marvel Television",
+      "description": "The Marvel Television series from ABC, Netflix, Hulu and Freeform, in release order.",
+      "derive": {
+        "flags": [
+          "marvel-television"
+        ],
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "animation",
+      "title": "Animation",
+      "description": "Marvel Studios' animated series and shorts, in release order.",
+      "derive": {
+        "flags": [
+          "animated"
+        ],
+        "sortBy": "released"
+      }
+    },
+    {
+      "id": "specials",
+      "title": "One-Shots & Specials",
+      "description": "The Marvel One-Shots and Disney+ specials, in release order.",
+      "derive": {
+        "flags": [
+          "one-shot",
+          "special"
+        ],
+        "sortBy": "released"
+      }
+    }
+  ],
+  "hub": {
+    "rows": [
+      "timeline",
+      "official-timeline",
+      "movie-timeline",
+      "infinity-saga",
+      "multiverse-saga",
+      "marvel-television",
+      "animation",
+      "specials",
+      "release"
+    ],
+    "pages": [
+      {
+        "id": "phases",
+        "title": "Phases",
+        "rows": [
+          "phase-1",
+          "phase-2",
+          "phase-3",
+          "phase-4",
+          "phase-5",
+          "phase-6"
+        ]
+      }
+    ]
+  }
+}

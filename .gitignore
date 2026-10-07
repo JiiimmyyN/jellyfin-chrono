@@ -1,0 +1,10 @@
+bin/
+obj/
+node_modules/
+web/dist/
+dev/jellyfin/
+dev/media/
+artifacts/
+*.user
+.vs/
+.idea/

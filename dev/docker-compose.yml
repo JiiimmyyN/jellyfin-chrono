@@ -1,0 +1,23 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:12.2
+    container_name: chrono-jellyfin
+    user: "${UID:-1000}:${GID:-1000}"
+    ports:
+      - "8096:8096"
+    volumes:
+      - ./jellyfin/config:/config
+      - ./jellyfin/cache:/cache
+      - ./media:/media:ro
+    restart: unless-stopped
+
+  seerr:
+    image: ghcr.io/seerr-team/seerr:latest
+    container_name: chrono-seerr
+    user: "${UID:-1000}:${GID:-1000}"
+    profiles: ["seerr"]
+    ports:
+      - "5055:5055"
+    volumes:
+      - ./seerr:/app/config
+    restart: unless-stopped
