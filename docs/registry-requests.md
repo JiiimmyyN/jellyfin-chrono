@@ -56,42 +56,27 @@ Pull requests opened by the workflow token don't trigger the *Build* workflow, s
 
 ### Claude routine (for `registry:claude`)
 
-The setup script and network access belong to a **cloud environment**, not to the routine; the routine just picks an environment. Create a dedicated one first.
+The routine runs in a Claude Code cloud session. The repository prepares that session itself: `.claude/settings.json` registers a [SessionStart hook](https://code.claude.com/docs/en/cloud-environments#install-dependencies-with-a-sessionstart-hook) that runs `scripts/install_pkgs.sh`, which installs the .NET 10 SDK from Ubuntu's package archive in cloud sessions (it does nothing on your own machine). Ubuntu's archive and NuGet are on the cloud environment's default **Trusted** allowlist, so no environment changes are needed to build, validate and test.
 
-1. **Create the environment.** On https://claude.ai/code, click the cloud icon showing the current environment name (the row above the message box) → **Cloud** → **Add cloud environment**:
-   * **Name:** `Chrono registry`
-   * **Network access:** **Custom**, tick **Also include default list of common package managers**, and add these **Allowed domains** (one per line):
-     ```text
-     builds.dotnet.microsoft.com
-     api.nuget.org
-     query.wikidata.org
-     www.wikidata.org
-     api.tvmaze.com
-     api.themoviedb.org
-     www.themoviedb.org
-     marvelcinematicuniverse.fandom.com
-     starwars.fandom.com
-     www.marvel.com
-     www.starwars.com
-     en.wikipedia.org
-     ```
-     The .NET SDK isn't pre-installed, its installer downloads from `builds.dotnet.microsoft.com`, restoring packages needs `api.nuget.org`, and the rest are the data sources the routine checks ids and placements against.
-   * **Setup script:**
-     ```bash
-     #!/bin/bash
-     set -e
-     curl -sSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh
-     bash /tmp/dotnet-install.sh --channel 10.0 --install-dir /usr/local/share/dotnet
-     ln -sf /usr/local/share/dotnet/dotnet /usr/local/bin/dotnet
-     dotnet --version
-     ```
-     It runs once and the result is cached for later sessions (rebuilt about weekly or when you edit the environment).
-   * **Create environment.**
+1. **Network access for data sources (optional).** The default allowlist doesn't include Wikidata, TVmaze, TMDB or the Fandom wikis, so the routine can't check ids and placements against them and will say so in its pull request. To allow them, edit the routine's environment (routine → **Edit** → the cloud icon below the **Instructions** box → hover the environment → settings icon), set **Network access** to **Custom**, tick **Also include default list of common package managers**, and add:
+   ```text
+   query.wikidata.org
+   www.wikidata.org
+   api.tvmaze.com
+   api.themoviedb.org
+   www.themoviedb.org
+   marvelcinematicuniverse.fandom.com
+   starwars.fandom.com
+   www.marvel.com
+   www.starwars.com
+   en.wikipedia.org
+   ```
+   See [Network access](https://code.claude.com/docs/en/cloud-environments#network-access) and [Environments and network access](https://code.claude.com/docs/en/routines#environments-and-network-access).
 2. **Install the Claude GitHub App** on the repository (https://github.com/apps/claude): Contents, Issues and Pull requests read and write.
 3. **Create the routine** at https://claude.ai/code/routines → **New routine**:
    * Name: `Chrono registry requests`; prompt: the text in the next section.
    * Repository: `JiiimmyyN/jellyfin-chrono`.
-   * Environment: below the **Instructions** box, click the cloud icon and pick **Chrono registry**.
+   * Environment: **Default** works; pick your own environment if you widened network access in step 1.
    * Trigger: **API**. Save the routine; then open it → **Edit** → the API trigger → copy the URL (the routine id is the `trig_…` part) and click **Generate token** (shown once).
    * Connectors: remove all; the routine only needs GitHub, which works through the app.
 4. **Store them in the repository:** variable `CLAUDE_ROUTINE_ID` (Settings → Secrets and variables → Actions → Variables, value `trig_…`) and secret `CLAUDE_ROUTINE_TOKEN`.
@@ -111,6 +96,8 @@ Make the requested change:
 - Verify every TMDB/IMDb/TVDB id and date you add (TMDB website, Wikidata SPARQL at https://query.wikidata.org/sparql, TVmaze API). Never guess an id; if you cannot verify something, leave it out and say so in the pull request.
 - Prefer official sources for placements (marvel.com, starwars.com) and wiki timelines (Fandom) as references; explain non-obvious placements in the entry "note".
 - Bump the "revision" of every universe you change to today's date (YYYY.MM.DD, or YYYY.MM.DD.N if it already has today's date).
+
+The repository's SessionStart hook installs the .NET 10 SDK when the session starts; if `dotnet` is missing, run `bash scripts/install_pkgs.sh` with CLAUDE_CODE_REMOTE=true. If a data source is blocked by the network policy, say so in the pull request instead of guessing.
 
 Validate before committing:
 - dotnet run --project tools/Chrono.RegistryTool -- validate registry
