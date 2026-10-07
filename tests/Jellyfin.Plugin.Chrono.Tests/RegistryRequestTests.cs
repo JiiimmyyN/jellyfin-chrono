@@ -63,6 +63,7 @@ public sealed class RegistryRequestTests : IDisposable
     public async Task AddMovieIsPlacedInExplicitOrders()
     {
         var editor = Editor();
+        var originalRevision = Load("mcu").Revision;
         var form = IssueForm.Parse("""
             ### Universe
 
@@ -104,7 +105,7 @@ public sealed class RegistryRequestTests : IDisposable
         Assert.Equal(timeline.IndexOf("loki-s1") + 1, timeline.IndexOf("blade"));
         Assert.Equal("blade", orders["official-timeline"][^1]);
         Assert.Contains("blade", orders["phase-6"]);
-        Assert.Equal("2026.10.07.1", universe.Revision);
+        Assert.Equal(editor.NextRevision(originalRevision), universe.Revision);
     }
 
     [Fact]
