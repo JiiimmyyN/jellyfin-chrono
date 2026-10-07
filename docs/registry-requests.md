@@ -52,7 +52,7 @@ Only people with triage or write access can add labels, so issue authors can't t
 * **Labels:** `registry`, `registry:add-title`, `registry:move-title`, `registry:exclude-title`, `registry:new-universe`, `registry:other`, `registry:approved`, `registry:claude`, `registry:needs-changes`.
 * **Optional secret `TMDB_API_KEY`:** a free TMDB API key (v3 key or v4 read access token) from https://www.themoviedb.org/settings/api. Without it, titles and dates come from Wikidata/TVmaze and new entries have no poster (the plugin then falls back to Seerr posters when Seerr is connected).
 
-Pull requests opened by the workflow token don't trigger the *Build* workflow, so the request workflow validates and runs the tests itself before opening them.
+The *Build* workflow skips pull requests that only change `registry/` (GitHub would otherwise hold those runs for approval, because the workflow's pull requests come from `github-actions[bot]`). The request workflows validate the registry and run the tests themselves before opening a pull request, and Build runs again on `main` after merging.
 
 ### Claude (for `registry:claude`)
 
