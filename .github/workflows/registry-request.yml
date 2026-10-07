@@ -73,6 +73,7 @@ jobs:
           echo "exit=$code" >> "$GITHUB_OUTPUT"
 
       - name: Open pull request
+        id: pr
         if: steps.apply.outputs.exit == '0' && steps.validate.outputs.exit == '0'
         env:
           TITLE: ${{ github.event.issue.title }}
@@ -83,7 +84,11 @@ jobs:
           git checkout -B "$branch"
           git add registry
           git commit -m "Registry: ${TITLE#\[Registry\] } (#$ISSUE)"
-          git push --force origin "$branch"
+          for attempt in 1 2 3 4; do
+            git push --force origin "$branch" && break
+            [ "$attempt" = 4 ] && exit 1
+            sleep $((attempt * 10))
+          done
           {
             cat "$RUNNER_TEMP/summary.md"
             echo
@@ -99,11 +104,17 @@ jobs:
           gh issue edit "$ISSUE" --remove-label registry:needs-changes || true
 
       - name: Report failure
-        if: always() && steps.kind.outputs.kind != '' && (steps.apply.outputs.exit != '0' || steps.validate.outputs.exit != '0')
+        if: always() && steps.kind.outputs.kind != '' && (steps.apply.outputs.exit != '0' || steps.validate.outputs.exit != '0' || steps.pr.outcome == 'failure')
+        env:
+          APPLY_EXIT: ${{ steps.apply.outputs.exit }}
+          VALIDATE_EXIT: ${{ steps.validate.outputs.exit }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           {
-            if [ -s "$RUNNER_TEMP/summary.md" ] && [ "${{ steps.apply.outputs.exit }}" != "0" ]; then
+            if [ "$APPLY_EXIT" != "0" ] && [ -s "$RUNNER_TEMP/summary.md" ]; then
               cat "$RUNNER_TEMP/summary.md"
+            elif [ "$VALIDATE_EXIT" = "0" ]; then
+              echo "The change was applied and validated, but the pull request could not be created ([run log]($RUN_URL))."
             else
               echo "The change was applied but validation failed:"
               echo
