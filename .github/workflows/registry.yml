@@ -1,0 +1,38 @@
+name: Registry freshness
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+      - name: Validate
+        run: dotnet run --project tools/Chrono.RegistryTool -- validate registry
+      - name: Find uncurated titles
+        run: dotnet run --project tools/Chrono.RegistryTool -- discover registry --output report.md
+      - name: Open or update the review issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Registry: titles to review"
+          existing=$(gh issue list --state open --search "in:title \"$title\"" --json number --jq '.[0].number')
+          if grep -q "Every Wikidata title is curated" report.md; then
+            [ -n "$existing" ] && gh issue close "$existing" --comment "All titles are curated now."
+            exit 0
+          fi
+          if [ -n "$existing" ]; then
+            gh issue edit "$existing" --body-file report.md
+          else
+            gh issue create --title "$title" --body-file report.md
+          fi

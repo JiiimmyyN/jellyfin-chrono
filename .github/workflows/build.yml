@@ -1,0 +1,38 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+      - name: Web client tests
+        working-directory: web
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm test
+      - name: Validate registry
+        run: dotnet run --project tools/Chrono.RegistryTool -- validate registry
+      - name: Package
+        run: scripts/package.sh 0.0.0.${{ github.run_number }}
+      - name: Plugin tests
+        run: dotnet test tests/Jellyfin.Plugin.Chrono.Tests
+      - uses: actions/upload-artifact@v5
+        with:
+          name: chrono-plugin
+          path: artifacts/package/*.zip
