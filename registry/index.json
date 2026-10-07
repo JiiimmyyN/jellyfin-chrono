@@ -19,6 +19,12 @@
       "name": "Middle Earth",
       "description": "J.R.R. Tolkien middle earth universe",
       "file": "universes/middle-earth.json"
+    },
+    {
+      "id": "star-trek",
+      "name": "Star Trek",
+      "description": "The Star Trek Movie and Series Universe",
+      "file": "universes/star-trek.json"
     }
   ]
 }
