@@ -4,7 +4,7 @@
   "id": "star-trek",
   "name": "Star Trek",
   "description": "The Star Trek Movie and Series Universe",
-  "revision": "2026.10.07.1",
+  "revision": "2026.10.07.2",
   "discover": {
     "wikidata": [
       "Q18043309"
@@ -42,6 +42,11 @@
   },
   "attribution": [
     {
+      "name": "Memory Alpha (Fandom): Star Trek chronology",
+      "url": "https://memory-alpha.fandom.com/wiki/Timeline",
+      "license": "CC BY-NC 3.0"
+    },
+    {
       "name": "Wikidata",
       "url": "https://www.wikidata.org/wiki/Q18043309",
       "license": "CC0 1.0"
@@ -51,7 +56,10 @@
       "url": "https://www.themoviedb.org/"
     }
   ],
-  "flags": {},
+  "flags": {
+    "kelvin-timeline": "Kelvin timeline (alternate reality)",
+    "episode-compilation": "Feature-length episode compilations"
+  },
   "groups": [
     {
       "id": "star-trek-the-next-generation",
@@ -152,7 +160,8 @@
       "tmdb": 1143894,
       "imdb": "tt0059753",
       "released": "1965-02-01",
-      "poster": "/nFs8Hlp7nrjGkbBq9jYJtgg8YeK.jpg"
+      "poster": "/nFs8Hlp7nrjGkbBq9jYJtgg8YeK.jpg",
+      "note": "Original pilot with Captain Pike, set in 2254, before Discovery."
     },
     {
       "id": "star-trek-iv-the-voyage-home",
@@ -259,7 +268,11 @@
       "poster": "/uS6HdlcG2x52HcWOLIgBTORzuse.jpg",
       "groups": [
         "star-trek-the-next-generation"
-      ]
+      ],
+      "flags": [
+        "episode-compilation"
+      ],
+      "note": "Feature-length cut of TNG 3x26/4x01 (2366-2367), between seasons 3 and 4."
     },
     {
       "id": "star-trek-vi-the-undiscovered-country",
@@ -354,7 +367,8 @@
       "tmdb": 193,
       "imdb": "tt0111280",
       "released": "1994-11-18",
-      "poster": "/gh0ZZRwSmlzEZTIZee3ZCN9Jssx.jpg"
+      "poster": "/gh0ZZRwSmlzEZTIZee3ZCN9Jssx.jpg",
+      "note": "Prologue in 2293; main story in 2371, after TNG season 7."
     },
     {
       "id": "star-trek-voyager-s1",
@@ -443,7 +457,11 @@
       "poster": "/aR00vbbYpRwuT8xXjga82GQYFaG.jpg",
       "groups": [
         "star-trek-deep-space-nine"
-      ]
+      ],
+      "flags": [
+        "episode-compilation"
+      ],
+      "note": "Feature-length cut of the DS9 season 4 premiere (2372)."
     },
     {
       "id": "star-trek-first-contact",
@@ -469,7 +487,11 @@
       "title": "Star Trek: Voyager - Dark Frontier",
       "tmdb": 573374,
       "released": "1999-02-17",
-      "poster": "/7fNDaZFryiez6nsnzLu0DLLomSv.jpg"
+      "poster": "/7fNDaZFryiez6nsnzLu0DLLomSv.jpg",
+      "flags": [
+        "episode-compilation"
+      ],
+      "note": "Feature-length cut of Voyager 5x15/5x16 (2375)."
     },
     {
       "id": "star-trek-enterprise-s1",
@@ -513,7 +535,8 @@
       "tvdb": 73893,
       "season": 4,
       "released": "2004-10-08",
-      "poster": "/6akvhEy1cRoQY7ocQwsmiaOTGW4.jpg"
+      "poster": "/6akvhEy1cRoQY7ocQwsmiaOTGW4.jpg",
+      "note": "The finale \"These Are the Voyages...\" is framed as a TNG season 7 holodeck program."
     },
     {
       "id": "star-trek-nemesis",
@@ -522,7 +545,21 @@
       "tmdb": 201,
       "imdb": "tt0253754",
       "released": "2002-12-13",
-      "poster": "/cldAwhvBmOv9jrd3bXWuqRHoXyq.jpg"
+      "poster": "/cldAwhvBmOv9jrd3bXWuqRHoXyq.jpg",
+      "note": "Set in 2379, after Voyager and before Lower Decks."
+    },
+    {
+      "id": "star-trek-2009",
+      "type": "movie",
+      "title": "Star Trek",
+      "tmdb": 13475,
+      "imdb": "tt0796366",
+      "released": "2009-05-06",
+      "poster": "/lV5OpzAss1z06YNagOVap1I35mH.jpg",
+      "flags": [
+        "kelvin-timeline"
+      ],
+      "note": "Kelvin timeline (alternate reality created in 2233); main story in 2258."
     },
     {
       "id": "star-trek-into-darkness",
@@ -531,7 +568,24 @@
       "tmdb": 54138,
       "imdb": "tt1408101",
       "released": "2013-05-05",
-      "poster": "/Aim3kVNh1MPIxPEFeJrl9e9Uf1a.jpg"
+      "poster": "/Aim3kVNh1MPIxPEFeJrl9e9Uf1a.jpg",
+      "flags": [
+        "kelvin-timeline"
+      ],
+      "note": "Kelvin timeline, 2259."
+    },
+    {
+      "id": "star-trek-beyond",
+      "type": "movie",
+      "title": "Star Trek Beyond",
+      "tmdb": 188927,
+      "imdb": "tt2660888",
+      "released": "2016-07-07",
+      "poster": "/wI5VghYNYLktDRPUa5rrVcVA1h7.jpg",
+      "flags": [
+        "kelvin-timeline"
+      ],
+      "note": "Kelvin timeline, 2263."
     },
     {
       "id": "star-trek-discovery-s1",
@@ -554,6 +608,30 @@
       "season": 2,
       "released": "2019-01-17",
       "poster": "/ztdmT2JzCumvuXb4olmxzBRVKGe.jpg"
+    },
+    {
+      "id": "short-treks-s1",
+      "type": "season",
+      "title": "Star Trek: Short Treks",
+      "tmdb": 82491,
+      "imdb": "tt9059594",
+      "tvdb": 376108,
+      "season": 1,
+      "released": "2018-10-03",
+      "poster": "/4EAxGiRUl5HjC6NZuqon1RZbjGZ.jpg",
+      "note": "Shorts set mostly around Discovery season 1 (2257); \"Calypso\" takes place about a thousand years later."
+    },
+    {
+      "id": "short-treks-s2",
+      "type": "season",
+      "title": "Star Trek: Short Treks",
+      "tmdb": 82491,
+      "imdb": "tt9059594",
+      "tvdb": 376108,
+      "season": 2,
+      "released": "2019-10-05",
+      "poster": "/qPqd6dvluMTTchGXOb38co5qTnR.jpg",
+      "note": "Shorts set mostly in the 2250s around Discovery season 2 and the Pike era (\"Q&A\" is 2254); \"Children of Mars\" leads into Picard (2385)."
     },
     {
       "id": "star-trek-discovery-s3",
@@ -751,7 +829,8 @@
       "tvdb": 439233,
       "season": 1,
       "released": "2023-09-08",
-      "poster": "/sMkx1MoLbs1JBt9ICbNsXs8vBzu.jpg"
+      "poster": "/sMkx1MoLbs1JBt9ICbNsXs8vBzu.jpg",
+      "note": "Comedic animated shorts, not part of the in-universe timeline."
     },
     {
       "id": "star-trek-section-31",
@@ -760,7 +839,8 @@
       "tmdb": 1114894,
       "imdb": "tt9603060",
       "released": "2025-01-15",
-      "poster": "/fNu6P4jYU55Cb3CC2SndtAKvois.jpg"
+      "poster": "/fNu6P4jYU55Cb3CC2SndtAKvois.jpg",
+      "note": "Set in the 2320s, between Star Trek VI and The Next Generation."
     },
     {
       "id": "star-trek-starfleet-academy-s1",
@@ -771,7 +851,8 @@
       "tvdb": 433120,
       "season": 1,
       "released": "2026-01-15",
-      "poster": "/eOxwyGkGKq4WZCgdVlU1pr2XcCG.jpg"
+      "poster": "/eOxwyGkGKq4WZCgdVlU1pr2XcCG.jpg",
+      "note": "Set in the 32nd century after Discovery season 5."
     },
     {
       "id": "star-trek-scouts-s1",
@@ -781,7 +862,8 @@
       "imdb": "tt38221314",
       "season": 1,
       "released": "2025-09-07",
-      "poster": "/7sJCF4kqr1CMI0j2bDMoa3bEAur.jpg"
+      "poster": "/7sJCF4kqr1CMI0j2bDMoa3bEAur.jpg",
+      "note": "Kids YouTube series, not placed in the in-universe timeline."
     },
     {
       "id": "star-trek-scouts-s2",
@@ -791,10 +873,115 @@
       "imdb": "tt38221314",
       "season": 2,
       "released": "2026-01-23",
-      "poster": "/eQ7PZcL64EgPt3GAE6sNxSWVg6m.jpg"
+      "poster": "/eQ7PZcL64EgPt3GAE6sNxSWVg6m.jpg",
+      "note": "Kids YouTube series, not placed in the in-universe timeline."
     }
   ],
   "orders": [
+    {
+      "id": "timeline",
+      "title": "Timeline",
+      "description": "Every film and series season in in-universe chronological order, from Enterprise (2151) to the 32nd century.",
+      "basis": "Memory Alpha in-universe dates per season/film (2026-10-07); overlapping 24th-century seasons interleaved by year, Kelvin films by their in-universe year",
+      "items": [
+        "star-trek-enterprise-s1",
+        "star-trek-enterprise-s2",
+        "star-trek-enterprise-s3",
+        "star-trek-enterprise-s4",
+        "star-trek-the-cage",
+        "star-trek-discovery-s1",
+        "short-treks-s1",
+        "star-trek-discovery-s2",
+        "short-treks-s2",
+        "star-trek-strange-new-worlds-s1",
+        "star-trek-strange-new-worlds-s2",
+        "star-trek-strange-new-worlds-s3",
+        "star-trek-strange-new-worlds-s4",
+        "star-trek-2009",
+        "star-trek-into-darkness",
+        "star-trek-beyond",
+        "star-trek-s1",
+        "star-trek-s2",
+        "star-trek-s3",
+        "star-trek-s1-1973",
+        "star-trek-s2-1974",
+        "star-trek-the-motion-picture",
+        "star-trek-ii-the-wrath-of-khan",
+        "star-trek-iii-the-search-for-spock",
+        "star-trek-iv-the-voyage-home",
+        "star-trek-v-the-final-frontier",
+        "star-trek-vi-the-undiscovered-country",
+        "star-trek-section-31",
+        "star-trek-the-next-generation-s1",
+        "star-trek-the-next-generation-s2",
+        "star-trek-the-next-generation-s3",
+        "star-trek-the-next-generation-the-best-of-both-worlds",
+        "star-trek-the-next-generation-s4",
+        "star-trek-the-next-generation-s5",
+        "star-trek-the-next-generation-s6",
+        "star-trek-deep-space-nine-s1",
+        "star-trek-the-next-generation-s7",
+        "star-trek-deep-space-nine-s2",
+        "star-trek-generations",
+        "star-trek-deep-space-nine-s3",
+        "star-trek-voyager-s1",
+        "star-trek-deep-space-nine-the-way-of-the-warrior",
+        "star-trek-deep-space-nine-s4",
+        "star-trek-voyager-s2",
+        "star-trek-first-contact",
+        "star-trek-deep-space-nine-s5",
+        "star-trek-voyager-s3",
+        "star-trek-deep-space-nine-s6",
+        "star-trek-voyager-s4",
+        "star-trek-insurrection",
+        "star-trek-deep-space-nine-s7",
+        "star-trek-voyager-s5",
+        "star-trek-voyager-dark-frontier",
+        "star-trek-voyager-s6",
+        "star-trek-voyager-s7",
+        "star-trek-nemesis",
+        "star-trek-lower-decks-s1",
+        "star-trek-lower-decks-s2",
+        "star-trek-lower-decks-s3",
+        "star-trek-lower-decks-s4",
+        "star-trek-lower-decks-s5",
+        "star-trek-prodigy-s1",
+        "star-trek-prodigy-s2",
+        "star-trek-picard-s1",
+        "star-trek-picard-s2",
+        "star-trek-picard-s3",
+        "star-trek-discovery-s3",
+        "star-trek-discovery-s4",
+        "star-trek-discovery-s5",
+        "star-trek-starfleet-academy-s1"
+      ]
+    },
+    {
+      "id": "prime-timeline",
+      "title": "Prime Timeline",
+      "description": "The timeline without the Kelvin-timeline films and episode compilations.",
+      "derive": {
+        "from": "timeline",
+        "excludeFlags": [
+          "kelvin-timeline",
+          "episode-compilation"
+        ]
+      }
+    },
+    {
+      "id": "movies-timeline",
+      "title": "Movie Timeline",
+      "description": "The films in in-universe order.",
+      "derive": {
+        "from": "timeline",
+        "types": [
+          "movie"
+        ],
+        "excludeFlags": [
+          "episode-compilation"
+        ]
+      }
+    },
     {
       "id": "star-trek-the-next-generation",
       "title": "Star Trek: The Next Generation",
@@ -826,6 +1013,9 @@
   ],
   "hub": {
     "rows": [
+      "timeline",
+      "prime-timeline",
+      "movies-timeline",
       "star-trek-the-next-generation",
       "star-trek-deep-space-nine",
       "release"
